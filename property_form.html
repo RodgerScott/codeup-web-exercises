@@ -10,33 +10,88 @@
         #header_text {
             text-align: center;
         }
+        body {
+            background-image: url("images/sunset.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+
+        legend {
+            font-size: 26pt;
+            margin-bottom: 10px;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-<header>
-    <div id="header_text">
-        <h5>Texas Association of Realtors</h5>
-        <h2>Residential Lease Application</h2>
-    </div>
-</header>
-<hr>
-<form action="" method="POST">
-    <div>
-        <label for="property_address">Property Address:<input type="text" name="property_address" id="property_address"></label><br>
-        <label for="move_in_date">Anticipated Move-in Date:<input type="text" name="move_in_date" id="move_in_date"></label>
-        <label for="monthly_rent">Monthly Rent: $<input type="text" name="monthly_rent" id="monthly_rent"></label>
-        <label for="security_deposit">Security Deposit: $<input type="text" name="security_deposit" id="security_deposit"></label>
-    </div>
-    <h5>Applicant was referred to Landlord by:</h5>
-    <div>
-        <label for="real_estate_agent"><input type="checkbox" name="real_estate_agent" id="real_estate_agent" value="Real Estate Agent">Real Estate Agent</label>
-        <ul>                             </ul>
-        <br>
-        <label for="newspaper"><input type="checkbox" name="newspaper" id="newspaper" value="newspaper">Newspaper</label>
-        <label for="sign"><input type="checkbox" name="sign" id="sign" value="sign">Sign</label>
-        <label for="internet"><input type="checkbox" name="internet" id="internet" value="internet">Internet</label>
-        <label for="other"><input type="checkbox" name="other" id="other" value="other">Other</label>
-    </div>
+    <header>
+        <div id="header_text">
+            <p align="right">Received on ________________- (date</p>
+            <h5>Texas Association of Realtors</h5>
+            <h2>Residential Lease Application</h2>
+        </div>
+    </header>
+    <form action="" method="POST">
+        <div>
+            <fieldset>
+                <legend>Property Info</legend>
+                <label for="property_address">Property Address:<input type="text" name="property_address" id="property_address"></label><br>
+                <label for="move_in_date">Anticipated Move-in Date:<input type="text" name="move_in_date" id="move_in_date"></label>
+                <label for="monthly_rent">Monthly Rent: $<input type="text" name="monthly_rent" id="monthly_rent"></label>
+                <label for="security_deposit">Security Deposit: $<input type="text" name="security_deposit" id="security_deposit"></label>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Applicant Referral Information</legend>
+                <h5>Applicant was referred to Landlord by:</h5>
+                <label for="real_estate_agent"><input type="checkbox" name="real_estate_agent" id="real_estate_agent" value="Real Estate Agent">Real Estate Agent
+                    <input type="text" id="agent_name" name="agent_name" placeholder="Agent Name">
+                    <input type="text" id="agent_number" name="agent_number" placeholder="Agent's Phone Number"</label>
+                <br>
+                <label for="newspaper"><input type="checkbox" name="newspaper" id="newspaper" value="newspaper">Newspaper</label>
+                <label for="sign"><input type="checkbox" name="sign" id="sign" value="sign">Sign</label>
+                <label for="internet"><input type="checkbox" name="internet" id="internet" value="internet">Internet</label>
+                <label for="other"><input type="checkbox" name="other" id="other" value="other">Other</label>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Applicant Information</legend>
+                <h5>Applicant Name:</h5>
+                <label for="first_name"><input type="text" name="first_name" id="first_name" placeholder="First Name"></label>
+                <label for="middle_name"><input type="text" name="middle_name" id="middle_name" placeholder="Middle Name"></label>
+                <label for="last_name"><input type="text" name="last_name" id="last_name" placeholder="Last Name"></label>
+
+                <h5>Is there a co-applicant?</h5>
+                <label for="co_applicant_y"><input type="radio" name="co_applicant" id="co_applicant_y" value="yes">Yes</label>
+                <label for="co_applicant_n"><input type="radio" name="co_applicant" id="co_applicant_n" value="no">No</label>
+                <span><em><strong>If yes, co-applicant must submit a separate form.</strong></em></span>
+
+                <h5>Applicants former last name (maiden or married)</h5>
+                <label for="former_name"><input type="text" id="former_name" name="former_name" placeholder="former name"></label>
+
+                <h5>Contact Information:</h5>
+                <label for="email"><input type="email" id="email" name="email" placeholder="email"></label><br>
+                <label for="home_phone"><input type="number" id="home_phone" name="home_phone" placeholder="home phone"></label><br>
+                <label for="work_phone"><input type="number" id="work_phone" name="work_phone" placeholder="work phone"></label><br>
+                <label for="mobile_phone"><input type="number" id="mobile_phone" name="mobile_phone" placeholder="mobile phone"></label><br>
+
+                <h5>Personal Information</h5>
+                <label for="ss_number"><input type="number" name="ss_number" id="ss_number" placeholder="Social Security#"></label><br>
+                <label for="dl_number"><input type="number" name="dl_number" id="dl_number" placeholder="Drivers License#"></label><br>
+                <label for="birthday">Birthday:<input type="date" name="birthday" id="birthday" placeholder="Birthday"></label><br>
+                <label for="height">Height<input type="text" name="height" id="height" placeholder="Height"></label><br>
+            </fieldset>
+        </div>
 </form>
 
 </body>
