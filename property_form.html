@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Property Form</title>
+    <style>
+        #header_text {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div id="header_text">
+        <h5>Texas Association of Realtors</h5>
+        <h2>Residential Lease Application</h2>
+    </div>
+</header>
+<hr>
+<form action="" method="POST">
+    <div>
+        <label for="property_address">Property Address:<input type="text" name="property_address" id="property_address"></label><br>
+        <label for="move_in_date">Anticipated Move-in Date:<input type="text" name="move_in_date" id="move_in_date"></label>
+        <label for="monthly_rent">Monthly Rent: $<input type="text" name="monthly_rent" id="monthly_rent"></label>
+        <label for="security_deposit">Security Deposit: $<input type="text" name="security_deposit" id="security_deposit"></label>
+    </div>
+    <h5>Applicant was referred to Landlord by:</h5>
+    <div>
+        <label for="real_estate_agent"><input type="checkbox" name="real_estate_agent" id="real_estate_agent" value="Real Estate Agent">Real Estate Agent</label>
+        <ul>                             </ul>
+        <br>
+        <label for="newspaper"><input type="checkbox" name="newspaper" id="newspaper" value="newspaper">Newspaper</label>
+        <label for="sign"><input type="checkbox" name="sign" id="sign" value="sign">Sign</label>
+        <label for="internet"><input type="checkbox" name="internet" id="internet" value="internet">Internet</label>
+        <label for="other"><input type="checkbox" name="other" id="other" value="other">Other</label>
+    </div>
+</form>
+
+</body>
+</html>
