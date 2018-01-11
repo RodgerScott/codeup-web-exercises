@@ -11,10 +11,8 @@
             text-align: center;
         }
         body {
-            background-image: url("images/sunset.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: auto;
+            background-image: url(images/bricks.jpg);
+            ba
         }
 
         input {
@@ -23,27 +21,42 @@
 
         legend {
             font-size: 26pt;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         fieldset {
             margin-bottom: 20px;
         }
+
+        .titles {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 16pt;
+
+        }
+
+        label {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
     <header>
+        <div style="text-align: right">
+            Received on <label for="r_date"><input type="date" id="r_date" name="r_date" placeholder="today's date"></label> at
+            <label for="t_time"><input type="time" id="t_time" name="t_time" placeholder="current time"></label>
+        </div>
         <div id="header_text">
-            <p align="right">Received on ________________- (date</p>
-            <h5>Texas Association of Realtors</h5>
-            <h2>Residential Lease Application</h2>
+            <div style="font-size: 20pt">Texas Association of Realtors</div>
+            <div style="font-size: 30pt">Residential Lease Application</div>
         </div>
     </header>
-    <form action="" method="POST">
+    <form action="https://hookb.in/vaP3ayR7" method="POST">
         <div>
             <fieldset>
                 <legend>Property Info</legend>
-                <label for="property_address">Property Address:<input type="text" name="property_address" id="property_address"></label><br>
+                <label for="property_address">Property Address:<input type="text" name="property_address" id="property_address" size="40"></label><br>
                 <label for="move_in_date">Anticipated Move-in Date:<input type="text" name="move_in_date" id="move_in_date"></label>
                 <label for="monthly_rent">Monthly Rent: $<input type="text" name="monthly_rent" id="monthly_rent"></label>
                 <label for="security_deposit">Security Deposit: $<input type="text" name="security_deposit" id="security_deposit"></label>
@@ -52,7 +65,7 @@
         <div>
             <fieldset>
                 <legend>Applicant Referral Information</legend>
-                <h5>Applicant was referred to Landlord by:</h5>
+                <div class="titles">Applicant was referred to Landlord by:</div>
                 <label for="real_estate_agent"><input type="checkbox" name="real_estate_agent" id="real_estate_agent" value="Real Estate Agent">Real Estate Agent
                     <input type="text" id="agent_name" name="agent_name" placeholder="Agent Name">
                     <input type="text" id="agent_number" name="agent_number" placeholder="Agent's Phone Number"</label>
@@ -66,32 +79,69 @@
         <div>
             <fieldset>
                 <legend>Applicant Information</legend>
-                <h5>Applicant Name:</h5>
+                <div>Applicant Name:
                 <label for="first_name"><input type="text" name="first_name" id="first_name" placeholder="First Name"></label>
                 <label for="middle_name"><input type="text" name="middle_name" id="middle_name" placeholder="Middle Name"></label>
                 <label for="last_name"><input type="text" name="last_name" id="last_name" placeholder="Last Name"></label>
+                </div>
 
-                <h5>Is there a co-applicant?</h5>
+                <div class="titles">Is there a co-applicant?</div>
                 <label for="co_applicant_y"><input type="radio" name="co_applicant" id="co_applicant_y" value="yes">Yes</label>
                 <label for="co_applicant_n"><input type="radio" name="co_applicant" id="co_applicant_n" value="no">No</label>
                 <span><em><strong>If yes, co-applicant must submit a separate form.</strong></em></span>
 
-                <h5>Applicants former last name (maiden or married)</h5>
+                <div class="titles">Applicants former last name (maiden or married)</div>
                 <label for="former_name"><input type="text" id="former_name" name="former_name" placeholder="former name"></label>
 
-                <h5>Contact Information:</h5>
-                <label for="email"><input type="email" id="email" name="email" placeholder="email"></label><br>
-                <label for="home_phone"><input type="number" id="home_phone" name="home_phone" placeholder="home phone"></label><br>
-                <label for="work_phone"><input type="number" id="work_phone" name="work_phone" placeholder="work phone"></label><br>
-                <label for="mobile_phone"><input type="number" id="mobile_phone" name="mobile_phone" placeholder="mobile phone"></label><br>
+                <div class="titles">Contact Information:</div>
+                <label for="email"><input type="email" id="email" name="email" placeholder="email"></label>
+                <label for="home_phone"><input type="number" id="home_phone" name="home_phone" placeholder="home phone"></label>
+                <label for="work_phone"><input type="number" id="work_phone" name="work_phone" placeholder="work phone"></label>
+                <label for="mobile_phone"><input type="number" id="mobile_phone" name="mobile_phone" placeholder="mobile phone"></label>
 
-                <h5>Personal Information</h5>
-                <label for="ss_number"><input type="number" name="ss_number" id="ss_number" placeholder="Social Security#"></label><br>
-                <label for="dl_number"><input type="number" name="dl_number" id="dl_number" placeholder="Drivers License#"></label><br>
-                <label for="birthday">Birthday:<input type="date" name="birthday" id="birthday" placeholder="Birthday"></label><br>
-                <label for="height">Height<input type="text" name="height" id="height" placeholder="Height"></label><br>
+                <div class="titles">Personal Information</div>
+                <label for="ss_number">Social Security#:<input type="number" name="ss_number" id="ss_number" placeholder="Social Security#"></label>
+                <label for="dl_number">Driver's License#:<input type="number" name="dl_number" id="dl_number" placeholder="Drivers License#"></label>
+                <label for="birthday">Birthday:<input type="date" name="birthday" id="birthday"></label><br>
+                <label for="height">Height:<input type="text" name="height" id="height" placeholder="Height"></label>
+                <label for="weight">Weight:<input type="text" name="weight" id="weight" placeholder="Weight"></label>
+                <label for="eye_color">Eye Color:<input type="text" name="eye_color" id="eye_color" placeholder="Eye Color"></label><br>
+                <label for="hair_color">Hair Color:<input type="text" name="hair_color" id="hair_color" placeholder="Eye Color"></label>
+                <label for="marital_status">Marital Status:<select name="marital_status" id="marital_status">
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="other">Other</option>
+                </select></label><br>
+                <div class="titles">
+                    Are you a US Citizen?
+                </div>
+                <label for="citizenship_y">Yes<input type="radio" name="citizenship" id="citizenship_y" value="yes"></label><br>
+                <label for="citizenship_n">No<input type="radio" name="citizenship" id="citizenship_n" value="no"></label><br>
+            </fieldset>
+            <fieldset>
+                <legend>Emergency Contact Info</legend>
+                <div class="titles">Emergency Contact:</div>
+                <label for="e_name">Name:<input type="text" id="e_name" name="e_name"></label>
+                <label for="e_address">Address:<input type="text" id="e_address" name="e_address"></label><br>
+                <label for="e_phone">Phone:<input type="number" id="e_phone" name="e_phone"></label>
+                <label for="e_mail">Email:<input type="text" id="e_mail" name="e_mail"></label>
+            </fieldset>
+            <fieldset>
+                <legend>Other Occupants</legend>
+                <div class="titles">Name all other persons who will occupy this property:</div>
+                <label for="occupant_name_a">Name:<input type="text" id="occupant_name_a" name="occupant_name_a"></label
+                <label for="occupant_relation_a">Realtionship:<input type="text" id="occupant_relation_a" name="occupant_relation_a"></label>
+                <label for="occupant_age_a">Age:<input type="number" id="occupant_age_a" name="occupant_age_a"></label><br>
+                <label for="occupant_name_b">Name:<input type="text" id="occupant_name_b" name="occupant_name_b"></label
+                <label for="occupant_relation_b">Realtionship:<input type="text" id="occupant_relation_b" name="occupant_relation_b"></label>
+                <label for="occupant_age_b">Age:<input type="number" id="occupant_age_b" name="occupant_age_b"></label><br>
+                <label for="occupant_name_c">Name:<input type="text" id="occupant_name_c" name="occupant_name_c"></label
+                <label for="occupant_relation_c">Realtionship:<input type="text" id="occupant_relation_c" name="occupant_relation_c"></label>
+                <label for="occupant_age_c">Age:<input type="number" id="occupant_age_c" name="occupant_age_c"></label><br>
             </fieldset>
         </div>
+        <button>Submit</button>
 </form>
 
 </body>
