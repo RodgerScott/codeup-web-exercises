@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    color: red;
+    text-decoration-line: underline;
+}
+
+body {
+    background-image: url(../images/bricks.jpg);
+    background-position: top;
+    font-family: "Comic Sans MS";
+}
+
+ul {
+    list-style: square;
+}
+
+table tr, td {
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 30px;
+}
+
+a:visited {
+    color: darkgreen;
+}
+
+a:hover {
+    font-size: 20px;
+}
