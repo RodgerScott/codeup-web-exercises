@@ -5,21 +5,42 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Awesome Magazine Subscription</title>
+    <title>Pokemon Magazine</title>
     <link rel="stylesheet" href="css/subscribe.css">
+    <script>
+        alert("Subscribe to this magazine or else you will be sorry!!!");
+    </script>
 </head>
 <body>
     <header>
-        <h1>Subscribe to Awesome Magazine</h1>
+        <h1>Subscribe to Pokemagazine Today!!</h1>
+        <table class="table">
+            <tr>
+                <th>Games Covered</th>
+                <th>Events</th>
+                <th>Outreach</th>
+            </tr>
+            <tr>
+                <td>Pokemon Red</td>
+                <td>Poke Challenge</td>
+                <td>Teach A Senior Pokemon</td>
+            </tr>
+            <tr>
+                <td>Pokemon Blue</td>
+                <td>Poke Battles</td>
+                <td>Teach a Kid Pokemon</td>
+            </tr>
+        </table>
+        <div class="text_on_page">Become a true pokemon master with the latest tips and tricks from fellow pokemon trainers.
+        Don't you dare delay, subscribe today!!</div>
     </header>
-    <iframe id="giph" src="https://giphy.com/embed/3owypj9Sbsa1K00aqc" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> <!-- <div><a href="https://giphy.com/gifs/nike-mind-blown-unlimited-justdoit-3owypj9Sbsa1K00aqc"></a></div>-->
+    <img class="mimikyu" src="images/mimikyu.png" alt="Mimikyu">
     <div>
         <form action="https://hookb.in/vaP3ayR7" method="POST">
-            <label for="email">Email address:<input type="email" name="email" id="email"></label>
+            <label for="email">Email address:<input type="email" name="email" id="email" required></label>
             <label for="subscribe"><input type="checkbox" name="subscribe" id="subscribe" checked>Subscribe to our email list</label><br>
-            <button>Submit</button>
+            <button><img src="images/pokeball_icon.png" alt="pokeball submit button" width="20"><br>Submit</button>
         </form>
     </div>
-
 </body>
 </html>
