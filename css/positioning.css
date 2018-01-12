@@ -1,0 +1,48 @@
+h1 {
+    color: purple;
+    font-weight: bold;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+#container_1 {
+    border: transparent;
+    height: 300px;
+    width: 400px;
+    margin-top: 50px;
+    position: relative;
+    left: 0px;
+
+}
+
+.boxsize_1{
+    height: 50px;
+    width: 50px;
+    padding: 11px;
+    border: 1px solid black;
+    margin: 0px 50px 50px 0px;
+    float: left;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    position: relative;
+}
+
+.boxsize_2 {
+    height: 50px;
+    width: 50px;
+    padding: 11px;
+    border: 1px solid black;
+    margin: 0px 50px 50px 0px;
+    float: left;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    position: relative;
+}
+
+.images {
+    position: relative;
+    bottom: 80px;
+    left: 40px;
+}
