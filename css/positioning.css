@@ -46,3 +46,7 @@ h1 {
     bottom: 80px;
     left: 40px;
 }
+
+/*div:nth-child(odd) {*/
+    /*clear: both;*/
+/*}*/
