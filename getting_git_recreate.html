@@ -17,6 +17,11 @@
             margin: 0px;
         }
 
+        .font {
+            font-size: 20px;
+        }
+
+
         .container_top {
             width: 100%;
             height: 800px;
@@ -31,22 +36,25 @@
 
         .container_section1 {
             width: 100%;
-            height: 2000px;
+            height: 1550px;
             box-sizing: border-box;
             border-bottom: 1px solid black;
             background-color: white;
             margin: 0px;
             position: relative;
+            text-align: center;
         }
 
         .container_section2 {
             width: 100%;
-            height: 500px;
+            height: 600px;
             box-sizing: border-box;
             border-bottom: 1px solid black;
             background-color: #cf4646;
             margin: 0px;
             position: relative;
+            text-align: center;
+            color: white;
         }
 
         .footer {
@@ -57,6 +65,31 @@
             background-color: white;
             margin: 0px;
             position: relative;
+        }
+
+        .red_color {
+            color: red;
+        }
+
+        .section2_sub_c {
+            position: relative;
+            border: transparent;
+            box-sizing: border-box;
+            margin: 0 auto;
+            width: 750px;
+            height: 400px;
+            top: 350px;
+        }
+
+        .section2_sub_c_1 {
+            float: left;
+            border: transparent;
+            box-sizing: border-box;
+            height: 200px;
+            width: 250px;
+            padding: 10px;
+            margin-bottom: 15px;
+
         }
 
         #login {
@@ -78,7 +111,7 @@
             top: 100px;
         }
 
-        #dash {
+        #dash_1 {
             color: #FFF;
             width: 70px;
             border-style: solid;
@@ -89,6 +122,26 @@
 
         }
 
+        #dash_2 {
+            color: #FFF;
+            width: 70px;
+            border-style: solid;
+            border-top: 4px solid red;
+            font-weight: bold;
+            position: relative;
+            top: 110px;
+        }
+
+        #dash_3 {
+            color: #FFF;
+            width: 70px;
+            border-style: solid;
+            border-top: 4px solid red;
+            font-weight: bold;
+            position: relative;
+            top: 310px;
+        }
+
         #font_intro {
             font-size: 30px;
             color: #FFF;
@@ -96,7 +149,7 @@
             top: 200px;
         }
 
-        #button {
+        #button_1 {
             border-radius: 90px;
             border: 1px solid white;
             height: 75px;
@@ -110,11 +163,83 @@
 
         }
 
+        #button_2 {
+            border-radius: 90px;
+            border: 1px solid white;
+            height: 75px;
+            width: 275px;
+            font-weight: bold;
+            background-color: transparent;
+            color: white;
+            position: relative;
+            top: 250px;
+            font-size: 20px;
+        }
+
         #intro_text {
             position: relative;
             font-size: 25px;
             top: 265px;
         }
+
+
+
+        #video {
+            position: relative;
+            top: 200px;
+        }
+
+        #text_below_video {
+            position: relative;
+            top: 250px;
+            font-size: 20px;
+        }
+
+        #course_intro {
+            position: relative;
+            top: 100px;
+            font-size: 36px;
+        }
+
+        #course_overview {
+            position: relative;
+            top: 300px;
+            font-size: 36px;
+        }
+
+        #section2_p1 {
+            position: relative;
+            top: 325px;
+          }
+
+        #dash_4 {
+            color: #FFF;
+            width: 70px;
+            border-style: solid;
+            border-top: 4px solid white;
+            font-weight: bold;
+            position: relative;
+            top: 150px;
+        }
+
+        #section2_header {
+            position: relative;
+            top: 100px;
+            font-size: 36px;
+        }
+
+        #section2_text {
+            position: relative;
+            font-size: 25px;
+            top: 185px;
+        }
+
+        #section2_bottom_text {
+            position: relative;
+            font-size: 25px;
+            top: 285px;
+        }
+
 
     </style>
 </head>
@@ -123,17 +248,40 @@
     <header class="container_top">
         <a id="login" href="https://gettinggit.com/login">Log in</a>
         <img id="logo" src="images/getting-git.svg" alt="">
-        <hr id="dash">
+        <hr id="dash_1">
         <div id="font_intro">A comprehensive video course from <code>git init</code> to <em>Git Master</em>.</div>
-        <button id="button">PURCHASE FOR $29</button>
+        <button id="button_1">PURCHASE FOR $29</button>
         <p id="intro_text"><strong>Getting Started?</strong> Watch the <a href="#watch">course intro.</a></p>
     </header>
 
     <section class="container_section1">
-
+        <h1 id="course_intro">Course Introduction</h1>
+        <hr id="dash_2">
+        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/W8DuXELzXhw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div id="text_below_video">
+           <strong>Want More? </strong>Watch all <span class="red_color">4 introductory videos</span> for free.
+        </div>
+        <h1 id="course_overview">Course Overview</h1>
+        <hr id="dash_3">
+        <p id="section2_p1" class="font"><em>Getting Git</em> is a <strong>5 part </strong> course with <strong>over 50 videos</strong> to
+        help you learn git commands in detail <br> as well as cover everyday scenarios you'll encounter
+        when using git</p>
+        <div class="section2_sub_c font">
+            <div class="section2_sub_c_1"><h2>Getting Started</h2>Getting Git starts with 4 videos to give you a feel for the course as well as ensure you have Git installed and configured. You can watch all of them now for free.</div>
+            <div class="section2_sub_c_1"><h2>Making Changes</h2>Part 1 contains 14 videos to learn Git commands to manage a standalone Git repository, including: git init, git add, git commit, git rm, and git revert.</div>
+            <div class="section2_sub_c_1"><h2>Viewing History</h2>Part 2 contains 10 videos to learn Git commands to view current and past changes, including: git status, git log, git show, and git diff.</div>
+            <div class="section2_sub_c_1"><h2>Managing Workflows</h2>Part 3 contains 12 videos to learn Git commands to manage multiple development within a single Git repository. This includes: git branch, git checkout, git merge, git cherry-pick, and git rebase.</div>
+            <div class="section2_sub_c_1"><h2>Sharing Work</h2>Part 4 contains 12 videos to learn Git commands to share a Git repository. This includes: git clone, git push, git pull, git fetch, and git remote.</div>
+            <div class="section2_sub_c_1"><h2>Everyday Git</h2>Everyday Git is a sub-course of Getting Git covering everyday scenarios you'll encounter when using Git. Videos will continually be added at no additional charge.</div>
+        </div>
     </section>
 
     <section class="container_section2">
+        <div id="section2_header">Ready to get started?</div>
+        <hr id="dash_4">
+        <div id="section2_text">Get full access for just $29!</div>
+        <a href="https://www.google.com"><button id="button_2">PURCHASE FOR $29</button></a>
+        <div id="section2_bottom_text" class="font">Need to use PayPal? Send payment to jmac@gettinggit.com.</div>
 
     </section>
 
