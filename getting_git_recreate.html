@@ -7,238 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Getting Git</title>
 
+    <link rel="stylesheet" href="css/getting_git.css">
+
     <style>
-
-        a:link {
-            color: white;
-        }
-
-        body {
-            margin: 0px;
-        }
-
-        .font {
-            font-size: 20px;
-        }
-
-
-        .container_top {
-            width: 100%;
-            height: 800px;
-            box-sizing: border-box;
-            border-bottom: 1px solid black;
-            background-color: #cf4646;
-            margin: 0px;
-            position: relative;
-            text-align: center;
-            color: white;
-        }
-
-        .container_section1 {
-            width: 100%;
-            height: 1550px;
-            box-sizing: border-box;
-            border-bottom: 1px solid black;
-            background-color: white;
-            margin: 0px;
-            position: relative;
-            text-align: center;
-        }
-
-        .container_section2 {
-            width: 100%;
-            height: 600px;
-            box-sizing: border-box;
-            border-bottom: 1px solid black;
-            background-color: #cf4646;
-            margin: 0px;
-            position: relative;
-            text-align: center;
-            color: white;
-        }
-
-        .footer {
-            width: 100%;
-            height: 500px;
-            box-sizing: border-box;
-            border-bottom: 1px solid black;
-            background-color: white;
-            margin: 0px;
-            position: relative;
-        }
-
-        .red_color {
-            color: red;
-        }
-
-        .section2_sub_c {
-            position: relative;
-            border: transparent;
-            box-sizing: border-box;
-            margin: 0 auto;
-            width: 750px;
-            height: 400px;
-            top: 350px;
-        }
-
-        .section2_sub_c_1 {
-            float: left;
-            border: transparent;
-            box-sizing: border-box;
-            height: 200px;
-            width: 250px;
-            padding: 10px;
-            margin-bottom: 15px;
-
-        }
-
-        #login {
-            text-decoration: underline;
-            color: white;
-            font-size: 28px;
-            padding: 3px 8px;
-            background-color: salmon;
-            position: absolute;
-            top: 25px;
-            right: 25px;
-        }
-
-        #logo {
-            width: 900px;
-            margin: 0 auto;
-            display: block;
-            position: relative;
-            top: 100px;
-        }
-
-        #dash_1 {
-            color: #FFF;
-            width: 70px;
-            border-style: solid;
-            border-top: 4px solid white;
-            font-weight: bold;
-            position: relative;
-            top: 150px;
-
-        }
-
-        #dash_2 {
-            color: #FFF;
-            width: 70px;
-            border-style: solid;
-            border-top: 4px solid red;
-            font-weight: bold;
-            position: relative;
-            top: 110px;
-        }
-
-        #dash_3 {
-            color: #FFF;
-            width: 70px;
-            border-style: solid;
-            border-top: 4px solid red;
-            font-weight: bold;
-            position: relative;
-            top: 310px;
-        }
-
-        #font_intro {
-            font-size: 30px;
-            color: #FFF;
-            position: relative;
-            top: 200px;
-        }
-
-        #button_1 {
-            border-radius: 90px;
-            border: 1px solid white;
-            height: 75px;
-            width: 275px;
-            font-weight: bold;
-            background-color: transparent;
-            color: white;
-            position: relative;
-            top: 250px;
-            font-size: 20px;
-
-        }
-
-        #button_2 {
-            border-radius: 90px;
-            border: 1px solid white;
-            height: 75px;
-            width: 275px;
-            font-weight: bold;
-            background-color: transparent;
-            color: white;
-            position: relative;
-            top: 250px;
-            font-size: 20px;
-        }
-
-        #intro_text {
-            position: relative;
-            font-size: 25px;
-            top: 265px;
-        }
-
-
-
-        #video {
-            position: relative;
-            top: 200px;
-        }
-
-        #text_below_video {
-            position: relative;
-            top: 250px;
-            font-size: 20px;
-        }
-
-        #course_intro {
-            position: relative;
-            top: 100px;
-            font-size: 36px;
-        }
-
-        #course_overview {
-            position: relative;
-            top: 300px;
-            font-size: 36px;
-        }
-
-        #section2_p1 {
-            position: relative;
-            top: 325px;
-          }
-
-        #dash_4 {
-            color: #FFF;
-            width: 70px;
-            border-style: solid;
-            border-top: 4px solid white;
-            font-weight: bold;
-            position: relative;
-            top: 150px;
-        }
-
-        #section2_header {
-            position: relative;
-            top: 100px;
-            font-size: 36px;
-        }
-
-        #section2_text {
-            position: relative;
-            font-size: 25px;
-            top: 185px;
-        }
-
-        #section2_bottom_text {
-            position: relative;
-            font-size: 25px;
-            top: 285px;
-        }
 
 
     </style>
@@ -249,7 +20,7 @@
         <a id="login" href="https://gettinggit.com/login">Log in</a>
         <img id="logo" src="images/getting-git.svg" alt="">
         <hr id="dash_1">
-        <div id="font_intro">A comprehensive video course from <code>git init</code> to <em>Git Master</em>.</div>
+        <div id="font_intro">A comprehensive video course from <code id="exception_code_text">git init</code> to <em>Git Master</em>.</div>
         <button id="button_1">PURCHASE FOR $29</button>
         <p id="intro_text"><strong>Getting Started?</strong> Watch the <a href="#watch">course intro.</a></p>
     </header>
@@ -257,9 +28,9 @@
     <section class="container_section1">
         <h1 id="course_intro">Course Introduction</h1>
         <hr id="dash_2">
-        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/W8DuXELzXhw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe id="video" width="850" height="600" src="https://www.youtube.com/embed/W8DuXELzXhw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <div id="text_below_video">
-           <strong>Want More? </strong>Watch all <span class="red_color">4 introductory videos</span> for free.
+            <strong>Want More? </strong>Watch all <a href="https://gettinggit.com/learn" target="_blank"><span class="red_color">4 introductory videos</span></a> for free.
         </div>
         <h1 id="course_overview">Course Overview</h1>
         <hr id="dash_3">
@@ -267,11 +38,12 @@
         help you learn git commands in detail <br> as well as cover everyday scenarios you'll encounter
         when using git</p>
         <div class="section2_sub_c font">
-            <div class="section2_sub_c_1"><h2>Getting Started</h2>Getting Git starts with 4 videos to give you a feel for the course as well as ensure you have Git installed and configured. You can watch all of them now for free.</div>
-            <div class="section2_sub_c_1"><h2>Making Changes</h2>Part 1 contains 14 videos to learn Git commands to manage a standalone Git repository, including: git init, git add, git commit, git rm, and git revert.</div>
-            <div class="section2_sub_c_1"><h2>Viewing History</h2>Part 2 contains 10 videos to learn Git commands to view current and past changes, including: git status, git log, git show, and git diff.</div>
-            <div class="section2_sub_c_1"><h2>Managing Workflows</h2>Part 3 contains 12 videos to learn Git commands to manage multiple development within a single Git repository. This includes: git branch, git checkout, git merge, git cherry-pick, and git rebase.</div>
-            <div class="section2_sub_c_1"><h2>Sharing Work</h2>Part 4 contains 12 videos to learn Git commands to share a Git repository. This includes: git clone, git push, git pull, git fetch, and git remote.</div>
+            <div class="section2_sub_c_1" id="height"><h2>Getting Started</h2>Getting Git starts with 4 videos to give you a feel for the course as well as ensure you have Git installed and configured. You can
+                <a href="https://vimeo.com/album/4319966"><span class="red_color">watch all of them now</span></a> for free.</div>
+            <div class="section2_sub_c_1" id="height"><h2>Making Changes</h2>Part 1 contains 14 videos to learn Git commands to manage a standalone Git repository, including: <code>git init</code>, <code>git add</code>, <code>git commit</code>, <code>git rm</code>, and <code>git revert</code>.</div>
+            <div class="section2_sub_c_1" id="height"><h2>Viewing History</h2>Part 2 contains 10 videos to learn Git commands to view current and past changes, including: <code>git status</code>, <code>git log</code>, <code>git show</code>, and <code>git diff</code>.</div>
+            <div class="section2_sub_c_1"><h2>Managing Workflows</h2>Part 3 contains 12 videos to learn Git commands to manage multiple development within a single Git repository. This includes: <code>git branch</code>, <code>git checkout</code>, <code>git merge</code>, <code>git cherry-pick</code>, and <code>git rebase</code>.</div>
+            <div class="section2_sub_c_1"><h2>Sharing Work</h2>Part 4 contains 12 videos to learn Git commands to share a Git repository. This includes: <code>git clone</code>, <code>git push</code>, <code>git pull</code>, <code>git fetch</code>, and <code>git remote</code>.</div>
             <div class="section2_sub_c_1"><h2>Everyday Git</h2>Everyday Git is a sub-course of Getting Git covering everyday scenarios you'll encounter when using Git. Videos will continually be added at no additional charge.</div>
         </div>
     </section>
@@ -286,6 +58,11 @@
     </section>
 
     <footer class="footer">
+        <div id="footer_header">
+            Have more questions?
+        </div>
+        <hr id="dash_5">
+        <p id="footer_bottom_text">No problem. Just <a href="mailto:jm%61c@%67%65t%74%69n%67g%69t%2E%63om" style="color: red">email me.</a> Unless I'm sleeping, you'll receive a pretty snappy reply.</p>
 
     </footer>
 
