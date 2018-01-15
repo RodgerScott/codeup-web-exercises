@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Facebook - Log in or Sign Up</title>
+
+    <style>
+
+        a:link {
+            color:white;
+        }
+
+        a:visited {
+            color:white;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        tr>td {
+            font-size: 25px;
+            padding: 5px;
+        }
+
+        .header {
+            height: 140px;
+            background-color: #4c67a1;
+            position: relative;
+        }
+
+        .main {
+           background-color: #eef0f6;
+           height: 1200px;
+
+
+        }
+
+        .footer {
+            background-color: white;
+            height: 800px;
+        }
+
+        .font_white {
+            color: white;
+            font-family: Arial;
+            font-weight: bold;
+        }
+
+        .input_box {
+            float: right;
+            position: relative;
+            top: 25px;
+            right: 280px;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .button_login {
+            background-color: #4267b2;
+            border: 1px solid black;
+            top: 47px;
+            right: 280px;
+            font-size: 25px;
+        }
+
+        .logo {
+            position: relative;
+            top: 40px;
+            left: 200px;
+        }
+
+        .forget_account {
+            position: relative;
+            top: 90px;
+            right: -90px;
+            color:  white;
+            float: right;
+            bottom: 0px;
+        }
+
+        .field_height {
+            height: 30px;
+            width: 245px;
+        }
+
+        .main_container_left {
+            border: 1px solid black;
+            height: 1000px;
+            box-sizing: border-box;
+            width: 914px;
+            padding: 20px;
+            margin-left: 138px;
+            float: left;
+
+        }
+
+        .main_container_right {
+            border: 1px solid black;
+            height: 1000px;
+            box-sizing: border-box;
+            width: 626px;
+            padding: 20px;
+            margin-left: 66px;
+            float: left;
+        }
+
+        .fb_icons {
+            height: 80px;
+            margin-bottom: 40px;
+        }
+
+        .text_height {
+            font-size: 25px;
+            positon
+        }
+
+        .main_container_left>h1 {
+            font-family: Arial;
+            font-size: 50px;
+            margin-bottom: 40px;
+            margin-top: 100px;
+        }
+
+        .footer_table {
+            position: relative;
+            top: 25px;
+            left: 225px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="container header">
+        <form action="" method="POST">
+            <button class="font_white input_box button_login">Log In</button>
+            <label for="password" class="font_white input_box">Password<br><input class="field_height" type="password" name="password" id="password"></label>
+            <label for="username" class="font_white input_box">Email or Phone<br><input class="field_height" type="email" name="username" id="username"></label>
+        </form>
+        <img class="logo" src="images/facebook_logo.jpeg" alt="Facebook Logo">
+        <div class="forget_account"><a href="https://www.facebook.com/login/identify?ctx=recover&lwv=110">Forget account?</a></div>
+    </header>
+    <main class="container main">
+        <div class="main_container_left">
+            <h1>Connect with friends and the
+                world around you on Facebook.</h1>
+            <table>
+                <tr>
+                    <td><img src="images/fb_list1.png" alt="" class="fb_icons"></td>
+                    <td><strong>See photos and updates</strong></td><td> from friends in News Feed.</td>
+                </tr>
+                <tr>
+                    <td><img src="images/fb_list2.png" alt="" class="fb_icons"></td>
+                    <td><strong>Share what's new</strong></td><td> in your life on your Timeline.</td>
+                </tr>
+                <tr>
+                    <td><img src="images/fb_list3.png" alt="" class="fb_icons"></td>
+                    <td><strong>Find more</strong></td><td> of what you're looking for with Facebook Search.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="main_container_right">
+            <h2>Sign Up</h2>
+            <div>It's free and always will be.</div>
+            <form action="" method="POST">
+                <label for="first_name"><input type="text" id="first_name" name="first_name" placeholder="First Name"></label>
+                <label for="last_name"><input type="text" id="last_name" name="last_name" placeholder="Last Name"></label><br>
+                <label for="email"><input type="email" id="email" name="email" placeholder="Email Address"></label><br>
+                <label for="new_password"><input type="password" id="new_password" name="new_password" placeholder="New Password"></label>
+                <label for="birthday"><input type="date" id="birthday" name="birthday"></label>
+                <label for="gender_f"><input type="radio" name="gender" id="gender_f">Female</label>
+                <label for="gender_m"><input type="radio" name="gender" id="gender_m">Male</label>
+                <p>By clicking Create Account, you agree to our Terms and that you have read our Data Policy,
+                    including our Cookie Use. You may receive SMS Notifications from Facebook
+                    and can opt out at any time.
+                </p>
+                <button>Create An Account</button>
+                <hr>
+                <p>Create a page for a celebrity, band or business</p>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <table class="footer_table">
+            <tr>
+                <td>English (US)</td>
+                <td>Espanol</td>
+                <td>Francais (France)</td>
+            </tr>
+        </table>
+        <hr class="footer_table">
+        <table class="footer_table">
+            <tr>
+                <td>Sign Up</td>
+                <td>Log in</td>
+                <td>Messenger</td>
+                <td>Facebook Lite</td>
+                <td>Mobile</td>
+                <td>Find Friends</td>
+                <td>People</td>
+                <td>Pages</td>
+                <td>Places</td>
+                <td>Game</td>
+                <td>Locations</td>
+            </tr>
+            <tr>
+                <td>Celebrities</td>
+                <td>Marketplace</td>
+                <td>Groups</td>
+                <td>Recipes</td>
+                <td>Sports</td>
+                <td>Look</td>
+                <td>Moments</td>
+                <td>Instagram</td>
+                <td>Local</td>
+                <td>About</td>
+                <td>Create Ad</td>
+            </tr>
+            <tr>
+                <td>Create Page</td>
+                <td>Developers</td>
+                <td>Careers</td>
+                <td>Privacy</td>
+                <td>Cookies</td>
+                <td>Add Choices</td>
+                <td>Terms</td>
+                <td>Help</td>
+            </tr>
+        </table>
+
+    </footer>
+
+
+</body>
+</html>
