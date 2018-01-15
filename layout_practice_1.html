@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout Practice 1</title>
+    <style>
+
+        h1 {
+            color: white;
+            font-size: 45px;
+            font-weight: bold;
+            margin: 20px;
+            text-align: center;
+        }
+
+        header ul {
+            top: 116px;
+        }
+
+        footer ul {
+        }
+
+        a:link {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: red;
+            background-color: black;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: relative;
+
+        }
+
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 55px;
+        }
+
+        .container {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+
+        .align_text {
+            text-align: center;
+
+        }
+
+        .align_text_left {
+            text-align: left;
+            width: 580px;
+            padding: 12px;
+        }
+
+        .aside_text {
+            text-align: left;
+            width: 50px;
+            padding: 12px;
+            margin-left: 60px;
+            color: white;
+            float:left;
+
+        }
+
+        .center_container {
+            margin: 0 auto;
+        }
+
+        .header {
+            height: 300px;
+            background-color: black;
+
+        }
+
+        .main {
+            height: 1300px;
+            background-color: blue;
+
+        }
+
+        .section {
+            height: 1000px;
+            position: relative;
+            width: 800px;
+            top: 100px;
+            border: 1px solid black;
+            float: left;
+            margin-left: 100px;
+            background-color: green;
+        }
+
+        .article {
+            height: 400px;
+            width: 600px;
+            position: relative;
+            top: 25px;
+            border: 1px solid black;
+            background-color: salmon;
+
+
+        }
+
+        .aside {
+            height: 1000px;
+            width: 600px;
+            border: 1px solid black;
+            position: relative;
+            top: 100px;
+            float: right;
+            margin-right: 225px;
+            background-color: purple;
+
+        }
+
+        .footer {
+            height: 186px;
+            background-color: pink;
+        }
+
+        .nav {
+            height: 150px;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+<header class="container header align_text">
+    <h1>HEADER</h1>
+        <ul>
+            <li><a href="https://www.google.com" target="_blank">Home</a></li>
+            <li><a href="https://www.google.com" target="_blank">About</a></li>
+            <li><a href="https://www.google.com" target="_blank">Stories</a></li>
+            <li><a href="https://www.google.com" target="_blank">Stuff</a></li>
+            <li><a href="https://www.google.com" target="_blank">Dingus</a></li>
+            <li><a href="https://www.google.com" target="_blank">Derpa</a></li>
+            <li><a href="https://www.google.com" target="_blank">HerpDerpa</a></li>
+            <li><a href="https://www.google.com" target="_blank">Blurpple</a></li>
+            <li><a href="https://www.google.com" target="_blank">Ripple</a></li>
+        </ul>
+</header>
+<main class="container main">
+    <h1>MAIN</h1>
+    <section class="section center_container">
+        <h1>SECTION 1</h1>
+        <article class="article center_container">
+            <h1>ARTICLE 1</h1>
+            <p class="align_text_left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, aperiam at consequatur culpa dolor
+                dolorum excepturi explicabo facere fuga id, in inventore iure natus odit recusandae sequi tempore veritatis vitae.</p>
+        </article>
+        <article class="article center_container">
+            <h1>ARTICLE 2</h1>
+            <p class="align_text_left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequuntur dignissimos iste itaque
+                laboriosam molestiae, mollitia necessitatibus obcaecati, quibusdam ratione rem similique voluptates. Aut eaque eius facere impedit reiciendis voluptate.</p>
+        </article>
+    </section>
+    <aside class="aside">
+        <h1>ASIDE</h1>
+        <p class="aside_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem consequuntur cum deleniti deserunt,
+            impedit ipsam maiores nihil nulla quis rem reprehenderit sed veniam vero voluptate. Eius nihil qui reprehenderit!</p>
+        <p class="aside_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores itaque maiores natus repellendus soluta,
+            tempore unde vitae! Aperiam cupiditate dolore esse, facere magni natus nemo quas quisquam repellat velit?</p>
+        <p class="aside_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloremque est exercitationem fugiat
+            incidunt iusto nemo, neque officia qui quod rerum temporibus voluptate. A accusamus itaque iure necessitatibus quia ut?</p>
+        <p class="aside_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam delectus
+            doloribus eaque eius, enim ex facilis mollitia natus, neque nobis nulla optio placeat possimus, quia quis repellat? Veniam!</p>
+
+    </aside>
+</main>
+<footer class="container footer">
+    <h1>FOOTER</h1>
+    <ul>
+        <li><a href="https://www.google.com" target="_blank">Home</a></li>
+        <li><a href="https://www.google.com" target="_blank">About</a></li>
+        <li><a href="https://www.google.com" target="_blank">Stories</a></li>
+        <li><a href="https://www.google.com" target="_blank">Stuff</a></li>
+        <li><a href="https://www.google.com" target="_blank">Dingus</a></li>
+        <li><a href="https://www.google.com" target="_blank">Derpa</a></li>
+        <li><a href="https://www.google.com" target="_blank">HerpDerpa</a></li>
+        <li><a href="https://www.google.com" target="_blank">Blurpple</a></li>
+        <li><a href="https://www.google.com" target="_blank">Ripple</a></li>
+    </ul>
+</footer>
+
+</body>
+</html>
