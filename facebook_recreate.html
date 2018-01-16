@@ -21,9 +21,32 @@
             width: 100%;
         }
 
-        tr>td {
-            font-size: 25px;
+        #top_row > td:nth-child(2) {
+            width: 300px;
+        }
+
+        .footer_table td {
+            font-size: 15px;
             padding: 5px;
+        }
+
+        /*td {*/
+            /*border: 1px solid black;*/
+        /*}*/
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+            font-family: "Arial";
+
+
+        }
+
+        label {
+            margin: 5px 5px 5px 0;
         }
 
         .header {
@@ -34,14 +57,15 @@
 
         .main {
            background-color: #eef0f6;
-           height: 1200px;
+           height: 650px;
+           width: 100%;
 
 
         }
 
         .footer {
             background-color: white;
-            height: 800px;
+            height: 300px;
         }
 
         .font_white {
@@ -82,30 +106,49 @@
             bottom: 0px;
         }
 
-        .field_height {
+        .field_height_top {
             height: 30px;
             width: 245px;
         }
 
+        .field_height_bottom {
+            height: 30px;
+            width: 200px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        .field_height_password {
+            height: 30px;
+            width: 416px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
         .main_container_left {
-            border: 1px solid black;
-            height: 1000px;
+            border: none;
+            height: 600px;
             box-sizing: border-box;
-            width: 914px;
+            width: 570px;
             padding: 20px;
             margin-left: 138px;
             float: left;
+            position: relative;
+            left: 0px;
+
 
         }
 
         .main_container_right {
-            border: 1px solid black;
-            height: 1000px;
+            border: none;
+            height: 500px;
             box-sizing: border-box;
-            width: 626px;
+            width: 475px;
             padding: 20px;
             margin-left: 66px;
             float: left;
+            position: relative;
+            right: 0px;
         }
 
         .fb_icons {
@@ -113,77 +156,98 @@
             margin-bottom: 40px;
         }
 
-        .text_height {
-            font-size: 25px;
-            positon
-        }
 
         .main_container_left>h1 {
             font-family: Arial;
-            font-size: 50px;
+            font-size: 30px;
             margin-bottom: 40px;
-            margin-top: 100px;
+            margin-top: 50px;
         }
 
         .footer_table {
-            position: relative;
-            top: 25px;
-            left: 225px;
+            text-align: center;
+
         }
+
+        #create {
+            background-color: green;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            height: 44px;
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        #top_row>td:nth-child(2) {
+            width: 200px;
+        }
+
+        #top_row>td:nth-child(3) {
+            width: 200px;
+        }
+        
+        .center_container {
+            margin: auto;
+            width: 80%;
+        }
+
 
     </style>
 </head>
-<body>
-    <header class="container header">
+<body class="container">
+    <header class="header">
         <form action="" method="POST">
             <button class="font_white input_box button_login">Log In</button>
-            <label for="password" class="font_white input_box">Password<br><input class="field_height" type="password" name="password" id="password"></label>
-            <label for="username" class="font_white input_box">Email or Phone<br><input class="field_height" type="email" name="username" id="username"></label>
+            <label for="password" class="font_white input_box">Password<br><input class="field_height_top" type="password" name="password" id="password"></label>
+            <label for="username" class="font_white input_box">Email or Phone<br><input class="field_height_top" type="email" name="username" id="username"></label>
         </form>
         <img class="logo" src="images/facebook_logo.jpeg" alt="Facebook Logo">
         <div class="forget_account"><a href="https://www.facebook.com/login/identify?ctx=recover&lwv=110">Forget account?</a></div>
     </header>
-    <main class="container main">
+    <main class="main">
         <div class="main_container_left">
             <h1>Connect with friends and the
                 world around you on Facebook.</h1>
             <table>
-                <tr>
-                    <td><img src="images/fb_list1.png" alt="" class="fb_icons"></td>
-                    <td><strong>See photos and updates</strong></td><td> from friends in News Feed.</td>
+                <tr id="top_row">
+                    <td><img style="vertical-align: central" src="images/fb_list1.png" alt="" class="fb_icons"></td>
+                    <td colspan="2"><strong>See photos and updates</strong>  from friends in News Feed.</td>
                 </tr>
                 <tr>
                     <td><img src="images/fb_list2.png" alt="" class="fb_icons"></td>
-                    <td><strong>Share what's new</strong></td><td> in your life on your Timeline.</td>
+                    <td colspan="2"><strong>Share what's new</strong>     in your life on your Timeline.</td>
                 </tr>
                 <tr>
                     <td><img src="images/fb_list3.png" alt="" class="fb_icons"></td>
-                    <td><strong>Find more</strong></td><td> of what you're looking for with Facebook Search.</td>
+                    <td colspan="2"><strong>Find more</strong>     of what you're looking for with Facebook Search.</td>
                 </tr>
             </table>
         </div>
         <div class="main_container_right">
             <h2>Sign Up</h2>
-            <div>It's free and always will be.</div>
-            <form action="" method="POST">
-                <label for="first_name"><input type="text" id="first_name" name="first_name" placeholder="First Name"></label>
-                <label for="last_name"><input type="text" id="last_name" name="last_name" placeholder="Last Name"></label><br>
-                <label for="email"><input type="email" id="email" name="email" placeholder="Email Address"></label><br>
-                <label for="new_password"><input type="password" id="new_password" name="new_password" placeholder="New Password"></label>
-                <label for="birthday"><input type="date" id="birthday" name="birthday"></label>
+            <div><strong>It's free and always will be.</strong></div>
+            <br>
+            <form  action="" method="POST">
+                <label for="first_name"><input class="field_height_bottom" type="text" id="first_name" name="first_name" placeholder="First Name"></label>
+                <label for="last_name"><input class="field_height_bottom" type="text" id="last_name" name="last_name" placeholder="Last Name"></label><br><br>
+                <label for="email"><input class="field_height_bottom" type="email" id="email" name="email" placeholder="Email Address"></label><br><br>
+                <label for="new_password"><input class="field_height_password" type="password" id="new_password" name="new_password" placeholder="New Password"></label><br><br>
+                <label for="birthday"><strong>Birthday:<br></strong><br><input class="field_height_bottom" type="date" id="birthday" name="birthday"></label><br><br>
                 <label for="gender_f"><input type="radio" name="gender" id="gender_f">Female</label>
                 <label for="gender_m"><input type="radio" name="gender" id="gender_m">Male</label>
                 <p>By clicking Create Account, you agree to our Terms and that you have read our Data Policy,
                     including our Cookie Use. You may receive SMS Notifications from Facebook
                     and can opt out at any time.
                 </p>
-                <button>Create An Account</button>
+                <button id="create">Create Account</button>
                 <hr>
                 <p>Create a page for a celebrity, band or business</p>
             </form>
         </div>
     </main>
     <footer class="footer">
+        <div class="center_container">
         <table class="footer_table">
             <tr>
                 <td>English (US)</td>
@@ -192,45 +256,45 @@
             </tr>
         </table>
         <hr class="footer_table">
-        <table class="footer_table">
-            <tr>
-                <td>Sign Up</td>
-                <td>Log in</td>
-                <td>Messenger</td>
-                <td>Facebook Lite</td>
-                <td>Mobile</td>
-                <td>Find Friends</td>
-                <td>People</td>
-                <td>Pages</td>
-                <td>Places</td>
-                <td>Game</td>
-                <td>Locations</td>
-            </tr>
-            <tr>
-                <td>Celebrities</td>
-                <td>Marketplace</td>
-                <td>Groups</td>
-                <td>Recipes</td>
-                <td>Sports</td>
-                <td>Look</td>
-                <td>Moments</td>
-                <td>Instagram</td>
-                <td>Local</td>
-                <td>About</td>
-                <td>Create Ad</td>
-            </tr>
-            <tr>
-                <td>Create Page</td>
-                <td>Developers</td>
-                <td>Careers</td>
-                <td>Privacy</td>
-                <td>Cookies</td>
-                <td>Add Choices</td>
-                <td>Terms</td>
-                <td>Help</td>
-            </tr>
-        </table>
-
+            <table class="footer_table">
+                <tr>
+                    <td>Sign Up</td>
+                    <td>Log in</td>
+                    <td>Messenger</td>
+                    <td>Facebook Lite</td>
+                    <td>Mobile</td>
+                    <td>Find Friends</td>
+                    <td>People</td>
+                    <td>Pages</td>
+                    <td>Places</td>
+                    <td>Game</td>
+                    <td>Locations</td>
+                </tr>
+                <tr>
+                    <td>Celebrities</td>
+                    <td>Marketplace</td>
+                    <td>Groups</td>
+                    <td>Recipes</td>
+                    <td>Sports</td>
+                    <td>Look</td>
+                    <td>Moments</td>
+                    <td>Instagram</td>
+                    <td>Local</td>
+                    <td>About</td>
+                    <td>Create Ad</td>
+                </tr>
+                <tr>
+                    <td>Create Page</td>
+                    <td>Developers</td>
+                    <td>Careers</td>
+                    <td>Privacy</td>
+                    <td>Cookies</td>
+                    <td>Add Choices</td>
+                    <td>Terms</td>
+                    <td>Help</td>
+                </tr>
+            </table>
+        </div>
     </footer>
 
 
