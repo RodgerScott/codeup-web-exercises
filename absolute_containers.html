@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            width: 100%;
+            position: absolute;
+            box-sizing: border-box;
+            border: 1px solid black;
+            height: 25%;
+            overflow: scroll;
+
+        }
+
+        .container_1 {
+            top: 0;
+            background-color: yellow;
+            animation-name: cont_color_1;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .container_2 {
+            top: 25%;
+            background-color: red;
+        }
+
+        .container_3 {
+            top: 50%;
+            background-color: blue;
+        }
+
+        .container_4 {
+            top: 75%;
+            background-color: green;
+        }
+
+        .sub_Box {
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            float: left;
+            color: white;
+            text-align: center;
+            margin: 1px 1px 1px 1px;
+
+        }
+
+        .picture_Box {
+            height: 100%;
+            width: 150px;
+            float: right;
+            background-color: white;
+            box-sizing: border-box;
+            background-image: url("images/bricks");
+        }
+
+        .container_1>.sub_Box {
+            background-color: blue;
+            animation-name: sub_color_1;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .container_2>.sub_Box {
+            background-color: green;
+        }
+
+        .container_3>.sub_Box {
+            background-color: yellow;
+            color: blue;
+        }
+
+        .container_4>.sub_Box {
+            background-color: red;
+        }
+
+        @keyframes sub_color_1 {
+            from {background-color: blue;}
+            to {background-color: red;}
+
+        }
+
+        @keyframes cont_color_1 {
+            from {background-color: yellow;}
+            to {background-color: green;}
+
+        }
+
+        @keyframes img_change {
+            from {background-image: url("images/bricks.jpg")}
+            to {background-image: url("images/facebook_logo.jpeg");}
+
+        }
+
+        .image_animate {
+            animation-name: img_change;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container container_1">
+        <div class="sub_Box">1</div>
+        <div class="sub_Box">2</div>
+        <div class="sub_Box">3</div>
+        <div class="sub_Box">4</div>
+        <div class="sub_Box">5</div>
+        <div class="sub_Box">6</div>
+        <div class="sub_Box">7</div>
+        <div class="sub_Box">8</div>
+        <div class="sub_Box">9</div>
+        <div class="sub_Box">10</div>
+        <div class="sub_Box">11</div>
+        <div class="sub_Box">12</div>
+        <div class="sub_Box">13</div>
+        <div class="sub_Box">14</div>
+        <div class="sub_Box">15</div>
+        <div class="sub_Box">16</div>
+        <div class="sub_Box">17</div>
+        <div class="sub_Box">18</div>
+        <div class="sub_Box">19</div>
+        <div class="sub_Box">20</div>
+        <div class="sub_Box">21</div>
+        <div class="sub_Box">22</div>
+        <div class="sub_Box">23</div>
+        <div class="sub_Box">24</div>
+        <div class="sub_Box">25</div>
+        <div class="sub_Box">26</div>
+        <div class="picture_Box image_animate"></div>
+    </div>
+    <div class="container container_2">
+        <div class="sub_Box">A</div>
+        <div class="sub_Box">B</div>
+        <div class="sub_Box">C</div>
+        <div class="sub_Box">D</div>
+        <div class="sub_Box">E</div>
+        <div class="sub_Box">F</div>
+        <div class="sub_Box">G</div>
+        <div class="sub_Box">H</div>
+        <div class="sub_Box">I</div>
+        <div class="sub_Box">J</div>
+        <div class="sub_Box">K</div>
+        <div class="sub_Box">L</div>
+        <div class="sub_Box">M</div>
+        <div class="sub_Box">N</div>
+        <div class="sub_Box">O</div>
+        <div class="sub_Box">P</div>
+        <div class="sub_Box">Q</div>
+        <div class="sub_Box">R</div>
+        <div class="sub_Box">S</div>
+        <div class="sub_Box">T</div>
+        <div class="sub_Box">U</div>
+        <div class="sub_Box">V</div>
+        <div class="sub_Box">W</div>
+        <div class="sub_Box">X</div>
+        <div class="sub_Box">Y</div>
+        <div class="sub_Box">Z</div>
+        <div class="picture_Box"><img src="images/bricks.jpg" alt=""></div>
+    </div>
+    <div class="container container_3">
+        <div class="sub_Box">1</div>
+        <div class="sub_Box">2</div>
+        <div class="sub_Box">3</div>
+        <div class="sub_Box">4</div>
+        <div class="sub_Box">5</div>
+        <div class="sub_Box">6</div>
+        <div class="sub_Box">7</div>
+        <div class="sub_Box">8</div>
+        <div class="sub_Box">9</div>
+        <div class="sub_Box">10</div>
+        <div class="sub_Box">11</div>
+        <div class="sub_Box">12</div>
+        <div class="sub_Box">13</div>
+        <div class="sub_Box">14</div>
+        <div class="sub_Box">15</div>
+        <div class="sub_Box">16</div>
+        <div class="sub_Box">17</div>
+        <div class="sub_Box">18</div>
+        <div class="sub_Box">19</div>
+        <div class="sub_Box">20</div>
+        <div class="sub_Box">21</div>
+        <div class="sub_Box">22</div>
+        <div class="sub_Box">23</div>
+        <div class="sub_Box">24</div>
+        <div class="sub_Box">25</div>
+        <div class="sub_Box">26</div>
+        <div class="picture_Box"><img src="images/bricks.jpg" alt=""></div>
+    </div>
+    <div class="container container_4">
+        <div class="sub_Box">A</div>
+        <div class="sub_Box">B</div>
+        <div class="sub_Box">C</div>
+        <div class="sub_Box">D</div>
+        <div class="sub_Box">E</div>
+        <div class="sub_Box">F</div>
+        <div class="sub_Box">G</div>
+        <div class="sub_Box">H</div>
+        <div class="sub_Box">I</div>
+        <div class="sub_Box">J</div>
+        <div class="sub_Box">K</div>
+        <div class="sub_Box">L</div>
+        <div class="sub_Box">M</div>
+        <div class="sub_Box">N</div>
+        <div class="sub_Box">O</div>
+        <div class="sub_Box">P</div>
+        <div class="sub_Box">Q</div>
+        <div class="sub_Box">R</div>
+        <div class="sub_Box">S</div>
+        <div class="sub_Box">T</div>
+        <div class="sub_Box">U</div>
+        <div class="sub_Box">V</div>
+        <div class="sub_Box">W</div>
+        <div class="sub_Box">X</div>
+        <div class="sub_Box">Y</div>
+        <div class="sub_Box">Z</div>
+        <div class="picture_Box"><img src="images/bricks.jpg" alt=""></div>
+    </div>
+</body>
+</html>
