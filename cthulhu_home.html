@@ -63,6 +63,11 @@
             text-decoration: none;
         }
 
+        iframe {
+            height: 300px;
+            width: 300px;
+        }
+
         .main_back {
             background-image: url("images/cthulhu_images/Grunge-Parchment-Paper-Texture.jpg");
         }
@@ -76,11 +81,16 @@
         .container {
             width: 100%;
             text-align: center;
+            box-sizing: border-box;
         }
 
         .section_1 {
             border: 1px solid black;
             background-image: url("images/cthulhu_images/Grunge-Parchment-Paper-Texture.jpg");
+        }
+
+        .section_2 {
+            height: 400px;
         }
 
 
@@ -118,6 +128,13 @@
             margin: 30px 20px 30px 20px;
         }
 
+        .twitter-timeline {
+            width: 300px;
+            height: 300px;
+            overflow: scroll;
+
+        }
+
         #table_1 {
             text-align: center;
             display: block;
@@ -149,8 +166,8 @@
         .section_1>h1 {
             color: white;
         }
-
     </style>
+
 </head>
 
 
@@ -169,14 +186,13 @@
         <h1>Ph'nglui mglw'nafh Cthulhu R'lyeh<br> wgah'nagl fhtagn</h1>
         <div id="changing_box"></div>
     </header>
-    <hr>
     <div class="main_back">
     <main class="container sub_main">
         <h2>Welcome to the Offical Cthulhu Fansite</h2>
         <table id="table_1">
             <tr>
                 <th>Cthluhu In The News</th>
-                <th>Cthulhu On Twitter</th>
+                <th>Cthulhu In The Movies</th>
             </tr>
             <tr>
                 <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi eligendi facere id incidunt
@@ -208,13 +224,17 @@
                 <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi eligendi facere id incidunt
                     minus nulla porro quasi quo. Aliquam consectetur debitis excepturi hic minima nulla porro quae quas tempora?
                 </td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi eligendi facere id incidunt
-                    minus nulla porro quasi quo. Aliquam consectetur debitis excepturi hic minima nulla porro quae quas tempora?
+                <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, veniam, voluptates. Adipisci atque
+                    corporis culpa dolore expedita fugiat, iste, laudantium non optio perferendis, quae quibusdam reiciendis sed sint ullam! Tenetur.
                 </td>
-
             </tr>
-
         </table>
+        <!--<h1>Cthulhu for Prez on Twitter: 2020!</h1>-->
+        <!--<a class="twitter-timeline" href="https://twitter.com/cthulhu4america?ref_src=twsrc%5Etfw">Tweets by cthulhu4america-->
+        <!--<script async src="https://platform.twitter.com/widgets.js" charset="utf-8">-->
+        <!--</script>-->
+        <!--</a>-->
     </main>
     </div>
     <section class="container section_1 section1_background">
@@ -235,7 +255,6 @@
             <img src="images/cthulhu_images/cthulhu_logo.jpeg" alt="">
         </div>
     </section>
-    <hr>
     <footer class="container">
         <p>Copyright&copy by the Cthulhu cultists association.</p>
         <p>If you violate our copyright, we will be sure to have the dark lord consume your soul.</p>
