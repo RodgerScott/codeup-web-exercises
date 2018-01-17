@@ -167,6 +167,11 @@ code {
 
 }
 
+#button_1:hover {
+    color: red;
+    background-color: white;
+}
+
 #button_2 {
     border-radius: 90px;
     border: 1px solid white;
@@ -178,6 +183,11 @@ code {
     position: relative;
     top: 250px;
     font-size: 20px;
+}
+
+#button_2:hover {
+    color: red;
+    background-color: white;
 }
 
 #intro_text {
