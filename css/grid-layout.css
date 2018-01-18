@@ -1,0 +1,46 @@
+.container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    min-width: 400px;
+}
+
+.row {
+    width: 100%;
+    background-color: lightgrey;
+    margin-bottom: 20px;
+
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.column.column_half {
+    width: 50%;
+}
+
+.column.column_third {
+    width: 33.33%;
+}
+
+.column.column_fourth {
+    width: 25%;
+}
+
+.column.column_eighth {
+    width: 12.5%;
+}
+
+/*body > div > div:nth-child(5) > div:nth-child(3) {*/
+    /*padding: 0px;*/
+/*}*/
