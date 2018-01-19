@@ -107,3 +107,20 @@ h4 {
     margin-top: 0;
     margin-bottom: 0;
 }
+
+.internal_button {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    width: 120px;
+    border-radius: 10px;
+    float: right;
+    margin-left: 5px;
+}
+
+.internal_button>a:active {
+    color: white;
+}
+.internal_button>a:visited {
+    color: white;
+}
