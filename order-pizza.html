@@ -49,7 +49,7 @@
 
 
 
-
+<main style="width: 85%; margin: 0 auto;">
 <h2>Build Your Own Pizza</h2>
     <hr>
 <ul class="nav nav-tabs">
@@ -65,8 +65,22 @@
                 <div class="panel-heading">Hand Tossed</div>
                 <div class="panel-body">Garlic seasoned crusted with a rich, buttery taste.</div>
                 <div class="list-group">
-                    <li class="list-group-item">Small (10")</li>
-                    <li class="list-group-item">Medium (12")</li>
+                    <li class="list-group-item">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="crust_size" id="ht_small" value="small_ht">
+                                Small (10")
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="crust_size" id="ht_medium" value="medium_ht">
+                                Medium (12")
+                            </label>
+                        </div>
+                    </li>
                 </div>
             </div>
         </div>
@@ -75,8 +89,23 @@
             <div class="panel-heading">Crunchy thin crust</div>
             <div class="panel-body">Thin enough for the optimum crispy ratio.</div>
             <div class="list-group">
-                <li class="list-group-item">Medium (12")</li>
-                <li class="list-group-item">Large (14")</li>
+
+                <li class="list-group-item">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="crust_size" id="ct_medium" value="medium_ct">
+                            Medium (12")
+                        </label>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="crust_size" id="ct_large" value="large_ct">
+                           Large (14")
+                        </label>
+                    </div>
+                </li>
             </div>
         </div>
     </div>
@@ -218,6 +247,7 @@
 </div>
 </div>
 </div>
+</main>
 <script src="js/jquery-2.2.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>
