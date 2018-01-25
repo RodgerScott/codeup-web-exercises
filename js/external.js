@@ -1,3 +1,5 @@
+"use strict";
+
 alert("Hey Dingus, Welcome To My Website!");
 
 // var confirmed = confirm("IS your hand bigger than your face?");
