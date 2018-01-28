@@ -110,3 +110,122 @@ function hasLowerCase(string) {
     return string != string.toUpperCase();
 }
 
+function isSpace(letter) {
+    return letter == " ";
+}
+
+function hasSpaces(string) {
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] == " ") {
+            return true;
+        }
+    }
+    return false;
+}
+
+function isZero(number) {
+    return number == 0;
+}
+
+function increment(number) {
+    return ++number;
+}
+
+
+function decrement(number) {
+    return --number;
+}
+
+function isFive(input) {
+    return input == 5;
+}
+
+
+function addFive(number) {
+    return number + 5;
+}
+
+function isMultipleOfFive(number) {
+    return number % 5 == 0;
+}
+
+function isThree(number) {
+    return number == 3;
+}
+
+function isMultipleOfThreeAndFive(number) {
+    if ((number % 3 == 0) && (number % 5 == 0) ) {
+        return true;
+    } else return false;
+}
+
+
+function lowerCaseString(string) {
+    return string.toLowerCase();
+}
+
+//Write a function named capitalizeEachWord(string) uses capitalize to return a string
+// where each new word (separated by a space) is capitalized.
+//REVISIT capitalizeEachWord
+
+// use .length to span entire string
+// .indexOf(char) use this to find out where space may be
+//.substring
+//.toUppercase()
+
+function capitalizeEachWord(string) {
+   var lcString = string.toLowerCase();
+
+    for (var i = 0; i < lcString.length; i++) {
+        lcString.indexOf(" ");
+    }
+    return lcString;
+}
+
+
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+function divide(a, b) {
+    return a / b;
+}
+
+function remainder(a, b) {
+    return a % b;
+}
+
+//REVISIT isBlank
+
+
+function isBlank(input) {
+    for (var i = 0; i < input.length; i++) {
+        if (input == " ") {
+            return "spaces"
+        } else if (input == "   ") {
+            return "tabs"
+        }
+    }
+
+}
+
+
+function isNumeric(input) {
+    if ( input > 0 || input === 0 || input < 0 ){
+        return true;
+    }
+    else return false;
+}
+
+
+function trim(string) {
+    return string.trim();
+}
