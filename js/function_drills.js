@@ -164,22 +164,13 @@ function lowerCaseString(string) {
     return string.toLowerCase();
 }
 
-//Write a function named capitalizeEachWord(string) uses capitalize to return a string
-// where each new word (separated by a space) is capitalized.
-//REVISIT capitalizeEachWord
-
-// use .length to span entire string
-// .indexOf(char) use this to find out where space may be
-//.substring
-//.toUppercase()
 
 function capitalizeEachWord(string) {
-   var lcString = string.toLowerCase();
-
-    for (var i = 0; i < lcString.length; i++) {
-        lcString.indexOf(" ");
-    }
-    return lcString;
+   var lcString = string.toLowerCase().split(' ');
+   for (var i = 0; i < lcString.length; i++) {
+       lcString[i] = lcString[i].charAt(0).toUpperCase() + lcString[i].substring(1);
+   }
+   return lcString.join (' ');
 }
 
 
