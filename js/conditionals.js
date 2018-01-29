@@ -292,8 +292,120 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
 
 
+// function isValidPassword(input) {
+//     if (input.length !== 6) {
+//         return ("Your password is not 6 characters");
+//     }
+//     else if (input.indexOf('a' || 'b' || 'c' || 'd' || 'e' || 'f' || 'g' || 'h' || 'i'
+//             || 'j' || 'k' || 'l' || 'm' || 'n' || 'o' || 'p' || 'q' || 'r' || 's'
+//             || 't' || 'u' || 'v' || 'w' || 'x' || 'y' || 'z') === -1) {
+//         return ("You need a lowercase letter");
+//     }
+//     else if (input.indexOf('A' || 'B' || 'C' || 'D' || 'E' || 'F' || 'G' || 'H' || 'I'
+//             || 'J' || 'K' || 'L' || 'M' || 'N' || 'O' || 'P' || 'Q' || 'R' || 'S'
+//             || 'T' || 'U' || 'V' || 'W' || 'X' || 'Y' || 'Z') === -1) {
+//         return ("You need an uppercase letter");
+//     } else if(input.indexOf('1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9'
+//             || '0') === -1) {
+//         return ("Your need a number");
+//     }
+//     else {
+//         return ("Your password is good to go");
+//     }
+// }
+
+
 function isValidPassword(input) {
-    if (input.length < 6) {
-        return ("Your password is not long enough");
+    if (input.length !== 6) {
+        return ("Your password is not 6 characters");
+    }
+    else if (input === input.toUpperCase()) {
+        return ("You need some lowercase letters");
+    }
+    else if (input === input.toLowerCase()) {
+        return ("You need some uppercase letters");
+    }
+
+    else if (input.indexOf('1') === -1) {
+        return ("You need a number");
+    }
+
+
+    // else if(input.indexOf('1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9'
+    //     || '0') === -1) {
+    //     return ("You need a number");
+    // }
+
+    // else if(input.indexOf('1') < 0) {
+    //     return ("You need a number");
+    // }
+    // else if(input.indexOf('2') < 0) {
+    //     return ("You need a number");
+    // }
+    // else if(input.indexOf('3') < 0) {
+    //     return ("You need a number");
+    // }
+    // else if(input.indexOf('4') < 0) {
+    //     return ("You need a number");
+    // }
+    // else if(input.indexOf('5') < 0) {
+    //     return ("You need a number");
+    // }
+    // else if(input.indexOf('6') < 0) {
+    //     return ("You need a number");
+    // }
+    // else if(input.indexOf('7') < 0) {
+    //     return ("You need a number");
+    // }
+    // else if(input.indexOf('8') < 0) {
+    //     return ("You need a number");
+    // }
+    // else if(input.indexOf('9') < 0) {
+    //     return ("You need a number");
+    // }
+    // else if(input.indexOf('0') < 0) {
+    //     return ("You need a number");
+    // }
+
+
+    // switch (input) {
+    //     case (input.indexOf('1') === -1):
+    //         return ("You need to add a number");
+    //     case (input.indexOf('2') === -1):
+    //         return ("You need to add a number");
+    //     case (input.indexOf('3') === -1):
+    //         return ("You need to add a number");
+    //     case (input.indexOf('4') === -1):
+    //         return ("You need to add a number");
+    //     case (input.indexOf('5') === -1):
+    //         return ("You need to add a number");
+    //     case (input.indexOf('6') === -1):
+    //         return ("You need to add a number");
+    //     case (input.indexOf('7') === -1):
+    //         return ("You need to add a number");
+    //     case (input.indexOf('8') === -1):
+    //         return ("You need to add a number");
+    //     case (input.indexOf('9') === -1):
+    //         return ("You need to add a number");
+    //     case (input.indexOf('0') === -1):
+    //         return ("You need to add a number");
+    // }
+
+
+    else {
+        return ("Your password is good to go.");
     }
 }
+
+
+    // else if(input.indexOf('1') === -1 || input.indexOf('2') === -1 || input.indexOf('3') === -1
+    //     || input.indexOf('4') === -1 || input.indexOf('5') === -1 || input.indexOf('6') === -1
+    //     || input.indexOf('7') === -1 || input.indexOf('8') === -1 || input.indexOf('9') === -1
+    //     || input.indexOf('0') === -1) {
+    //     return ("You need a number");
+    // }
+
+
+    // else if(input.indexOf('!' || '@' || '#' || '$' || '%' || '^' || '&' || '*') !== -1) {
+    //     return ("You can\'t use special characters");
+
