@@ -290,13 +290,10 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // 5) EXTRA BONUS: is not the same forwards and backwards
 
 
-new RegExp('/[A-Za-z0-9_]/');
+
 
 function isValidPassword(input) {
     if (input.length < 6) {
         return ("Your password is not long enough");
-    }   else  {
-            if (RegExp.input !== true);
-            return ("Your password sucks");
     }
 }
