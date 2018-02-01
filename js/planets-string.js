@@ -38,7 +38,6 @@
 
     for (var i = planetsArray.length -1; i >= 0; i--) {
         planetsLi.splice(0, 0, "<li>" + planetsArray[i] + "</li>");
-
     }
 
     planetsUl.splice(1, 0, planetsLi.join(''));
