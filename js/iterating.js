@@ -143,4 +143,42 @@ function upperCaseAll(array) {
     return uppercased;
 }
 
-//8.
+//8. Write a function called getOdds(array) that returns
+// an array of only the odd numbers from an array of numbers.
+
+function getOdds(array) {
+    var returnOdds = [];
+
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] % 2 == 1) {
+            returnOdds.push(array[i]);
+        }
+    }
+    return returnOdds;
+}
+
+// 9. Write a function called getEvens(array) that returns only the
+// even numbers from an array of numbers
+
+function getEvens(array) {
+    var returnOdds = [];
+
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] % 2 == 0) {
+            returnOdds.push(array[i]);
+        }
+    }
+    return returnOdds;
+}
+
+// 10. Write a function called multiplyAll(array)
+// that takes in an array of numbers and returns the
+// result of multiplying all the numbers
+
+function multiplyAll(array) {
+    var result = 1;
+    for (var i = 0; i < array.length; i++) {
+        result *= array[i];
+    }
+    return result;
+}
