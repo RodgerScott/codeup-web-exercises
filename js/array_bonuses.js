@@ -48,13 +48,43 @@ function phoneNumberParser(string_of_numbers) {
 // 4) View all student names in reverse alphabetical order
 // Store the student names in an array. Account for invalid user input.
 
+(function () {
 
-alert("Welcome to the bare-bones student roster application");
+var studentEntries = [];
 
-var studentEntries = prompt("Please enter a student's name?");
+function studentRoster() {
 
-if (studentEntries) {
-    studentEntries.push(prompt);
-} else {
-    alert("The names you entered in are " + studentEntries.join(','));
+
+var userPrompt = prompt("What would you like to do today?" + "\n If you would like to add a student to the roster, please type" +
+"\'add\'." + " " + "\n If you would like to remove a student, please type \'remove\'." + " " + "\n If you would like a list of our" +
+"students, please type \'list\'." + "\n If you would like a reverse list, please type \'reverse\'.");
+
+
+    if (userPrompt === 'add') {
+        var newStudents = prompt("What is the student's name");
+        studentEntries.push(newStudents);
+    }
+
+    if (userPrompt === 'remove') {
+        var remove = prompt("What is the student's name");
+        studentEntries.pop(remove);
+    }
+
+    if (userPrompt === 'list') {
+        alert(studentEntries.sort());
+    }
+
+    if (userPrompt === 'reverse') {
+        alert(studentEntries.reverse());
+
+    } else {
+        alert("See you later");
+    }
+
+
+
+alert("See you later");
 }
+studentRoster();
+
+})();
