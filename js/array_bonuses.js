@@ -50,41 +50,33 @@ function phoneNumberParser(string_of_numbers) {
 
 (function () {
 
-var studentEntries = [];
+    function studentRoster() {
 
-function studentRoster() {
+        var array = [];
 
+        do {
+            var response = prompt("To add a student type \'add\'" + '\n' + "To remove a student type \'remove\'" + '\n' + "To list the students type \'list\'" + '\n' + "To quit type \'quit\'");
 
-var userPrompt = prompt("What would you like to do today?" + "\n If you would like to add a student to the roster, please type" +
-"\'add\'." + " " + "\n If you would like to remove a student, please type \'remove\'." + " " + "\n If you would like a list of our" +
-"students, please type \'list\'." + "\n If you would like a reverse list, please type \'reverse\'.");
+            if (response === 'add') {
+                var newStudent = prompt("Please enter your student\'s name.");
+                array.push(newStudent);
+            }
 
+            if (response === 'remove') {
+                var removeStudent = prompt("Please enter student name to remove");
+                if(array.includes(removeStudent)) {
+                    array.pop(removeStudent);
+                }
+            }
 
-    if (userPrompt === 'add') {
-        var newStudents = prompt("What is the student's name");
-        studentEntries.push(newStudents);
+            if (response === 'list') {
+                alert(array.sort());
+            }
+
+        } while (response !== 'quit');
+
+        alert("Thank you for your time.")
+
     }
-
-    if (userPrompt === 'remove') {
-        var remove = prompt("What is the student's name");
-        studentEntries.pop(remove);
-    }
-
-    if (userPrompt === 'list') {
-        alert(studentEntries.sort());
-    }
-
-    if (userPrompt === 'reverse') {
-        alert(studentEntries.reverse());
-
-    } else {
-        alert("See you later");
-    }
-
-
-
-alert("See you later");
-}
-studentRoster();
-
+    studentRoster();
 })();
