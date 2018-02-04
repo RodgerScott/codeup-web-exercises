@@ -2,8 +2,8 @@ nav div {
     background-color: #CFD0D4;
 }
 
-.topMarginForRows {
-    margin-top: 20px;
+.row.top-margin-for-rows {
+    margin-top: 80px;
 }
 
 main {
@@ -11,7 +11,7 @@ main {
     background-size: cover;
 }
 
-.text-center.textColor {
+.text-center.text-color {
     font-weight: bold;
     font-size: 1.5em;
     background-color: #5A9046;
