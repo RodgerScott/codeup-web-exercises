@@ -16,20 +16,20 @@
                 if (newPhrase[i].toLowerCase().charCodeAt(0) === 97 || newPhrase[i].toLowerCase().charCodeAt(0) === 101 ||
                     newPhrase[i].toLowerCase().charCodeAt(0) === 105 || newPhrase[i].toLowerCase().charCodeAt(0) === 111 ||
                     newPhrase[i].toLowerCase().charCodeAt(0) === 117) {
-                    pigLatingCharacter.push(newPhrase[i] + "-ay");
+                    pigLatingCharacter.push(newPhrase[i] + "way");
                 }
                 else if (newPhrase[i].toLowerCase().charCodeAt(1) === 97 || newPhrase[i].toLowerCase().charCodeAt(1) === 101 ||
                         newPhrase[i].toLowerCase().charCodeAt(1) === 105 || newPhrase[i].toLowerCase().charCodeAt(1) === 111 ||
                         newPhrase[i].toLowerCase().charCodeAt(1) === 117) {
-                    pigLatingCharacter.push(newPhrase[i].substring(1, newPhrase[i].length) + "-" + (newPhrase[i].charAt(0).toLowerCase() + "ay"));
+                    pigLatingCharacter.push(newPhrase[i].substring(1, newPhrase[i].length) + (newPhrase[i].charAt(0).toLowerCase() + "ay"));
                 }
                 else if (newPhrase[i].toLowerCase().charCodeAt(2) === 97 || newPhrase[i].toLowerCase().charCodeAt(2) === 101 ||
                         newPhrase[i].toLowerCase().charCodeAt(2) === 105 || newPhrase[i].toLowerCase().charCodeAt(2) === 111 ||
                         newPhrase[i].toLowerCase().charCodeAt(2) === 117) {
-                    pigLatingCharacter.push(newPhrase[i].substring(2, newPhrase[i].length) + "-" + (newPhrase[i].substring(0, 2).toLowerCase() + "ay"));
+                    pigLatingCharacter.push(newPhrase[i].substring(2, newPhrase[i].length) + (newPhrase[i].substring(0, 2).toLowerCase() + "ay"));
                 }
                 else {
-                    pigLatingCharacter.push(newPhrase[i].substring(3, newPhrase[i].length) + "-" + (newPhrase[i].substring(0, 3).toLowerCase() + "ay"));
+                    pigLatingCharacter.push(newPhrase[i].substring(3, newPhrase[i].length) + (newPhrase[i].substring(0, 3).toLowerCase() + "ay"));
                 }
             }
             alert("Your pig-Latinified expression is " + pigLatingCharacter.join(' '));

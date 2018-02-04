@@ -8,15 +8,13 @@ nav div {
 
 main {
     background-image: url("../images/ancient-rome.jpg");
-    opacity: .5;
     background-size: cover;
 }
 
-.textColor {
-    color: white;
+.text-center.textColor {
     font-weight: bold;
     font-size: 1.5em;
-    background-color: black;
+    background-color: #5A9046;
 }
 
 .input-width {
