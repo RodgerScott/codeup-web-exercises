@@ -1,5 +1,4 @@
 (function () {
-    var array = [];
     var input;
     var pigLatingCharacter = [];
     do {
@@ -33,7 +32,6 @@
                 }
             }
             alert("Your pig-Latinified expression is " + pigLatingCharacter.join(' '));
-            array = [];
             pigLatingCharacter =[];
         }
     } while(input !== 'quit' && input !== null);
