@@ -7,7 +7,7 @@ nav div {
 }
 
 main {
-    background-image: url("../img/ancient-rome.jpg");
+    background-image: url("../images/ancient-rome.jpg");
     opacity: .5;
     background-size: cover;
 }
