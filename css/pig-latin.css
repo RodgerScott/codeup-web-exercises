@@ -1,0 +1,24 @@
+nav div {
+    background-color: #CFD0D4;
+}
+
+.topMarginForRows {
+    margin-top: 20px;
+}
+
+main {
+    background-image: url("../img/ancient-rome.jpg");
+    opacity: .5;
+    background-size: cover;
+}
+
+.textColor {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    background-color: black;
+}
+
+.input-width {
+    width: 100%;
+}
