@@ -1,12 +1,7 @@
-(function () {
-    var input;
+function  ted () {
     var pigLatingCharacter = [];
-    do {
-        input = prompt("Welcome to the Pig Latin converter tool." + '\n' + "If you would " +
-            "like to convert a word or phrase, please type \'add\'." + '\n' + "If you would like to quit this application," +
-            " please type \'quit\'.");
-        if(input === 'add') {
-            var newPhrase = prompt("What word or phrase would you like to add?");
+
+            var newPhrase = document.getElementById("original-text").value;
             newPhrase = newPhrase.split(' ');
             for (var i = 0; i < newPhrase.length; i++) {
                 while (newPhrase[i] === "") {
@@ -31,8 +26,5 @@
                     pigLatingCharacter.push(newPhrase[i].substring(3, newPhrase[i].length) + (newPhrase[i].substring(0, 3).toLowerCase() + "ay"));
                 }
             }
-            alert("Your pig-Latinified expression is " + pigLatingCharacter.join(' '));
-            pigLatingCharacter =[];
-        }
-    } while(input !== 'quit' && input !== null);
-})();
+            document.getElementById("function-return").innerHTML = pigLatingCharacter.join(' ');
+}
