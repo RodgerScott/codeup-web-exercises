@@ -6,6 +6,13 @@
 </head>
 <body>
 
+<nav>
+    <button id="btn1">Print JS Message</button>
+    <button id="btn2">Subheader Blue</button>
+    <button id="btn3">Li Stuff</button>
+    <button id="btn4">Change SubP</button>
+</nav>
+
 <h1 id="main-header">Hello World!</h1>
 <ul>
     <li data-dbid="1">Item 1</li>
@@ -29,26 +36,41 @@
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        var mainHeader = document.getElementById('main-header');
+        // var mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
+        // mainHeader.innerHTML = "JavaScript is Cool";
+
+
+        var jsHeader = function () {
+            document.getElementById('main-header').innerHTML = "JavaScript is Cool";
+        };
+
+        document.getElementById('btn1').addEventListener('click', jsHeader, false);
+
 
         // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.getElementById('sub-header');
+        // var subHeader = document.getElementById('sub-header');
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = 'blue';
+        // subHeader.style.color = 'blue';
+
+
+        var subHeadButtonBlue = function () {
+            document.getElementById('sub-header').style.color = 'blue';
+        };
+
+        document.getElementById('btn2').addEventListener('click', subHeadButtonBlue, false);
 
         // TODO: Uncomment the next line and get all list items
-        var listItems = document.getElementsByTagName('li');
+        // var listItems = document.getElementsByTagName('li');
 
         // TODO: Set text color on every other list item to grey
 
-        for (var i = 0; i < listItems.length; i += 2) {
-
-            listItems[i].style.color = 'grey';
-        }
+        // for (var i = 0; i < listItems.length; i += 2) {
+        //
+        //     listItems[i].style.color = 'grey';
+        // }
 
 
         // TODO: Set text color of li with dbid = 1 to blue
@@ -56,23 +78,66 @@
             // listItems[0].style.color = 'blue';
 
 
-        for (var j = 0; j < listItems.length; j++) {
-            if (listItems[j].getAttribute('data-dbid') === '1') {
-                listItems[j].style.color = 'blue';
+        // for (var j = 0; j < listItems.length; j++) {
+        //     if (listItems[j].getAttribute('data-dbid') === '1') {
+        //         listItems[j].style.color = 'blue';
+        //     }
+        // }
+
+
+        var listItemStuff = function () {
+           var listItems = document.getElementsByTagName('li');
+
+            for (var i = 0; i < listItems.length; i += 2) {
+
+                listItems[i].style.color = 'grey';
             }
-        }
+
+            for (var j = 0; j < listItems.length; j++) {
+                if (listItems[j].getAttribute('data-dbid') === '1') {
+                    listItems[j].style.color = 'blue';
+                }
+            }
+
+        };
+
+        document.getElementById('btn3').addEventListener('click', listItemStuff, false);
+
+
 
 
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName('sub-paragraph')[0];
+        // var subParagraphs = document.getElementsByClassName('sub-paragraph')[0];
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 
-        subParagraphs.innerText = "Mission Accomplished!";
+        // subParagraphs.innerText = "Mission Accomplished!";
+
+        var bottomParagraph = function () {
+            var subParagraphs = document.getElementsByClassName('sub-paragraph')[0];
+
+            subParagraphs.innerText = "Mission Accomplished!";
+        };
+
+        document.getElementById('btn4').addEventListener('click', bottomParagraph, false);
 
 
     })();
+
+
+
+    // var mainHeader = document.getElementById('main-header');
+    //
+    // function jsHeader (event) {
+    //     mainHeader.innerHTML = "JavaScript is Cool";
+    // }
+    //
+    // mainHeader('btn1').addEventListener('click', jsHeader(), false);
+
+
+
+
 </script>
 </body>
 </html>
