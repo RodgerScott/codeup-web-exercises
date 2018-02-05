@@ -14,16 +14,21 @@ function  ted () {
                 }
                 else if (newPhrase[i].toLowerCase().charCodeAt(1) === 97 || newPhrase[i].toLowerCase().charCodeAt(1) === 101 ||
                         newPhrase[i].toLowerCase().charCodeAt(1) === 105 || newPhrase[i].toLowerCase().charCodeAt(1) === 111 ||
-                        newPhrase[i].toLowerCase().charCodeAt(1) === 117) {
+                        newPhrase[i].toLowerCase().charCodeAt(1) === 117 || newPhrase[i].toLowerCase().charCodeAt(1) === 121)  {
                     pigLatingCharacter.push(newPhrase[i].substring(1, newPhrase[i].length) + (newPhrase[i].charAt(0).toLowerCase() + "ay"));
                 }
                 else if (newPhrase[i].toLowerCase().charCodeAt(2) === 97 || newPhrase[i].toLowerCase().charCodeAt(2) === 101 ||
                         newPhrase[i].toLowerCase().charCodeAt(2) === 105 || newPhrase[i].toLowerCase().charCodeAt(2) === 111 ||
-                        newPhrase[i].toLowerCase().charCodeAt(2) === 117) {
+                        newPhrase[i].toLowerCase().charCodeAt(2) === 117 || newPhrase[i].toLowerCase().charCodeAt(2) === 121) {
                     pigLatingCharacter.push(newPhrase[i].substring(2, newPhrase[i].length) + (newPhrase[i].substring(0, 2).toLowerCase() + "ay"));
                 }
-                else {
+                else if (newPhrase[i].toLowerCase().charCodeAt(3) === 97 || newPhrase[i].toLowerCase().charCodeAt(3) === 101 ||
+                    newPhrase[i].toLowerCase().charCodeAt(3) === 105 || newPhrase[i].toLowerCase().charCodeAt(3) === 111 ||
+                    newPhrase[i].toLowerCase().charCodeAt(3) === 117 || newPhrase[i].toLowerCase().charCodeAt(3) === 121) {
                     pigLatingCharacter.push(newPhrase[i].substring(3, newPhrase[i].length) + (newPhrase[i].substring(0, 3).toLowerCase() + "ay"));
+                }
+                else {
+                    pigLatingCharacter.push(newPhrase[i].substring(4, newPhrase[i].length) + (newPhrase[i].substring(0, 4).toLowerCase() + "ay"));
                 }
             }
             document.getElementById("function-return").innerHTML = pigLatingCharacter.join(' ');
