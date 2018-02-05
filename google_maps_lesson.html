@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Maps Exercise</title>
+
+    <style>
+        #map-canvas {
+            width: 800px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<!-- AIzaSyCIIUTWwvJJl5ZNhLBapDLyznaOhiyvjos -->
+
+<div id="map-canvas"></div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIIUTWwvJJl5ZNhLBapDLyznaOhiyvjos"></script>
+<script type="text/javascript">
+
+(function () {
+
+
+
+    "use strict";
+
+    var mapOptions = {
+        zoom: 18,
+
+        center: {
+            lat: 29.426043,
+            lng: -98.486143
+        }
+    };
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+})();
+
+</script>
+
+</body>
+</html>
