@@ -29,17 +29,19 @@
         </div>
         <div class="row">
             <div class="col-xs-offset-3 col-xs-6 text-center">
-                <button id="run-the-function" onclick="ted()">Let's Get Pig-Latinized</button>
+                <button id="run-the-function" onclick="ted(); play()" class="button-style">Get Pig-Latinized</button>
             </div>
         </div>
         <div class="row top-margin-for-rows">
             <div class="col-xs-offset-3 col-xs-6 text-center">
-                <label for="function-return" class="text-center text-color">Erehay Ouyay Ogay:<br>
+                <label for="function-return" class="text-center text-color label-size">Erehay Ouyay Ogay:<br>
                     <textarea id="function-return" class="input-width"></textarea>
                 </label>
             </div>
         </div>
     </main>
+
+    <audio id="audio" src="sounds/pig.wav"></audio>
 
     <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/pig-latin.js"></script>

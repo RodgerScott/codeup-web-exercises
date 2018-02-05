@@ -20,3 +20,16 @@ main {
 .input-width {
     width: 100%;
 }
+
+.button-style {
+    color: white;
+    background-color: #5A9046;
+    font-weight: bold;
+    height: 100%;
+    font-size: 1.5em;
+    border-radius: 50px;
+    margin-top: 35px;
+}
+.label-size {
+    width: 85%;
+}

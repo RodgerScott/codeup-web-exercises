@@ -33,3 +33,8 @@ function  ted () {
             }
             document.getElementById("function-return").innerHTML = pigLatingCharacter.join(' ');
 }
+
+function play(){
+    var audio = document.getElementById("audio");
+    audio.play();
+}
