@@ -13,10 +13,14 @@
             height: 450px;
             margin: 0 auto;
         }
+
+        html body {
+            background-color: #CAE0E4;
+        }
     </style>
 </head>
 <body>
-
+<h1 style="text-align: center">Restaurant Recommendation App</h1>
 <div id="map-canvas"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIIUTWwvJJl5ZNhLBapDLyznaOhiyvjos"></script>
@@ -29,40 +33,58 @@
         "use strict";
 
         var mapOptions = {
-            zoom: 15,
+            zoom: 10,
 
             center: {
                 lat: 29.426043,
                 lng: -98.486143
-            },
+            }
 
-            mapTypeId: google.maps.MapTypeId.SATELLITE
+
         };
+
+        var icons = {
+            japanese: {
+                icon: 'images/japan.png'
+            },
+            indian: {
+                icon: 'images/india.png'
+            },
+            mexican: {
+                icon: 'images/sombrero.png'
+            }
+        };
+
+
 
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-        var restaurantAddresses = [{
-            fujiya: {
-                address: "9030 Wurzbach Road, San Antonio, TX 78240",
-                foodType: "Japanese"
+        var restaurantAddresses = [
+            {position: new google.maps.LatLng(29.5258895, -98.5665007),
+             type: 'japanese',
+                descrip: "<h1>Fujiya Japanese Steakhouse</h1>" +
+                "<a href='http://www.fujiyajapanesegarden.com/' target='_blank'>Link to website</a>" +
+                "<ul><li>Great Food</li><li>Traditional Atmosphere</li><li>Reasonably Priced</li></ul>"
             },
-            indiaOven: {
-                address: "1031 Patricia Ste 106, San Antonio, TX 78213",
-                foodType: "Indian"
+            {position: new google.maps.LatLng(29.5453932, -98.51227569999998),
+             type: 'indian',
+                descrip: "<h1>India Oven</h1>" +
+                "<a href='http://www.indiaovensa.com/' target='_blank'>Link to website</a><ul>" +
+                "<li>Delicious Cuisine</li><li>Try the Rogan Josh</li><li>Excellent Waitstaff</li></ul>"
             },
-            perricos: {
-                address: "10820 Bandera Rd., San Antonio, TX 78250",
-                foodType: "Mexico"
+            {position: new google.maps.LatLng(29.5444489, -98.6571495),
+             type: 'mexican',
+                descrip: "<h1>Pericos</h1>" +
+                "<a href='http://www.pericosgrill.com/' target='_blank'>Link to website</a>" +
+                "<ul><li>Very Affordable</li><li>Delicious Chips and Salsa</li><li>Not Too Loud</li></ul>"
             }
+        ];
 
-        }];
-
-
-        // var address = "9030 Wurzbach Road - San Antonio, TX 78240";
+        var address = "9030 Wurzbach Road - San Antonio, TX 78240";
 
         var geocoder = new google.maps.Geocoder();
 
-        geocoder.geocode({"address": restaurantAddresses[0].fujiya.address}, function(results, status) {
+        geocoder.geocode({"address": address}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
 
                 map.setCenter(results[0].geometry.location);
@@ -74,23 +96,20 @@
             console.log(results[0].geometry.location.lng());
         });
 
-        var fujiya = {lat: 29.5258895, lng: -98.5665007};
 
-        var marker = new google.maps.Marker({
-           position: fujiya,
-           map: map,
-           animation: google.maps.Animation.DROP,
-           icon: "images/sushi.png"
-        });
+        restaurantAddresses.forEach(function(feature) {
+            var marker = new google.maps.Marker({
+                position: feature.position,
+                map: map,
+                icon: icons[feature.type].icon
+            });
+            var infowindow = new google.maps.InfoWindow({
+                content: feature.descrip
+            });
 
-        var infowindow = new google.maps.InfoWindow ({
-
-           content: "<h1>Fujiya Japanese Steakhouse</h1>" +
-           "<ul><li>Great Food</li><li>Reasonably Priced</li><li>Traditional Decor</li></ul>"
-        });
-
-        marker.addListener('click', function() {
-            infowindow.open(map, marker);
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
         });
 
         console.log(restaurantAddresses);
