@@ -22,7 +22,12 @@
 <body>
 <h1 style="text-align: center">Restaurant Recommendation App</h1>
 <div id="map-canvas"></div>
+<div style="text-align: center">
+    <button id="clear">I Don't Like Any Options</button>
+    <br>
+    <button id="zoomFifteen">Zoom 15</button>
 
+</div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIIUTWwvJJl5ZNhLBapDLyznaOhiyvjos"></script>
 <script type="text/javascript">
 
@@ -38,8 +43,8 @@
             center: {
                 lat: 29.426043,
                 lng: -98.486143
-            }
-
+            },
+            mapTypeId: google.maps.MapTypeId.SATELLITE
 
         };
 
@@ -54,7 +59,6 @@
                 icon: 'images/sombrero.png'
             }
         };
-
 
 
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -101,7 +105,8 @@
             var marker = new google.maps.Marker({
                 position: feature.position,
                 map: map,
-                icon: icons[feature.type].icon
+                icon: icons[feature.type].icon,
+                animation: google.maps.Animation.DROP
             });
             var infowindow = new google.maps.InfoWindow({
                 content: feature.descrip
@@ -112,7 +117,22 @@
             });
         });
 
-        console.log(restaurantAddresses);
+        var clearly = document.getElementById('clear');
+
+        var clearMarkers = function (event) {
+            marker.setMap(null);
+        };
+
+        clearly.addEventListener('click', clearMarkers, false);
+
+
+        var zoomy = document.getElementById('zoomFifteen');
+
+        var zoomTen = function (event) {
+            mapOptions.zoom = 15;
+        };
+
+        zoomy.addEventListener('click', zoomTen, false);
 
     })();
 </script>
