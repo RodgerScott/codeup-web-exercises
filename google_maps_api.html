@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Maps API Exercise</title>
+
+    <style>
+        #map-canvas {
+            width: 450px;
+            height: 450px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map-canvas"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIIUTWwvJJl5ZNhLBapDLyznaOhiyvjos"></script>
+<script type="text/javascript">
+
+    (function () {
+
+
+
+        "use strict";
+
+        var mapOptions = {
+            zoom: 18,
+
+            center: {
+                lat: 29.426043,
+                lng: -98.486143
+            },
+
+            mapTypeId: google.maps.MapTypeId.SATELLITE
+        };
+
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+
+        var address = "9030 Wurzbach Road - San Antonio, TX 78240";
+
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({"address": address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                map.setCenter(results[0].geometry.location);
+            } else {
+
+                alert('Geocoding was not successful - STATUS: ' + status);
+            }
+            console.log(results[0].geometry.location.lat());
+            console.log(results[0].geometry.location.lng());
+        });
+
+        var fujiya = {lat: 29.5258895, lng: -98.5665007};
+
+        var marker = new google.maps.Marker({
+           position: fujiya,
+           map: map,
+           animation: google.maps.Animation.DROP,
+           icon: "images/sushi.png"
+        });
+
+        var infowindow = new google.maps.InfoWindow ({
+
+           content: "<h1>Fujiya Japanese Steakhouse</h1>" +
+           "<ul><li>Great Food</li><li>Reasonably Priced</li><li>Traditional Decor</li></ul>"
+        });
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+
+    })();
+</script>
+</body>
+</html>
