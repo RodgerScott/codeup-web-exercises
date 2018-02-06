@@ -29,7 +29,7 @@
         "use strict";
 
         var mapOptions = {
-            zoom: 18,
+            zoom: 15,
 
             center: {
                 lat: 29.426043,
@@ -41,12 +41,28 @@
 
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+        var restaurantAddresses = [{
+            fujiya: {
+                address: "9030 Wurzbach Road, San Antonio, TX 78240",
+                foodType: "Japanese"
+            },
+            indiaOven: {
+                address: "1031 Patricia Ste 106, San Antonio, TX 78213",
+                foodType: "Indian"
+            },
+            perricos: {
+                address: "10820 Bandera Rd., San Antonio, TX 78250",
+                foodType: "Mexico"
+            }
 
-        var address = "9030 Wurzbach Road - San Antonio, TX 78240";
+        }];
+
+
+        // var address = "9030 Wurzbach Road - San Antonio, TX 78240";
 
         var geocoder = new google.maps.Geocoder();
 
-        geocoder.geocode({"address": address}, function(results, status) {
+        geocoder.geocode({"address": restaurantAddresses[0].fujiya.address}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
 
                 map.setCenter(results[0].geometry.location);
@@ -76,6 +92,8 @@
         marker.addListener('click', function() {
             infowindow.open(map, marker);
         });
+
+        console.log(restaurantAddresses);
 
     })();
 </script>
