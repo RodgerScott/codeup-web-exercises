@@ -8,16 +8,47 @@
     <title>JQuery Exercises</title>
 </head>
 <body>
+<h1 id="pageHeader">JQuery Exercises</h1>
 
+<div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias culpa doloribus eveniet ipsa laboriosam natus
+        ratione sit. Dolores ea eos maiores, nobis, odio officia porro, quaerat sint tempore velit voluptatem!
+    </p>
+    <p class="codeup">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias culpa doloribus eveniet ipsa laboriosam natus
+        ratione sit. Dolores ea eos maiores, nobis, odio officia porro, quaerat sint tempore velit voluptatem!
+    </p>
+    <p class="codeup">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias culpa doloribus eveniet ipsa laboriosam natus
+        ratione sit. Dolores ea eos maiores, nobis, odio officia porro, quaerat sint tempore velit voluptatem!
+    </p>
+
+    <h2 id="listHeading">On The Agenda</h2>
+    <ul>
+        <li>Go To Store</li>
+        <li>Do Something Else</li>
+        <li>???</li>
+        <li>Profit</li>
+    </ul>
+
+</div>
 
 <script src="js/jquery-2.2.4.js"></script>
-
 <script>
     "use strict";
 
-
     $(document).ready(function() {
-        alert("The DOM has finished loading.");
+
+        $('li').css('font-size', '20px');
+
+        $('.codeup').css('border', '1px solid red');
+
+        $('h1, p, li').css('background-color', 'grey');
+
+        alert($('h1').html());
+
+
     });
 </script>
 </body>
