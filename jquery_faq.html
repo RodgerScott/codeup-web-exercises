@@ -18,7 +18,7 @@
             background-size: cover;
         }
 
-        dl, p, dd {
+        dl, p, dd, h3, ul, li {
             margin-left: 10px;
         }
     </style>
@@ -51,6 +51,33 @@
 
     <p id="area"></p>
 
+    <h3 id="national-parks-heading">National Parks</h3>
+    <ul id="national-parks">
+        <li>Arches</li>
+        <li>Badlands</li>
+        <li>Carlsbad Caverns</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
+    <h3>State Parks of Idaho</h3>
+    <ul id="state-parks-idaho">
+        <li>Bruneau Dunes</li>
+        <li>Thousand Springs</li>
+        <li>Winchester Lake</li>
+        <li>Three Island Crossing</li>
+        <li>Priest Lake</li>
+    </ul>
+
+    <button id="backChange">Change Background</button>
+
 
     <script src="js/jquery-2.2.4.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -69,8 +96,18 @@
             $('dd').toggleClass('invisible');
         });
 
+        $('#backChange').click(function(){
+            $('ul').each(function (index, element){
+                $(element).children().last().css('background-color', 'yellow');
+            });
+        });
+
+        $('h3').click(function(){
+            $(this).next().children().css('font-weight', 'bold');
+            });
 
         });
+
     </script>
 </body>
 </html>
