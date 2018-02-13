@@ -33,3 +33,9 @@
 .noBottom {
     border-bottom: 0px transparent;
 }
+
+h1 {
+    text-align: center;
+    size: 1.5em;
+    margin-bottom: 55px;
+}
