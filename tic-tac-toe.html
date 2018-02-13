@@ -233,6 +233,19 @@
         if (ticTacToeBoard[0][2] === 2 && ticTacToeBoard[1][1] === 2 && ticTacToeBoard[2][0] === 2) {
             $('#turnIndicator').text('X Wins');
         }
+
+        // var stalemate = 0;
+        // ticTacToeBoard.forEach(function(array) {
+        //     for (var i = 0; i < array.length; i ++) {
+        //         if (array[i] !== 0) {
+        //             stalemate +=1;
+        //         }
+        //     }
+        // });
+        //
+        // if(stalemate === 9) {
+        //     $('#turnIndicator').text('Stalemate!!')
+        // }
     }
 </script>
 </body>
