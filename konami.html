@@ -19,14 +19,14 @@
        console.log(event.keyCode);
        }
 
-       if (event.keyCode === 13 && enteredCode[0] === 38 && enteredCode[1] === 38 && enteredCode[2] === 40 && enteredCode[3] === 40
+       if (event.keyCode === 13 && (enteredCode[0] === 38 && enteredCode[1] === 38 && enteredCode[2] === 40 && enteredCode[3] === 40
            && enteredCode[4] === 37 && enteredCode[5] === 39 && enteredCode[6] === 37 && enteredCode[7] === 39
-           && enteredCode[8] === 66 && enteredCode[9] === 65) {
+           && enteredCode[8] === 66 && enteredCode[9] === 65) && enteredCode.length === 10) {
            alert("You just got 30 lives");
            enteredCode = [];
        } else if (event.keyCode === 13 && (enteredCode[0] !== 38 && enteredCode[1] !== 38 && enteredCode[2] !== 40 && enteredCode[3] !== 40
            && enteredCode[4] !== 37 && enteredCode[5] !== 39 && enteredCode[6] !== 37 && enteredCode[7] !== 39
-           && enteredCode[8] !== 66 && enteredCode[9] !== 65)) {
+           && enteredCode[8] !== 66 && enteredCode[9] !== 65) || (enteredCode.length > 10)) {
            enteredCode = [];
        }
     });
