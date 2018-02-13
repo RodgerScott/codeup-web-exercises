@@ -10,12 +10,25 @@
 <script>
     "use strict";
 
-    $(document).keyup(function(event){
-        if (event.keyCode === 38) {
-            alert("You got it dude");
-        }
+    var enteredCode = [];
 
-        console.log(event.keyCode);
+    $(document).keyup(function(event){
+
+       if (event.keyCode !== 13) {
+       enteredCode.push(event.keyCode);
+       console.log(event.keyCode);
+       }
+
+       if (event.keyCode === 13 && enteredCode[0] === 38 && enteredCode[1] === 38 && enteredCode[2] === 40 && enteredCode[3] === 40
+           && enteredCode[4] === 37 && enteredCode[5] === 39 && enteredCode[6] === 37 && enteredCode[7] === 39
+           && enteredCode[8] === 66 && enteredCode[9] === 65) {
+           alert("You just got 30 lives");
+           enteredCode = [];
+       } else if (event.keyCode === 13 && (enteredCode[0] !== 38 && enteredCode[1] !== 38 && enteredCode[2] !== 40 && enteredCode[3] !== 40
+           && enteredCode[4] !== 37 && enteredCode[5] !== 39 && enteredCode[6] !== 37 && enteredCode[7] !== 39
+           && enteredCode[8] !== 66 && enteredCode[9] !== 65)) {
+           enteredCode = [];
+       }
     });
 </script>
 </body>
