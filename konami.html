@@ -40,14 +40,10 @@
        console.log(event.keyCode);
        }
 
-       if (event.keyCode === 13 && (enteredCode[0] === 38 && enteredCode[1] === 38 && enteredCode[2] === 40 && enteredCode[3] === 40
-           && enteredCode[4] === 37 && enteredCode[5] === 39 && enteredCode[6] === 37 && enteredCode[7] === 39
-           && enteredCode[8] === 66 && enteredCode[9] === 65) && enteredCode.length === 10) {
+       if (event.keyCode === 13 && enteredCode.join('') === '38384040373937396665') {
            enteredCode = [];
            window.location.href = "contra_2.html";
-       } else if (event.keyCode === 13 && (enteredCode[0] !== 38 && enteredCode[1] !== 38 && enteredCode[2] !== 40 && enteredCode[3] !== 40
-           && enteredCode[4] !== 37 && enteredCode[5] !== 39 && enteredCode[6] !== 37 && enteredCode[7] !== 39
-           && enteredCode[8] !== 66 && enteredCode[9] !== 65) || (enteredCode.length > 10)) {
+       } else if (event.keyCode === 13 && enteredCode.join('') !== '38384040373937396665') {
            enteredCode = [];
        }
     });
@@ -63,9 +59,6 @@
             elem.style.right = pos + 'px';
         }
     }
-
-
-
 </script>
 </body>
 </html>
