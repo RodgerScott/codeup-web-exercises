@@ -42,13 +42,11 @@
        }
 
        if (event.keyCode === 13 && enteredCode.join('') === '38384040373937396665') {
-           enteredCode = [];
            window.location.href = "contra_2.html";
        } else if (event.keyCode === 13 && enteredCode.join('') !== '38384040373937396665') {
            enteredCode = [];
        }
     });
-
     var pos = -850;
     var id = setInterval(frame, 2);
     function frame() {
