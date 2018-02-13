@@ -53,11 +53,11 @@
 
     $('.box').click(function(event){
 
-        if (turn % 2 === 0) {
+        if (turn % 2 === 0 && $(this).text() === "") {
             $(event.target).text('X');
             turn += 1;
             $('#turnIndicator').text("Go Player O");
-        } else {
+        } else if (turn % 2 === 1 && $(this).text() === "") {
             $(event.target).text("O");
             turn += 1;
             $('#turnIndicator').text("Go Player X");
@@ -74,11 +74,11 @@
 
 
     $('#tr0').click(function(){
-        if(turn % 2 === 0) {
+        if(turn % 2 === 0 && ticTacToeBoard[0][0] === 0) {
 
             ticTacToeBoard[0].splice(0, 1, 1);
             console.log(ticTacToeBoard);
-        } else {
+        } else if (turn % 2 === 1 && ticTacToeBoard[0][0] === 0) {
             ticTacToeBoard[0].splice(0, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -86,22 +86,22 @@
     });
 
     $('#tr1').click(function(){
-        if(turn % 2 === 0) {
+        if(turn % 2 === 0 && ticTacToeBoard[0][1] === 0) {
 
             ticTacToeBoard[0].splice(1, 1, 1);
             console.log(ticTacToeBoard);
-        } else {
+        } else if (turn % 2 === 1 && ticTacToeBoard[0][1] === 0){
             ticTacToeBoard[0].splice(1, 1, 2);
             console.log(ticTacToeBoard);
         }
         isSolved();
     });
     $('#tr2').click(function(){
-        if(turn % 2 === 0) {
+        if(turn % 2 === 0 && ticTacToeBoard[0][2] === 0) {
 
             ticTacToeBoard[0].splice(2, 1, 1);
             console.log(ticTacToeBoard);
-        } else {
+        } else if (turn % 2 === 1 && ticTacToeBoard[0][2] === 0) {
             ticTacToeBoard[0].splice(2, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -109,11 +109,11 @@
     });
 
     $('#mr0').click(function(){
-        if(turn % 2 === 0) {
+        if(turn % 2 === 0 && ticTacToeBoard[1][0] === 0) {
 
             ticTacToeBoard[1].splice(0, 1, 1);
             console.log(ticTacToeBoard);
-        } else {
+        } else if (turn % 2 === 1 && ticTacToeBoard[1][0] === 0) {
             ticTacToeBoard[1].splice(0, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -121,22 +121,22 @@
     });
 
     $('#mr1').click(function(){
-        if(turn % 2 === 0) {
+        if(turn % 2 === 0 && ticTacToeBoard[1][1] === 0) {
 
             ticTacToeBoard[1].splice(1, 1, 1);
             console.log(ticTacToeBoard);
-        } else {
+        } else if (turn % 2 === 1 && ticTacToeBoard[1][1] === 0) {
             ticTacToeBoard[1].splice(1, 1, 2);
             console.log(ticTacToeBoard);
         }
         isSolved();
     });
     $('#mr2').click(function(){
-        if(turn % 2 === 0) {
+        if(turn % 2 === 0 && ticTacToeBoard[1][2] === 0) {
 
             ticTacToeBoard[1].splice(2, 1, 1);
             console.log(ticTacToeBoard);
-        } else {
+        } else if (turn % 2 === 1 && ticTacToeBoard[1][2] === 0) {
             ticTacToeBoard[1].splice(2, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -144,11 +144,11 @@
     });
 
     $('#br0').click(function(){
-        if(turn % 2 === 0) {
+        if(turn % 2 === 0 && ticTacToeBoard[2][0] === 0) {
 
             ticTacToeBoard[2].splice(0, 1, 1);
             console.log(ticTacToeBoard);
-        } else {
+        } else if (turn % 2 === 1 && ticTacToeBoard[2][0] === 0) {
             ticTacToeBoard[2].splice(0, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -156,22 +156,22 @@
     });
 
     $('#br1').click(function(){
-        if(turn % 2 === 0) {
+        if(turn % 2 === 0 && ticTacToeBoard[2][1] === 0) {
 
             ticTacToeBoard[2].splice(1, 1, 1);
             console.log(ticTacToeBoard);
-        } else {
+        } else if (turn % 2 === 1 && ticTacToeBoard[2][1] === 0){
             ticTacToeBoard[2].splice(1, 1, 2);
             console.log(ticTacToeBoard);
         }
         isSolved();
     });
     $('#br2').click(function(){
-        if(turn % 2 === 0) {
+        if(turn % 2 === 0 && ticTacToeBoard[2][2] === 0) {
 
             ticTacToeBoard[2].splice(2, 1, 1);
             console.log(ticTacToeBoard);
-        } else {
+        } else if (turn % 2 === 1 && ticTacToeBoard[2][2] === 0) {
             ticTacToeBoard[2].splice(2, 1, 2);
             console.log(ticTacToeBoard);
         }
