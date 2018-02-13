@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        .invisible {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+    <dl>
+        <dt>Where is Palo Duro Canyon?</dt>
+        <dd class="invisible">Canyon, Tx</dd>
+        <dt>How many people die in state parks every year?</dt>
+        <dd class="invisible"> 0.57 deaths [per] 1 million visits</dd>
+        <dt>What is the largest state park?</dt>
+        <dd class="invisible">Adirondack Park</dd>
+        <dt>How many people visit the Grand Canyon every year?</dt>
+        <dd class="invisible">More than 5 million</dd>
+        <dt>Which state park has the biggest lake?</dt>
+        <dd class="invisible">Big lake State Park</dd>
+        <dt>Which state park is the hottest?</dt>
+        <dd class="invisible">Hot Springs State Park</dd>
+        <dt>How many people have free climbed El Capitan?</dt>
+        <dd class="invisible">1: Alex Honnold</dd>
+        <dt>How many people get eaten by bears a year?</dt>
+        <dd class="invisible">About 25</dd>
+        <dt>What is the total number of state parks in the US?</dt>
+        <dd class="invisible">6,624</dd>
+        <dt>How many square miles is YellowStone?</dt>
+        <dd class="invisible">3471</dd>
+    </dl>
+
+    <p id="area"></p>
+
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $('#area').html('<a href="" id="toggle">Click for Answers</a>');
+
+        $('#toggle').click(function(event){
+            event.preventDefault();
+            $('dd').removeClass('invisible');
+        });
+    </script>
+</body>
+</html>
