@@ -2,13 +2,34 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <style>
+        #myContainer {
+            width: 85%;
+            height: 800px;
+            position: relative;
+        }
+        #myAnimation {
+            width: 955px;
+            height: 720px;
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
-<h1>Konami Code</h1>
+<audio id='openingSong' src="sounds/contra.mp3" autoplay="autoplay"></audio>
+
+<div id ="myContainer">
+    <div id ="myAnimation"><img id="title" src="images/contra_main.jpg" alt=""></div>
+</div>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
+
+
+    $('h1').css('color', 'white');
+
+    $('body').css('background-color', 'black');
 
     var enteredCode = [];
 
@@ -22,14 +43,29 @@
        if (event.keyCode === 13 && (enteredCode[0] === 38 && enteredCode[1] === 38 && enteredCode[2] === 40 && enteredCode[3] === 40
            && enteredCode[4] === 37 && enteredCode[5] === 39 && enteredCode[6] === 37 && enteredCode[7] === 39
            && enteredCode[8] === 66 && enteredCode[9] === 65) && enteredCode.length === 10) {
-           alert("You just got 30 lives");
            enteredCode = [];
+           window.location.href = "contra_2.html";
        } else if (event.keyCode === 13 && (enteredCode[0] !== 38 && enteredCode[1] !== 38 && enteredCode[2] !== 40 && enteredCode[3] !== 40
            && enteredCode[4] !== 37 && enteredCode[5] !== 39 && enteredCode[6] !== 37 && enteredCode[7] !== 39
            && enteredCode[8] !== 66 && enteredCode[9] !== 65) || (enteredCode.length > 10)) {
            enteredCode = [];
        }
     });
+
+    var elem = document.getElementById("myAnimation");
+    var pos = -800;
+    var id = setInterval(frame, 2);
+    function frame() {
+        if (pos == 100) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.right = pos + 'px';
+        }
+    }
+
+
+
 </script>
 </body>
 </html>
