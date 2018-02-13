@@ -1,0 +1,40 @@
+.container.center-block {
+    height: 600px;
+    width: 900px;
+    box-sizing: border-box;
+}
+
+.box {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    font-size: 34px;
+    text-align: center;
+    padding-top: 65px;
+}
+
+
+.lookingGood {
+    font-size: 3.5em;
+}
+
+.noTop {
+    border-top: 0px transparent;
+}
+
+.noLeft {
+    border-left: 0px transparent;
+}
+
+.noRight {
+    border-right: 0px transparent;
+}
+
+.noBottom {
+    border-bottom: 0px transparent;
+}
+
+.xAndO {
+    position: relative;
+    top: 60px;
+}
