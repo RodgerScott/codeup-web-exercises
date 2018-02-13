@@ -12,11 +12,20 @@
         .invisible {
             display: none;
         }
+
+        body {
+            background-image: url("images/rachealmountain.jpg");
+            background-size: cover;
+        }
+
+        dl, p, dd {
+            margin-left: 10px;
+        }
     </style>
 
 </head>
 <body>
-
+    <h1 class="text-center">Random State Park Questions</h1>
     <dl>
         <dt>Where is Palo Duro Canyon?</dt>
         <dd class="invisible">Canyon, Tx</dd>
@@ -46,11 +55,21 @@
     <script src="js/jquery-2.2.4.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
+        $(document).ready(function(){
+
+
+
+        "use strict";
+
+
         $('#area').html('<a href="" id="toggle">Click for Answers</a>');
 
         $('#toggle').click(function(event){
             event.preventDefault();
-            $('dd').removeClass('invisible');
+            $('dd').toggleClass('invisible');
+        });
+
+
         });
     </script>
 </body>
