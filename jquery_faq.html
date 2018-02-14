@@ -120,8 +120,8 @@
             <div class="col-xs-4">
                 <button id='left' class="center-block">Swap</button>
             </div>
-            <div class="col-xs-4">
-                <button id="'middle" class="center-block">Swap</button>
+            <div class="col-xs-4 exper">
+                <button id="'middle1" class="center-block">Swap</button>
             </div>
             <div class="col-xs-4">
                 <button id="right" class="center-block">Swap</button>
@@ -162,17 +162,62 @@
         });
 
 
+
         var array =['art1', 'art2', 'art3'];
+        var tempArray =[];
+
+
+        console.log(array);
 
         $('#left').click(function(){
-            $('#leftPic').removeClass(this).next().addClass();
-            $('#midPic').addClass.next().removeClass('art2');
+            $('#leftPic').removeClass(array[0]).addClass(array[1]);
+            $('#midPic').removeClass(array[1]).addClass(array[0]);
+            tempArray.splice(1, 0, array[0]);
+            tempArray.splice(0, 0, array[1]);
+            tempArray.splice(2, 0, array[2]);
+            array = tempArray;
+            tempArray = [];
+            console.log(array);
+        });
+        $('#right').click(function(){
+            $('#rightPic').removeClass(array[2]).addClass(array[1]);
+            $('#midPic').removeClass(array[1]).addClass(array[2]);
+            tempArray.splice(1, 0, array[2]);
+            tempArray.splice(0, 0, array[0]);
+            tempArray.splice(2, 0, array[1]);
+            array = tempArray;
+            tempArray = [];
+            console.log(array);
         });
 
-        $('#right').click(function(){
-            $('#rightPic').removeClass('art3').addClass('art2');
-            $('#midPic').removeClass('art2').addClass('art3');
+            var rando = Math.floor((Math.random() * 2) + 1);
+            console.log(rando);
+
+        $('.exper').click(function() {
+            console.log("hey");
+            if (rando === 1) {
+
+                $('#leftPic').removeClass(array[0]).addClass(array[1]);
+                $('#midPic').removeClass(array[1]).addClass(array[0]);
+                tempArray.splice(1, 0, array[0]);
+                tempArray.splice(0, 0, array[1]);
+                tempArray.splice(2, 0, array[2]);
+                array = tempArray;
+                tempArray = [];
+                console.log(array);
+            } else {
+                $('#rightPic').removeClass(array[2]).addClass(array[1]);
+                $('#midPic').removeClass(array[1]).addClass(array[2]);
+                tempArray.splice(1, 0, array[2]);
+                tempArray.splice(0, 0, array[0]);
+                tempArray.splice(2, 0, array[1]);
+                array = tempArray;
+                tempArray = [];
+                console.log(array);
+            }
+            rando = Math.floor((Math.random() * 2) + 1);
         });
+
 
         $('#close').click(function(){
             $('#newsletter').hide();
