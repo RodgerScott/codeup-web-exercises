@@ -21,6 +21,30 @@
         dl, p, dd, h3, ul, li {
             margin-left: 10px;
         }
+
+        .art1 {
+            background-image: url("images/forest.jpg");
+            height: 400px;
+            width: 300px;
+        }
+
+        .art2 {
+            background-image: url("images/sports_ha2.jpg");
+            height: 400px;
+            width: 300px;
+        }
+
+        .art3 {
+            background-image: url("images/sports_main.jpg");
+            height: 400px;
+            width: 300px;
+        }
+        .container {
+            width: 920px;
+        }
+        .marLR {
+            margin-right: 10px;
+        }
     </style>
 
 </head>
@@ -78,6 +102,25 @@
 
     <button id="backChange">Change Background</button>
 
+    <div class="container">
+        <div class="row">
+            <div id="leftPic" class="col-xs-4 art1 marLR"></div>
+            <div id="midPic" class="col-xs-4 art2 marLR"></div>
+            <div id="rightPic" class="col-xs-4 art3"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <button id='left' class="center-block">Swap</button>
+            </div>
+            <div class="col-xs-4">
+                <button id="'middle" class="center-block">Swap</button>
+            </div>
+            <div class="col-xs-4">
+                <button id="right" class="center-block">Swap</button>
+            </div>
+        </div>
+    </div>
+
 
     <script src="js/jquery-2.2.4.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -105,6 +148,22 @@
         $('h3').click(function(){
             $(this).next().children().css('font-weight', 'bold');
             });
+
+        $('li').click(function () {
+            $(this).parent().children().first().css('color', 'blue');
+        });
+
+
+        $('#left').click(function(){
+            $('#leftPic').addClass('background-image').next();
+            $('#midPic')
+        });
+
+        $('#right').click(function(){
+            $('#rightPic').removeClass('art3').addClass('art2');
+            $('#midPic').removeClass('art2').addClass('art3');
+        });
+
 
         });
 
