@@ -49,6 +49,14 @@
 
 </head>
 <body>
+    <div>
+        <h1 id="newsletter">Would you like to sign up for our newsletter?</h1>
+        <span id="close">X</span>
+    </div>
+    <div>
+        <h2 id="register">Please register for the site.</h2>
+    </div>
+
     <h1 class="text-center">Random State Park Questions</h1>
     <dl>
         <dt>Where is Palo Duro Canyon?</dt>
@@ -157,14 +165,35 @@
         var array =['art1', 'art2', 'art3'];
 
         $('#left').click(function(){
-            $('#leftPic').addClass('art2').removeClass('art1');
-            $('#midPic').addClass('art1').removeClass('art2');
+            $('#leftPic').removeClass(this).next().addClass();
+            $('#midPic').addClass.next().removeClass('art2');
         });
 
         $('#right').click(function(){
             $('#rightPic').removeClass('art3').addClass('art2');
             $('#midPic').removeClass('art2').addClass('art3');
         });
+
+        $('#close').click(function(){
+            $('#newsletter').hide();
+            });
+
+        $('ul').hide();
+
+        $('h3').click(function() {
+            $(this).next().slideDown({
+                duration: 2000
+            });
+        });
+
+        $('#register').hide();
+
+
+        setTimeout(function(){
+            $('#register').fadeIn({
+                duration: 1
+            });
+        }, 10000);
 
 
         });
