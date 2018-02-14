@@ -154,9 +154,11 @@
         });
 
 
+        var array =['art1', 'art2', 'art3'];
+
         $('#left').click(function(){
-            $('#leftPic').addClass('background-image').next();
-            $('#midPic')
+            $('#leftPic').addClass('art2').removeClass('art1');
+            $('#midPic').addClass('art1').removeClass('art2');
         });
 
         $('#right').click(function(){
