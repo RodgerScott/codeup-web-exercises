@@ -1,0 +1,138 @@
+li {
+    display: inline;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+a:active {
+    color:white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+nav h1 {
+    text-align: center;
+    color: white;
+}
+
+nav ul {
+    text-align: center;
+}
+
+.headerBackground {
+    background-image: url("../images/toolsbanner.jpeg");
+    background-size: cover;
+}
+
+.blogPosts {
+    background-color: #EBEEF2;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+body {
+    background-color: #BFCDE8;
+}
+
+header {
+    margin-bottom: 15px;
+}
+
+nav {
+    height: 125px;
+}
+
+th {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+.mainBackground {
+    background-color: #EAEEF2;
+    border-radius: 25px;
+}
+
+.simpleBorder {
+    border: 0;
+}
+
+ul {
+    position: relative;
+    right: 40px;
+    top:20px;
+}
+
+.postTitle {
+    text-align: center;
+    font-size: 2.0em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.postContent {
+}
+
+.postCategory {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.postDate {
+    font-weight: bold;
+
+}
+
+
+
+.navLinks {
+    background-color: #8c8c8c;
+    border-radius: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+@media screen and (min-width:332px) {
+    #inventoryTitle {
+    text-align: center;
+    }
+}
+
+@media screen and (min-width:992px) {
+    ul {
+        position: relative;
+        top: 25px;
+    }
+    .simpleBorder {
+        border: 1px solid black;
+    }
+
+    nav h1 {
+        text-align: left;
+        color: white;
+    }
+
+    #inventoryTitle {
+        text-align: left;
+    }
+}
+
+
+
