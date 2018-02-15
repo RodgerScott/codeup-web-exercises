@@ -5,17 +5,17 @@ li {
     text-align: center;
 }
 
-a:active {
+span>a:active {
     color:white;
     text-decoration: none;
 }
 
-a:hover {
+span>a:hover {
     color: white;
     text-decoration: none;
 }
 
-a:visited {
+span>a:visited {
     color: white;
     text-decoration: none;
 }
