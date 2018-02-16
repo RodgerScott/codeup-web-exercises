@@ -65,6 +65,11 @@
             margin-top: 5px;
         }
 
+        #clearmarker {
+            position:relative;
+            left: 110px;
+        }
+
 
 
     </style>
@@ -90,6 +95,9 @@
     <div id="map">
 
     </div>
+    <button id="clearmarker">
+        Clear Markers
+    </button>
 
 
 
@@ -145,13 +153,17 @@
 
             var marker = new google.maps.Marker({
                 position: myLatLng,
-                map: map,
+                map: map
             });
 
             console.log(latInput);
             console.log(lonInput);
 
             ted();
+
+            $('#clearmarker').click(function(){
+                marker.setMap(null);
+            });
 
             latInput = document.getElementById('latInput').value;
             lonInput = document.getElementById('lonInput').value;
@@ -223,6 +235,8 @@
 
 
         $('#mapLocate').click(ted);
+
+
 
 
 
