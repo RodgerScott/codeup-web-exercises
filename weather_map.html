@@ -12,6 +12,10 @@
             background-color: lightblue;
         }
 
+        h1 {
+            text-align: center;
+        }
+
         .mainContainer {
             height: 200px;
             width: 85%;
@@ -49,6 +53,18 @@
             margin-bottom: 2px;
         }
 
+        #inputs {
+            position:relative;
+            left: 110px;
+        }
+
+        #mapLocate {
+            position:relative;
+            left: 110px;
+            margin-bottom: 10px;
+            margin-top: 5px;
+        }
+
 
 
     </style>
@@ -57,7 +73,7 @@
 
     <h1>Codeup Weather Project</h1>
 
-    <div>
+    <div id="inputs">
         <label>Input Latitude: </label><input id="latInput" type="text" value="29.4259671">
         <label>Input Longitude: </label><input id="lonInput" type="text" value="-98.4861419">
     </div>
@@ -66,7 +82,6 @@
             Click This!
         </button>
     </div>
-    <h2>San Antonio</h2>
     <div class="mainContainer">
         <div id="today" class="innerBox"></div>
         <div id="tomorrow" class="innerBox"></div>
@@ -82,16 +97,21 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIIUTWwvJJl5ZNhLBapDLyznaOhiyvjos"></script>
     <script>
 
-        var addressSearch = $('#cityInput').val;
+
+        var latInput = document.getElementById('latInput').value;
+        var lonInput = document.getElementById('lonInput').value;
+
 
         //Google Maps Scripting
 
         var map;
         function initMap() {
+
             map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644},
+                center: {lat: 29.4259671, lng: -98.4861419},
                 zoom: 10
             });
+
         }
 
         initMap();
@@ -112,6 +132,33 @@
                 console.log(results[0].geometry.location.lng());
             });
 
+        google.maps.event.addListener(map, "click", function(event) {
+            var lat = event.latLng.lat();
+            var lng = event.latLng.lng();
+            // change the temp value based on click: lat, lng
+            latInput = lat;
+            lonInput = lng;
+            var myLatLng = {
+                lat: lat,
+                lng: lng
+            };
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+            });
+
+            console.log(latInput);
+            console.log(lonInput);
+
+            ted();
+
+            latInput = document.getElementById('latInput').value;
+            lonInput = document.getElementById('lonInput').value;
+
+
+        });
+
         //OpenWeather Scripting
 
 
@@ -120,8 +167,6 @@
             var weatherData = "";
             var tomorrowData = "";
             var dayAfterTomorrowData = "";
-            var latInput = document.getElementById('latInput').value;
-            var lonInput = document.getElementById('lonInput').value;
 
 
             $.get("http://api.openweathermap.org/data/2.5/forecast", {
@@ -131,6 +176,8 @@
                 lon: lonInput
 
             }).done(function (data) {
+
+                console.log(data.list);
 
 
                 var upToDateWeatherInfo = data.list;
@@ -164,6 +211,11 @@
                 $('#today').html(weatherData);
                 $('#tomorrow').html(tomorrowData);
                 $('#dayAfterTomorrow').html(dayAfterTomorrowData);
+
+                // console.log(latInput);
+                // console.log(lonInput);
+                latInput = document.getElementById('latInput').value;
+                lonInput = document.getElementById('lonInput').value;
             });
 
         }
@@ -171,6 +223,8 @@
 
 
         $('#mapLocate').click(ted);
+
+
 
     </script>
 </body>
