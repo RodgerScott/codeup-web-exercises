@@ -41,7 +41,15 @@
         .tempResults {
             font-size: 1.75em;
             font-weight: bold;
+            margin-bottom: 5px;
         }
+
+        .otherResults {
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+
 
     </style>
 </head>
@@ -50,14 +58,15 @@
     <h1>Codeup Weather Project</h1>
 
     <div>
-        <label>Input Latitude: </label><input id="LatInput" type="text">
-        <label>Input Longitude: </label><input id="LonInput" type="text">
+        <label>Input Latitude: </label><input id="latInput" type="text" value="29.4259671">
+        <label>Input Longitude: </label><input id="lonInput" type="text" value="-98.4861419">
     </div>
     <div>
         <button id="mapLocate">
             Click This!
         </button>
     </div>
+    <h2>San Antonio</h2>
     <div class="mainContainer">
         <div id="today" class="innerBox"></div>
         <div id="tomorrow" class="innerBox"></div>
@@ -104,77 +113,64 @@
             });
 
         //OpenWeather Scripting
-        var weatherData = "";
-
-        $.get("http://api.openweathermap.org/data/2.5/weather", {
-            APPID: "03924764fe8c1dc6f21d496c9fed9776",
-            q:     "San Antonio",
-            units: "imperial"
-        }).done(function(data) {
-
-            weatherData += '<div class="tempResults">' + data.main.temp_min + ' / ' + data.main.temp_max +  '</div>';
-            weatherData += '<div>' + data.weather[0].main + '</div>';
-            weatherData += '<div>' + 'Humidity: ' + data.main.humidity + '</div>';
-            weatherData += '<div>' + 'Wind: ' + data.wind.speed + '</div>';
-            weatherData += '<div>' + 'Pressure: ' + data.main.pressure + '</div>';
-
-            $('#today').html(weatherData);
-        });
 
 
-        var tomorrowData = "";
+        function ted () {
 
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
-            APPID: "03924764fe8c1dc6f21d496c9fed9776",
-            q:     "San Antonio",
-            units: "imperial"
-        }).done(function(data) {
-
-            console.log(data.list[0]);
-
-            tomorrowData += '<div class="tempResults">' + data.list[0].main.temp_min + ' / ' + data.list[0].main.temp_max +  '</div>';
-            tomorrowData += '<div>' + data.list[0].weather[0].main + '</div>';
-            tomorrowData += '<div>' + 'Humidity: ' + data.list[0].main.humidity + '</div>';
-            tomorrowData += '<div>' + 'Wind: ' + data.list[0].wind.speed + '</div>';
-            tomorrowData += '<div>' + 'Pressure: ' + data.list[0].main.pressure + '</div>';
-
-            $('#tomorrow').html(tomorrowData);
-        });
+            var weatherData = "";
+            var tomorrowData = "";
+            var dayAfterTomorrowData = "";
+            var latInput = document.getElementById('latInput').value;
+            var lonInput = document.getElementById('lonInput').value;
 
 
-        var dayAfterTomorrowData = "";
+            $.get("http://api.openweathermap.org/data/2.5/forecast", {
+                APPID: "03924764fe8c1dc6f21d496c9fed9776",
+                units: "imperial",
+                lat: latInput,
+                lon: lonInput
 
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
-            APPID: "03924764fe8c1dc6f21d496c9fed9776",
-            q:     "San Antonio",
-            units: "imperial"
-        }).done(function(data) {
-
-            console.log(data.list[8]);
-
-            tomorrowData += '<div class="tempResults">' + data.list[8].main.temp_min + ' / ' + data.list[0].main.temp_max +  '</div>';
-            tomorrowData += '<div>' + data.list[0].weather[8].main + '</div>';
-            tomorrowData += '<div>' + 'Humidity: ' + data.list[8].main.humidity + '</div>';
-            tomorrowData += '<div>' + 'Wind: ' + data.list[8].wind.speed + '</div>';
-            tomorrowData += '<div>' + 'Pressure: ' + data.list[8].main.pressure + '</div>';
-
-            $('#tomorrow').html(tomorrowData);
-        });
+            }).done(function (data) {
 
 
+                var upToDateWeatherInfo = data.list;
+                var iconToday = data.list[0].weather[0].icon;
+                var iconTomorrow = data.list[8].weather[0].icon;
+                var iconDayAfterTomorrow = data.list[16].weather[0].icon;
+
+                weatherData += '<div class="tempResults">' + parseInt(data.list[0].main.temp) + '˚' + ' / ' + parseInt(data.list[2].main.temp) + '˚' + '</div>';
+                weatherData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconToday + '.png' + '>';
+                weatherData += '<div class="otherResults">' + '<strong>' + data.list[0].weather[0].main + ':' + ' </strong>' + data.list[0].weather[0].description + '</div>';
+                weatherData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + data.list[0].main.humidity + '</div>';
+                weatherData += '<div class="otherResults">' + '<strong>Wind: </strong>' + data.list[0].wind.speed + '</div>';
+                weatherData += '<div class="otherResults">' + '<strong>Pressure: </strong>' + data.list[0].main.pressure + '</div>';
+
+                tomorrowData += '<div class="tempResults">' + parseInt(data.list[8].main.temp) + '˚' + ' / ' + parseInt(data.list[10].main.temp) + '˚' + '</div>';
+                tomorrowData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconTomorrow + '.png' + '>';
+                tomorrowData += '<div class="otherResults">' + '<strong>' + data.list[8].weather[0].main + ':' + ' </strong>' + data.list[8].weather[0].description + '</div>';
+                tomorrowData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + data.list[8].main.humidity + '</div>';
+                tomorrowData += '<div class="otherResults">' + '<strong>Wind: </strong>' + data.list[8].wind.speed + '</div>';
+                tomorrowData += '<div class="otherResults">' + '<strong>Pressure: </strong>' + data.list[8].main.pressure + '</div>';
 
 
+                dayAfterTomorrowData += '<div class="tempResults">' + parseInt(data.list[16].main.temp) + '˚' + ' / ' + parseInt(data.list[18].main.temp) + '˚' + '</div>';
+                dayAfterTomorrowData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconDayAfterTomorrow + '.png' + '>';
+                dayAfterTomorrowData += '<div class="otherResults">' + '<strong>' + data.list[16].weather[0].main + ':' + ' </strong>' + data.list[16].weather[0].description + '</div>';
+                dayAfterTomorrowData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + data.list[16].main.humidity + '</div>';
+                dayAfterTomorrowData += '<div class="otherResults">' + '<strong>Wind: </strong>' + data.list[16].wind.speed + '</div>';
+                dayAfterTomorrowData += '<div class="otherResults">' + '<strong>Pressure: </strong>' + data.list[16].main.pressure + '</div>';
 
-        // data.forEach(function(littleData) {
-        //
-        //     weatherData += '<div class="tempResults">' + littleData.main.temp_min + ' / ' + data.main.temp_max +  '</div>';
-        //     weatherData += '<div>' + littleData.weather[0].main + '</div>';
-        //     weatherData += '<div>' + 'Humidity: ' + littleData.main.humidity + '</div>';
-        //     weatherData += '<div>' + 'Wind: ' + littleData.wind.speed + '</div>';
-        //     weatherData += '<div>' + 'Pressure: ' + littleData.main.pressure + '</div>';
-        //
-        // });
-        // $('#today').html(weatherData);
+
+                $('#today').html(weatherData);
+                $('#tomorrow').html(tomorrowData);
+                $('#dayAfterTomorrow').html(dayAfterTomorrowData);
+            });
+
+        }
+        ted ();
+
+
+        $('#mapLocate').click(ted);
 
     </script>
 </body>
