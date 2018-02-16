@@ -194,19 +194,35 @@
                 var iconToday = data.list[0].weather[0].icon;
                 var iconTomorrow = data.list[8].weather[0].icon;
                 var iconDayAfterTomorrow = data.list[16].weather[0].icon;
-                var maxTemps = [];
+
+
                 var maxTempsToday = [];
                 var maxTempsTomorrow = [];
                 var maxTempsNextDay = [];
                 var maxTempsNextNextDay = [];
-                var minTemps = [];
+                var maTempsTomorrow = 0;
+                var maTempsNextDay = 0;
+                var maTempsNextNextDay = 0;
+
+
+                var minTempsToday = [];
+                var minTempsTomorrow = [];
+                var minTempsNextDay = [];
+                var minTempsNextNextDay = [];
+                var miTempsTomorrow = 0;
+                var miTempsNextDay = 0;
+                var miTempsNextNextDay = 0;
+
                 var counter = 0;
 
-                function maxTemper () {
+                function Temper () {
                     for (var i = 0; i < 40; i++) {
                         if (upToDateWeatherInfo[i].dt_txt.substring(0, 10) === upToDateWeatherInfo[i + 1].dt_txt.substring(0, 10)) {
                             maxTempsToday.push(upToDateWeatherInfo[i].main.temp);
+                            minTempsToday.push(upToDateWeatherInfo[i].main.temp);
                         } else {
+                            maxTempsToday.push(upToDateWeatherInfo[i].main.temp);
+                            minTempsToday.push(upToDateWeatherInfo[i].main.temp);
                             counter = i + 1;
                             break;
                         }
@@ -214,7 +230,10 @@
                     for (var j = counter; j < 40; j++) {
                         if (upToDateWeatherInfo[j].dt_txt.substring(0, 10) === upToDateWeatherInfo[j + 1].dt_txt.substring(0, 10)) {
                             maxTempsTomorrow.push(upToDateWeatherInfo[j].main.temp);
+                            minTempsTomorrow.push(upToDateWeatherInfo[j].main.temp);
                         } else {
+                            maxTempsTomorrow.push(upToDateWeatherInfo[j].main.temp);
+                            minTempsTomorrow.push(upToDateWeatherInfo[j].main.temp);
                             counter = j + 1;
                             break;
                         }
@@ -222,7 +241,10 @@
                     for (var k = counter; k < 40; k++) {
                         if (upToDateWeatherInfo[k].dt_txt.substring(0, 10) === upToDateWeatherInfo[k + 1].dt_txt.substring(0, 10)) {
                             maxTempsNextDay.push(upToDateWeatherInfo[k].main.temp);
+                            minTempsNextDay.push(upToDateWeatherInfo[k].main.temp);
                         } else {
+                            maxTempsNextDay.push(upToDateWeatherInfo[k].main.temp);
+                            minTempsNextDay.push(upToDateWeatherInfo[k].main.temp);
                             counter = k + 1;
                             break;
                         }
@@ -230,45 +252,36 @@
                     for (var l = counter; l < 40; l++) {
                         if (upToDateWeatherInfo[l].dt_txt.substring(0, 10) === upToDateWeatherInfo[l + 1].dt_txt.substring(0, 10)) {
                             maxTempsNextNextDay.push(upToDateWeatherInfo[l].main.temp);
+                            minTempsNextNextDay.push(upToDateWeatherInfo[l].main.temp);
                         } else {
+                            maxTempsNextNextDay.push(upToDateWeatherInfo[l].main.temp);
+                            minTempsNextNextDay.push(upToDateWeatherInfo[l].main.temp);
                             counter = l + 1;
                             break;
                         }
                     }
-                }
 
-                maxTemper();
-
-                console.log(maxTempsToday);
-                console.log(maxTempsTomorrow);
-                console.log(maxTempsNextDay);
-                console.log(maxTempsNextNextDay);
-
-                console.log(counter);
-
-
-
-                function minTemper () {
-                    for (var i = 0; i < 40; i++) {
-
-                        minTemps.push(data.list[i].main.temp);
-
-                    } var testie = Math.min.apply(null, minTemps);
-
-                    console.log(testie);
+                    maTempsTomorrow = Math.max.apply(null, maxTempsTomorrow);
+                    maTempsNextDay = Math.max.apply(null, maxTempsNextDay);
+                    maTempsNextNextDay = Math.max.apply(null, maxTempsNextNextDay);
+                    miTempsTomorrow = Math.min.apply(null, minTempsTomorrow);
+                    miTempsNextDay = Math.min.apply(null, minTempsNextDay);
+                    miTempsNextNextDay = Math.min.apply(null, minTempsNextNextDay);
 
                 }
-                minTemper();
+
+                Temper();
 
 
-                weatherData += '<div class="tempResults">' + parseInt(data.list[0].main.temp) + '˚' + ' / ' + parseInt(data.list[2].main.temp) + '˚' + '</div>';
+                weatherData += '<div class="tempResults">' + parseInt(maTempsTomorrow) + '˚' + ' / ' + parseInt(miTempsTomorrow) + '˚' + '</div>';
                 weatherData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconToday + '.png' + '>';
                 weatherData += '<div class="otherResults">' + '<strong>' + data.list[0].weather[0].main + ':' + ' </strong>' + data.list[0].weather[0].description + '</div>';
                 weatherData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + data.list[0].main.humidity + '</div>';
                 weatherData += '<div class="otherResults">' + '<strong>Wind: </strong>' + data.list[0].wind.speed + '</div>';
                 weatherData += '<div class="otherResults">' + '<strong>Pressure: </strong>' + data.list[0].main.pressure + '</div>';
 
-                tomorrowData += '<div class="tempResults">' + parseInt(data.list[8].main.temp) + '˚' + ' / ' + parseInt(data.list[10].main.temp) + '˚' + '</div>';
+
+                tomorrowData += '<div class="tempResults">' + parseInt(maTempsNextDay) + '˚' + ' / ' + parseInt(miTempsNextDay) + '˚' + '</div>';
                 tomorrowData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconTomorrow + '.png' + '>';
                 tomorrowData += '<div class="otherResults">' + '<strong>' + data.list[8].weather[0].main + ':' + ' </strong>' + data.list[8].weather[0].description + '</div>';
                 tomorrowData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + data.list[8].main.humidity + '</div>';
@@ -276,7 +289,7 @@
                 tomorrowData += '<div class="otherResults">' + '<strong>Pressure: </strong>' + data.list[8].main.pressure + '</div>';
 
 
-                dayAfterTomorrowData += '<div class="tempResults">' + parseInt(data.list[16].main.temp) + '˚' + ' / ' + parseInt(data.list[18].main.temp) + '˚' + '</div>';
+                dayAfterTomorrowData += '<div class="tempResults">' + parseInt(maTempsNextNextDay) + '˚' + ' / ' + parseInt(miTempsNextNextDay) + '˚' + '</div>';
                 dayAfterTomorrowData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconDayAfterTomorrow + '.png' + '>';
                 dayAfterTomorrowData += '<div class="otherResults">' + '<strong>' + data.list[16].weather[0].main + ':' + ' </strong>' + data.list[16].weather[0].description + '</div>';
                 dayAfterTomorrowData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + data.list[16].main.humidity + '</div>';
