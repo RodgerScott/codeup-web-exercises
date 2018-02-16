@@ -69,9 +69,6 @@
             position:relative;
             left: 110px;
         }
-
-
-
     </style>
 </head>
 <body>
@@ -198,44 +195,71 @@
                 var iconTomorrow = data.list[8].weather[0].icon;
                 var iconDayAfterTomorrow = data.list[16].weather[0].icon;
                 var maxTemps = [];
+                var maxTempsToday = [];
+                var maxTempsTomorrow = [];
+                var maxTempsNextDay = [];
+                var maxTempsNextNextDay = [];
                 var minTemps = [];
+                var counter = 0;
 
                 function maxTemper () {
                     for (var i = 0; i < 40; i++) {
-
-                        maxTemps.push(data.list[i].main.temp);
-
-                        // if (upToDateWeatherInfo[i].main.temp.max > upToDateWeatherInfo[i -1].main.temp.max) {
-                        //     maxTemps.splice(0,1, upToDateWeatherInfo[i].main.temp.max)
-                        // }
+                        if (upToDateWeatherInfo[i].dt_txt.substring(0, 10) === upToDateWeatherInfo[i + 1].dt_txt.substring(0, 10)) {
+                            maxTempsToday.push(upToDateWeatherInfo[i].main.temp);
+                        } else {
+                            counter = i + 1;
+                            break;
+                        }
+                    }
+                    for (var j = counter; j < 40; j++) {
+                        if (upToDateWeatherInfo[j].dt_txt.substring(0, 10) === upToDateWeatherInfo[j + 1].dt_txt.substring(0, 10)) {
+                            maxTempsTomorrow.push(upToDateWeatherInfo[j].main.temp);
+                        } else {
+                            counter = j + 1;
+                            break;
+                        }
+                    }
+                    for (var k = counter; k < 40; k++) {
+                        if (upToDateWeatherInfo[k].dt_txt.substring(0, 10) === upToDateWeatherInfo[k + 1].dt_txt.substring(0, 10)) {
+                            maxTempsNextDay.push(upToDateWeatherInfo[k].main.temp);
+                        } else {
+                            counter = k + 1;
+                            break;
+                        }
+                    }
+                    for (var l = counter; l < 40; l++) {
+                        if (upToDateWeatherInfo[l].dt_txt.substring(0, 10) === upToDateWeatherInfo[l + 1].dt_txt.substring(0, 10)) {
+                            maxTempsNextNextDay.push(upToDateWeatherInfo[l].main.temp);
+                        } else {
+                            counter = l + 1;
+                            break;
+                        }
                     }
                 }
 
                 maxTemper();
 
-                console.log(maxTemps);
+                console.log(maxTempsToday);
+                console.log(maxTempsTomorrow);
+                console.log(maxTempsNextDay);
+                console.log(maxTempsNextNextDay);
+
+                console.log(counter);
+
+
 
                 function minTemper () {
                     for (var i = 0; i < 40; i++) {
 
                         minTemps.push(data.list[i].main.temp);
 
-                        // if (upToDateWeatherInfo[i].main.temp.max > upToDateWeatherInfo[i -1].main.temp.max) {
-                        //     maxTemps.splice(0,1, upToDateWeatherInfo[i].main.temp.max)
-                        // }
-                    }
-                    for (var j = 0; j < 40; j++) {
-                        if (minTemps[j] < minTemps[j + 1]) {
-                            minTemps.splice (0, 1);
-                            j = 0;
-                        }
-                    }
+                    } var testie = Math.min.apply(null, minTemps);
+
+                    console.log(testie);
+
                 }
                 minTemper();
 
-
-
-                console.log(minTemps);
 
                 weatherData += '<div class="tempResults">' + parseInt(data.list[0].main.temp) + '˚' + ' / ' + parseInt(data.list[2].main.temp) + '˚' + '</div>';
                 weatherData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconToday + '.png' + '>';
@@ -273,13 +297,7 @@
         }
         ted ();
 
-
         $('#mapLocate').click(ted);
-
-
-
-
-
     </script>
 </body>
 </html>
