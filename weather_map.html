@@ -189,6 +189,7 @@
 
             }).done(function (data) {
 
+
                 console.log(data.list);
 
 
@@ -196,6 +197,45 @@
                 var iconToday = data.list[0].weather[0].icon;
                 var iconTomorrow = data.list[8].weather[0].icon;
                 var iconDayAfterTomorrow = data.list[16].weather[0].icon;
+                var maxTemps = [];
+                var minTemps = [];
+
+                function maxTemper () {
+                    for (var i = 0; i < 40; i++) {
+
+                        maxTemps.push(data.list[i].main.temp);
+
+                        // if (upToDateWeatherInfo[i].main.temp.max > upToDateWeatherInfo[i -1].main.temp.max) {
+                        //     maxTemps.splice(0,1, upToDateWeatherInfo[i].main.temp.max)
+                        // }
+                    }
+                }
+
+                maxTemper();
+
+                console.log(maxTemps);
+
+                function minTemper () {
+                    for (var i = 0; i < 40; i++) {
+
+                        minTemps.push(data.list[i].main.temp);
+
+                        // if (upToDateWeatherInfo[i].main.temp.max > upToDateWeatherInfo[i -1].main.temp.max) {
+                        //     maxTemps.splice(0,1, upToDateWeatherInfo[i].main.temp.max)
+                        // }
+                    }
+                    for (var j = 0; j < 40; j++) {
+                        if (minTemps[j] < minTemps[j + 1]) {
+                            minTemps.splice (0, 1);
+                            j = 0;
+                        }
+                    }
+                }
+                minTemper();
+
+
+
+                console.log(minTemps);
 
                 weatherData += '<div class="tempResults">' + parseInt(data.list[0].main.temp) + '˚' + ' / ' + parseInt(data.list[2].main.temp) + '˚' + '</div>';
                 weatherData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconToday + '.png' + '>';
