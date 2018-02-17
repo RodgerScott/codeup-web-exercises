@@ -85,7 +85,6 @@ function ted () {
         var iconTomorrow = data.list[8].weather[0].icon;
         var iconDayAfterTomorrow = data.list[16].weather[0].icon;
 
-
         var maxTempsToday = [];
         var maxTempsTomorrow = [];
         var maxTempsNextDay = [];
@@ -93,7 +92,6 @@ function ted () {
         var maTempsTomorrow = 0;
         var maTempsNextDay = 0;
         var maTempsNextNextDay = 0;
-
 
         var minTempsToday = [];
         var minTempsTomorrow = [];
@@ -103,13 +101,45 @@ function ted () {
         var miTempsNextDay = 0;
         var miTempsNextNextDay = 0;
 
-        var cloudToday = [];
-        var cloudTomorrow = [];
-        var cloudNextDay = [];
-        var cloudNextNextDay = [];
-        var cloudsTomorrow = "";
-        var cloudsNextDay = "";
-        var cloudsNextNextDay = "";
+        var weatherToday = [];
+        var weatherTomorrow = [];
+        var weatherNextDay = [];
+        var weatherNextNextDay = [];
+        var weatherTomorrow = "";
+        var weatherNextDay = "";
+        var weatherNextNextDay = "";
+
+        var wdescripToday = [];
+        var wdescripTomorrow = [];
+        var wdescripNextDay = [];
+        var wdescripNextNextDay = [];
+        var wdescripTomorrow = "";
+        var wdescripNextDay = "";
+        var wdescripNextNextDay = "";
+
+        var humidityToday = [];
+        var humidityTomorrow = [];
+        var humidityNextDay = [];
+        var humidityNextNextDay = [];
+        var humidityTomorrow = "";
+        var humidityNextDay = "";
+        var humidityNextNextDay = "";
+
+        var windToday = [];
+        var windTomorrow = [];
+        var windNextDay = [];
+        var windNextNextDay = [];
+        var windTomorrow = "";
+        var windNextDay = "";
+        var windNextNextDay = "";
+
+        var pressureToday = [];
+        var pressureTomorrow = [];
+        var pressureNextDay = [];
+        var pressureNextNextDay = [];
+        var pressureTomorrow = "";
+        var pressureNextDay = "";
+        var pressureNextNextDay = "";
 
         var counter = 0;
 
