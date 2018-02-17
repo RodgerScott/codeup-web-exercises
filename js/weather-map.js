@@ -1,7 +1,6 @@
-var address = "";
 var myLatLng = {};
-var lat = 29.4259671;
-var lng = -98.4861419;
+var lat = 29.4241219;
+var lng = -98.49362819999999;
 
 
 //Google Maps Scripting
@@ -13,19 +12,18 @@ function initMap() {
         center: {lat: 29.4259671, lng: -98.4861419},
         zoom: 10
     });
-
 }
 
 initMap();
 
+//Google Maps Marker Event code
+
 google.maps.event.addListener(map, "click", function(event) {
 
-
-
-    var lat = event.latLng.lat();
-    var lng = event.latLng.lng();
+    lat = event.latLng.lat();
+    lng = event.latLng.lng();
     // change the temp value based on click: lat, lng
-    var myLatLng = {
+    myLatLng = {
         lat: lat,
         lng: lng
     };
@@ -34,9 +32,23 @@ google.maps.event.addListener(map, "click", function(event) {
         position: myLatLng,
         map: map
     });
+    map.setCenter(myLatLng);
 
-    console.log(latInput);
-    console.log(lonInput);
+    var geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode({"location": myLatLng}, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+
+            map.setCenter(results[0].geometry.location);
+
+        } else {
+
+            alert('Geocoding was not successful - STATUS: ' + status);
+        }
+
+        $('h1').text(results[0].address_components[2].long_name);
+    });
+
 
     ted();
 
@@ -44,13 +56,11 @@ google.maps.event.addListener(map, "click", function(event) {
         marker.setMap(null);
     });
 
-    // latInput = document.getElementById('latInput').value;
-    // lonInput = document.getElementById('lonInput').value;
 
 
 });
 
-//OpenWeather Scripting
+//OpenWeather Scripting and parsing
 
 
 function ted () {
@@ -68,9 +78,7 @@ function ted () {
 
     }).done(function (data) {
 
-
         console.log(data.list);
-
 
         var upToDateWeatherInfo = data.list;
         var iconToday = data.list[0].weather[0].icon;
@@ -95,9 +103,17 @@ function ted () {
         var miTempsNextDay = 0;
         var miTempsNextNextDay = 0;
 
+        var cloudToday = [];
+        var cloudTomorrow = [];
+        var cloudNextDay = [];
+        var cloudNextNextDay = [];
+        var cloudsTomorrow = "";
+        var cloudsNextDay = "";
+        var cloudsNextNextDay = "";
+
         var counter = 0;
 
-        function Temper () {
+        function parsing () {
             for (var i = 0; i < 40; i++) {
                 if (upToDateWeatherInfo[i].dt_txt.substring(0, 10) === upToDateWeatherInfo[i + 1].dt_txt.substring(0, 10)) {
                     maxTempsToday.push(upToDateWeatherInfo[i].main.temp);
@@ -152,7 +168,7 @@ function ted () {
 
         }
 
-        Temper();
+        parsing();
 
 
         weatherData += '<div class="tempResults">' + parseInt(maTempsTomorrow) + '˚' + ' / ' + parseInt(miTempsTomorrow) + '˚' + '</div>';
@@ -188,16 +204,15 @@ function ted () {
 }
 ted ();
 
-$('#mapLocate').click(ted);
 $('#cityButton').click(function (){
-    address = document.getElementById("citySelect").value;
-    $('h1').text(address);
+    var address = document.getElementById("citySelect").value;
     var geocoder = new google.maps.Geocoder();
 
     geocoder.geocode({"address": address}, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
 
             map.setCenter(results[0].geometry.location);
+
         } else {
 
             alert('Geocoding was not successful - STATUS: ' + status);
@@ -206,7 +221,11 @@ $('#cityButton').click(function (){
         lng = results[0].geometry.location.lng();
         myLatLng = { lat: results[0].geometry.location.lat(),
         lng: results[0].geometry.location.lng()};
+
         $('h1').text(results[0].address_components[0].long_name);
     });
-    ted();
+
+    console.log(lat);
+    console.log(lng);
+    setTimeout(ted, 300);
 });
