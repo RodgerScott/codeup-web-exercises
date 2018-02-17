@@ -1,0 +1,61 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+.mainContainer {
+    height: 200px;
+    width: 85%;
+    background-color: #F2F2F2;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.innerBox {
+    height: 200px;
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding-top: 15px;
+}
+
+#map {
+    height: 400px;
+    width: 85%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.tempResults {
+    font-size: 1.75em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.otherResults {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#inputs {
+    position:relative;
+    left: 110px;
+}
+
+#mapLocate {
+    position:relative;
+    left: 110px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#clearmarker {
+    position:relative;
+    left: 110px;
+}
