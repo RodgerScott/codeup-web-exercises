@@ -367,3 +367,20 @@ $('#cityButton').click(function (){
     console.log(lng);
     setTimeout(ted, 300);
 });
+
+$('#checkboxTwo').click(function(){
+   $('#dayAfterTomorrow').hide();
+    $('#tomorrow').show();
+    $('#today').show();
+});
+
+$('#checkboxOne').click(function(){
+    $('#dayAfterTomorrow').hide();
+    $('#tomorrow').hide();
+});
+
+$('#checkboxThree').click(function(){
+    $('#dayAfterTomorrow').show();
+    $('#tomorrow').show();
+    $('#today').show();
+});
