@@ -365,7 +365,7 @@ $('#cityButton').click(function (){
 
     console.log(lat);
     console.log(lng);
-    setTimeout(ted, 300);
+    setTimeout(ted, 1300);
 });
 
 $('#checkboxTwo').click(function(){
