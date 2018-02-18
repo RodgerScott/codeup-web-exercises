@@ -81,148 +81,256 @@ function ted () {
         console.log(data.list);
 
         var upToDateWeatherInfo = data.list;
-        var iconToday = data.list[0].weather[0].icon;
-        var iconTomorrow = data.list[8].weather[0].icon;
-        var iconDayAfterTomorrow = data.list[16].weather[0].icon;
 
-        var maxTempsToday = [];
-        var maxTempsTomorrow = [];
-        var maxTempsNextDay = [];
-        var maxTempsNextNextDay = [];
+        var dateTemp = [];
+        var dateTomorrow = "";
+        var dateNextDay = "";
+        var dateNextNextDay = "";
+
+        var maxTempsTemp = [];
         var maTempsTomorrow = 0;
         var maTempsNextDay = 0;
         var maTempsNextNextDay = 0;
 
-        var minTempsToday = [];
-        var minTempsTomorrow = [];
-        var minTempsNextDay = [];
-        var minTempsNextNextDay = [];
+        var minTempsTemp = [];
         var miTempsTomorrow = 0;
         var miTempsNextDay = 0;
         var miTempsNextNextDay = 0;
 
-        var weatherToday = [];
-        var weatherTomorrow = [];
-        var weatherNextDay = [];
-        var weatherNextNextDay = [];
-        var weatherTomorrow = "";
-        var weatherNextDay = "";
-        var weatherNextNextDay = "";
+        var iconTemp = [];
+        var iconTomorrow = "";
+        var iconNextDay = "";
+        var iconNextNextDay = "";
 
-        var wdescripToday = [];
-        var wdescripTomorrow = [];
-        var wdescripNextDay = [];
-        var wdescripNextNextDay = [];
+        var weatherTemp = [];
+        var weTomorrow = "";
+        var weNextDay = "";
+        var weNextNextDay = "";
+
+        var weatherdescripTemp = [];
         var wdescripTomorrow = "";
         var wdescripNextDay = "";
         var wdescripNextNextDay = "";
 
-        var humidityToday = [];
-        var humidityTomorrow = [];
-        var humidityNextDay = [];
-        var humidityNextNextDay = [];
-        var humidityTomorrow = "";
-        var humidityNextDay = "";
-        var humidityNextNextDay = "";
+        var humidityTemp = [];
+        var huTomorrow = "";
+        var huNextDay = "";
+        var huNextNextDay = "";
 
-        var windToday = [];
-        var windTomorrow = [];
-        var windNextDay = [];
-        var windNextNextDay = [];
-        var windTomorrow = "";
-        var windNextDay = "";
-        var windNextNextDay = "";
+        var windTemp = [];
+        var wiTomorrow = "";
+        var wiNextDay = "";
+        var wiNextNextDay = "";
 
-        var pressureToday = [];
-        var pressureTomorrow = [];
-        var pressureNextDay = [];
-        var pressureNextNextDay = [];
-        var pressureTomorrow = "";
-        var pressureNextDay = "";
-        var pressureNextNextDay = "";
+        var pressureTemp = [];
+        var prTomorrow = "";
+        var prNextDay = "";
+        var prNextNextDay = "";
 
         var counter = 0;
 
+        var today = new Date();
+
         function parsing () {
-            for (var i = 0; i < 40; i++) {
+            for (var i = 0; i < upToDateWeatherInfo.length; i++) {
                 if (upToDateWeatherInfo[i].dt_txt.substring(0, 10) === upToDateWeatherInfo[i + 1].dt_txt.substring(0, 10)) {
-                    maxTempsToday.push(upToDateWeatherInfo[i].main.temp);
-                    minTempsToday.push(upToDateWeatherInfo[i].main.temp);
                 } else {
-                    maxTempsToday.push(upToDateWeatherInfo[i].main.temp);
-                    minTempsToday.push(upToDateWeatherInfo[i].main.temp);
                     counter = i + 1;
                     break;
                 }
             }
-            for (var j = counter; j < 40; j++) {
+            for (var j = counter; j < upToDateWeatherInfo.length; j++) {
                 if (upToDateWeatherInfo[j].dt_txt.substring(0, 10) === upToDateWeatherInfo[j + 1].dt_txt.substring(0, 10)) {
-                    maxTempsTomorrow.push(upToDateWeatherInfo[j].main.temp);
-                    minTempsTomorrow.push(upToDateWeatherInfo[j].main.temp);
+                    dateTemp.push(upToDateWeatherInfo[j].dt_txt.substring(5, 10));
+                    maxTempsTemp.push(upToDateWeatherInfo[j].main.temp);
+                    minTempsTemp.push(upToDateWeatherInfo[j].main.temp);
+                    iconTemp.push(upToDateWeatherInfo[j].weather[0].icon);
+                    weatherTemp.push(upToDateWeatherInfo[j].weather[0].main);
+                    weatherdescripTemp.push(upToDateWeatherInfo[j].weather[0].description);
+                    humidityTemp.push(upToDateWeatherInfo[j].main.humidity);
+                    windTemp.push(upToDateWeatherInfo[j].wind.speed);
+                    pressureTemp.push(upToDateWeatherInfo[j].main.pressure);
+
                 } else {
-                    maxTempsTomorrow.push(upToDateWeatherInfo[j].main.temp);
-                    minTempsTomorrow.push(upToDateWeatherInfo[j].main.temp);
+                    dateTemp.push(upToDateWeatherInfo[j].dt_txt.substring(5, 10));
+                    maxTempsTemp.push(upToDateWeatherInfo[j].main.temp);
+                    minTempsTemp.push(upToDateWeatherInfo[j].main.temp);
+                    minTempsTemp.push(upToDateWeatherInfo[j].main.temp);
+                    iconTemp.push(upToDateWeatherInfo[j].weather[0].icon);
+                    weatherTemp.push(upToDateWeatherInfo[j].weather[0].main);
+                    weatherdescripTemp.push(upToDateWeatherInfo[j].weather[0].description);
+                    humidityTemp.push(upToDateWeatherInfo[j].main.humidity);
+                    windTemp.push(upToDateWeatherInfo[j].wind.speed);
+                    pressureTemp.push(upToDateWeatherInfo[j].main.pressure);
+
+                    dateTomorrow = dateTemp[3];
+                    dateTemp = [];
+
+                    maTempsTomorrow = Math.max.apply(null, maxTempsTemp);
+                    maxTempsTemp = [];
+
+                    miTempsTomorrow = Math.min.apply(null, minTempsTemp);
+                    minTempsTemp =[];
+
+                    console.log(today);
+
+                    iconTomorrow = iconTemp[3];
+                    iconTemp = [];
+
+                    weTomorrow = weatherTemp[3];
+                    weatherTemp = [];
+
+                    wdescripTomorrow = weatherdescripTemp[3];
+                    weatherdescripTemp = [];
+
+                    huTomorrow = humidityTemp[3];
+                    humidityTemp =[];
+
+                    wiTomorrow = windTemp[3];
+                    windTemp = [];
+
+                    prTomorrow = pressureTemp[3];
+                    pressureTemp = [];
+
                     counter = j + 1;
                     break;
                 }
             }
-            for (var k = counter; k < 40; k++) {
+            for (var k = counter; k < upToDateWeatherInfo.length; k++) {
                 if (upToDateWeatherInfo[k].dt_txt.substring(0, 10) === upToDateWeatherInfo[k + 1].dt_txt.substring(0, 10)) {
-                    maxTempsNextDay.push(upToDateWeatherInfo[k].main.temp);
-                    minTempsNextDay.push(upToDateWeatherInfo[k].main.temp);
+                    dateTemp.push(upToDateWeatherInfo[k].dt_txt.substring(5, 10));
+                    maxTempsTemp.push(upToDateWeatherInfo[k].main.temp);
+                    minTempsTemp.push(upToDateWeatherInfo[k].main.temp);
+                    iconTemp.push(upToDateWeatherInfo[k].weather[0].icon);
+                    weatherTemp.push(upToDateWeatherInfo[k].weather[0].main);
+                    weatherdescripTemp.push(upToDateWeatherInfo[k].weather[0].description);
+                    humidityTemp.push(upToDateWeatherInfo[k].main.humidity);
+                    windTemp.push(upToDateWeatherInfo[k].wind.speed);
+                    pressureTemp.push(upToDateWeatherInfo[k].main.pressure);
                 } else {
-                    maxTempsNextDay.push(upToDateWeatherInfo[k].main.temp);
-                    minTempsNextDay.push(upToDateWeatherInfo[k].main.temp);
+                    dateTemp.push(upToDateWeatherInfo[k].dt_txt.substring(5, 10));
+                    maxTempsTemp.push(upToDateWeatherInfo[k].main.temp);
+                    minTempsTemp.push(upToDateWeatherInfo[k].main.temp);
+                    iconTemp.push(upToDateWeatherInfo[k].weather[0].icon);
+                    weatherTemp.push(upToDateWeatherInfo[k].weather[0].main);
+                    weatherdescripTemp.push(upToDateWeatherInfo[k].weather[0].description);
+                    humidityTemp.push(upToDateWeatherInfo[k].main.humidity);
+                    windTemp.push(upToDateWeatherInfo[k].wind.speed);
+                    pressureTemp.push(upToDateWeatherInfo[k].main.pressure);
+
+                    dateNextDay = dateTemp[3];
+                    dateTemp = [];
+
+                    maTempsNextDay = Math.max.apply(null, maxTempsTemp);
+                    maxTempsTemp = [];
+
+                    miTempsNextDay = Math.min.apply(null, minTempsTemp);
+                    minTempsTemp =[];
+
+                    iconNextDay = iconTemp[3];
+                    iconTemp = [];
+
+                    weNextDay = weatherTemp[3];
+                    weatherTemp = [];
+
+                    wdescripNextDay = weatherdescripTemp[3];
+                    weatherdescripTemp = [];
+
+                    huNextDay = humidityTemp[3];
+                    humidityTemp =[];
+
+                    wiNextDay = windTemp[3];
+                    windTemp = [];
+
+                    prNextDay = pressureTemp[3];
+                    pressureTemp = [];
+
                     counter = k + 1;
                     break;
                 }
             }
-            for (var l = counter; l < 40; l++) {
+            for (var l = counter; l < upToDateWeatherInfo.length; l++) {
                 if (upToDateWeatherInfo[l].dt_txt.substring(0, 10) === upToDateWeatherInfo[l + 1].dt_txt.substring(0, 10)) {
-                    maxTempsNextNextDay.push(upToDateWeatherInfo[l].main.temp);
-                    minTempsNextNextDay.push(upToDateWeatherInfo[l].main.temp);
+                    dateTemp.push(upToDateWeatherInfo[l].dt_txt.substring(5, 10));
+                    maxTempsTemp.push(upToDateWeatherInfo[l].main.temp);
+                    minTempsTemp.push(upToDateWeatherInfo[l].main.temp);
+                    iconTemp.push(upToDateWeatherInfo[l].weather[0].icon);
+                    weatherTemp.push(upToDateWeatherInfo[l].weather[0].main);
+                    weatherdescripTemp.push(upToDateWeatherInfo[l].weather[0].description);
+                    humidityTemp.push(upToDateWeatherInfo[l].main.humidity);
+                    windTemp.push(upToDateWeatherInfo[l].wind.speed);
+                    pressureTemp.push(upToDateWeatherInfo[l].main.pressure);
+
                 } else {
-                    maxTempsNextNextDay.push(upToDateWeatherInfo[l].main.temp);
-                    minTempsNextNextDay.push(upToDateWeatherInfo[l].main.temp);
+                    dateTemp.push(upToDateWeatherInfo[l].dt_txt.substring(5, 10));
+                    maxTempsTemp.push(upToDateWeatherInfo[l].main.temp);
+                    minTempsTemp.push(upToDateWeatherInfo[l].main.temp);
+                    iconTemp.push(upToDateWeatherInfo[l].weather[0].icon);
+                    weatherTemp.push(upToDateWeatherInfo[l].weather[0].main);
+                    weatherdescripTemp.push(upToDateWeatherInfo[l].weather[0].description);
+                    humidityTemp.push(upToDateWeatherInfo[l].main.humidity);
+                    windTemp.push(upToDateWeatherInfo[l].wind.speed);
+                    pressureTemp.push(upToDateWeatherInfo[l].main.pressure);
+
+                    dateNextNextDay = dateTemp[3];
+                    dateTemp = [];
+
+                    maTempsNextNextDay = Math.max.apply(null, maxTempsTemp);
+                    maxTempsTemp = [];
+
+                    miTempsNextNextDay = Math.min.apply(null, minTempsTemp);
+                    minTempsTemp =[];
+
+                    iconNextNextDay = iconTemp[3];
+                    iconTemp = [];
+
+                    weNextNextDay = weatherTemp[3];
+                    weatherTemp = [];
+
+                    wdescripNextNextDay = weatherdescripTemp[3];
+                    weatherdescripTemp = [];
+
+                    huNextNextDay = humidityTemp[3];
+                    humidityTemp =[];
+
+                    wiNextNextDay = windTemp[3];
+                    windTemp = [];
+
+                    prNextNextDay = pressureTemp[3];
+                    pressureTemp = [];
+
                     counter = l + 1;
+
                     break;
                 }
             }
-
-            maTempsTomorrow = Math.max.apply(null, maxTempsTomorrow);
-            maTempsNextDay = Math.max.apply(null, maxTempsNextDay);
-            maTempsNextNextDay = Math.max.apply(null, maxTempsNextNextDay);
-            miTempsTomorrow = Math.min.apply(null, minTempsTomorrow);
-            miTempsNextDay = Math.min.apply(null, minTempsNextDay);
-            miTempsNextNextDay = Math.min.apply(null, minTempsNextNextDay);
-
         }
 
         parsing();
 
-
+        weatherData += '<div class="otherResults">' + '<strong>Date: </strong>' + dateTomorrow + '</div>';
         weatherData += '<div class="tempResults">' + parseInt(maTempsTomorrow) + '˚' + ' / ' + parseInt(miTempsTomorrow) + '˚' + '</div>';
-        weatherData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconToday + '.png' + '>';
-        weatherData += '<div class="otherResults">' + '<strong>' + data.list[0].weather[0].main + ':' + ' </strong>' + data.list[0].weather[0].description + '</div>';
-        weatherData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + data.list[0].main.humidity + '</div>';
-        weatherData += '<div class="otherResults">' + '<strong>Wind: </strong>' + data.list[0].wind.speed + '</div>';
-        weatherData += '<div class="otherResults">' + '<strong>Pressure: </strong>' + data.list[0].main.pressure + '</div>';
+        weatherData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconTomorrow + '.png' + '>';
+        weatherData += '<div class="otherResults">' + '<strong>' + weTomorrow + ':' + ' </strong>' + wdescripTomorrow + '</div>';
+        weatherData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + huTomorrow + '</div>';
+        weatherData += '<div class="otherResults">' + '<strong>Wind: </strong>' + wiTomorrow + '</div>';
+        weatherData += '<div class="otherResults">' + '<strong>Pressure: </strong>' + prTomorrow + '</div>';
 
-
+        tomorrowData += '<div class="otherResults">' + '<strong>Date: </strong>' + dateNextDay + '</div>';
         tomorrowData += '<div class="tempResults">' + parseInt(maTempsNextDay) + '˚' + ' / ' + parseInt(miTempsNextDay) + '˚' + '</div>';
-        tomorrowData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconTomorrow + '.png' + '>';
-        tomorrowData += '<div class="otherResults">' + '<strong>' + data.list[8].weather[0].main + ':' + ' </strong>' + data.list[8].weather[0].description + '</div>';
-        tomorrowData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + data.list[8].main.humidity + '</div>';
-        tomorrowData += '<div class="otherResults">' + '<strong>Wind: </strong>' + data.list[8].wind.speed + '</div>';
-        tomorrowData += '<div class="otherResults">' + '<strong>Pressure: </strong>' + data.list[8].main.pressure + '</div>';
+        tomorrowData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconNextDay + '.png' + '>';
+        tomorrowData += '<div class="otherResults">' + '<strong>' + weNextDay + ':' + ' </strong>' + wdescripNextDay + '</div>';
+        tomorrowData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + huNextDay + '</div>';
+        tomorrowData += '<div class="otherResults">' + '<strong>Wind: </strong>' + wiNextDay + '</div>';
+        tomorrowData += '<div class="otherResults">' + '<strong>Pressure: </strong>' + prNextDay + '</div>';
 
-
+        dayAfterTomorrowData += '<div class="otherResults">' + '<strong>Date: </strong>' + dateNextNextDay + '</div>';
         dayAfterTomorrowData += '<div class="tempResults">' + parseInt(maTempsNextNextDay) + '˚' + ' / ' + parseInt(miTempsNextNextDay) + '˚' + '</div>';
-        dayAfterTomorrowData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconDayAfterTomorrow + '.png' + '>';
-        dayAfterTomorrowData += '<div class="otherResults">' + '<strong>' + data.list[16].weather[0].main + ':' + ' </strong>' + data.list[16].weather[0].description + '</div>';
-        dayAfterTomorrowData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + data.list[16].main.humidity + '</div>';
-        dayAfterTomorrowData += '<div class="otherResults">' + '<strong>Wind: </strong>' + data.list[16].wind.speed + '</div>';
-        dayAfterTomorrowData += '<div class="otherResults">' + '<strong>Pressure: </strong>' + data.list[16].main.pressure + '</div>';
+        dayAfterTomorrowData += '<div class="otherResults">' + '<img ' + 'src=' + 'http://openweathermap.org/img/w/' + iconNextNextDay + '.png' + '>';
+        dayAfterTomorrowData += '<div class="otherResults">' + '<strong>' + weNextNextDay + ':' + ' </strong>' + wdescripNextNextDay + '</div>';
+        dayAfterTomorrowData += '<div class="otherResults">' + '<strong>Humidity: </strong>' + huNextNextDay + '</div>';
+        dayAfterTomorrowData += '<div class="otherResults">' + '<strong>Wind: </strong>' + wiNextNextDay + '</div>';
+        dayAfterTomorrowData += '<div class="otherResults">' + '<strong>Pressure: </strong>' + prNextNextDay + '</div>';
 
 
         $('#today').html(weatherData);
