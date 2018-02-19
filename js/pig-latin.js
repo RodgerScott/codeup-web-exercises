@@ -11,16 +11,16 @@ function  ted () {
 
                     pigLatingCharacter.push(newPhrase[i] + "way");
                 }
-                else if (newPhrase[i].charAt(1).match(/[aeiou]/gi)) {
+                else if (newPhrase[i].charAt(1).match(/[aeiouy]/gi)) {
 
                     pigLatingCharacter.push(newPhrase[i].substring(1, newPhrase[i].length) + (newPhrase[i].charAt(0).toLowerCase() + "ay"));
 
                 }
-                else if (newPhrase[i].charAt(2).match(/[aeiou]/gi)) {
+                else if (newPhrase[i].charAt(2).match(/[aeiouy]/gi)) {
 
                     pigLatingCharacter.push(newPhrase[i].substring(2, newPhrase[i].length) + (newPhrase[i].substring(0, 2).toLowerCase() + "ay"));
                 }
-                else if (newPhrase[i].charAt(3).match(/[aeiou]/gi)) {
+                else if (newPhrase[i].charAt(3).match(/[aeiouy]/gi)) {
 
                     pigLatingCharacter.push(newPhrase[i].substring(3, newPhrase[i].length) + (newPhrase[i].substring(0, 3).toLowerCase() + "ay"));
                 }
