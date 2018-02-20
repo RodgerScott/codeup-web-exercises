@@ -31,4 +31,27 @@ const users = [
     },
 ];
 
+//filter function
+
+let languagesThree = [];
+users.filter(user => {
+   if (user.languages.length > 2) {
+       languagesThree.push(user);
+   }
+});
+console.log(languagesThree);
+
+//map function
+
+let emailAddresses = [];
+
+users.map(user => {
+    emailAddresses.push(user.email);
+});
+
+console.log(emailAddresses);
+
+
+
+//reduce function
 
