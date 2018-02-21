@@ -33,24 +33,18 @@ const users = [
 
 //filter function
 
-let languagesThree = [];
-users.filter(user => {
+const userLanguages = users.filter(user => {
    if (user.languages.length > 2) {
-       languagesThree.push(user);
+       return user;
    }
 });
-console.log(languagesThree);
+
 
 //map function
 
-let emailAddresses = [];
-
-users.map(user => {
-    emailAddresses.push(user.email);
+const userEmails = users.map(user => {
+    return user.email;
 });
-
-console.log(emailAddresses);
-
 
 
 //reduce function
@@ -117,9 +111,6 @@ const averageAge = customers.reduce (( average, customer) => {
 }, 0);
 
 
-
-
-
 // bonus set 2
 
 const names = ["John", "Max", "Ronald"];
@@ -147,23 +138,43 @@ const nameLetterLength = names.filter ( name => {
 
 // - Create an array of names with only the last two letters of each name
 
-
+const nameLastTwoLetters = names.map ( name => {
+   return `${name.charAt(name.length - 2)}${name.charAt(name.length - 1)}`
+});
 
 // - Create a total count of all letters
 
+const nameLetterCount = names.reduce (( counter, name) => {
+        return counter + name.length;
+}, 0);
 
 
 // - Create a string of all letters in alphabetical order
 
+const alphaArray = [];
+alphaArray.push(names.join('').toLowerCase());
+
+const alphaOrder = alphaArray.map(name => {
+    return name.split('').sort().join('');
+});
 
 
 // - Create an array of word objects with properties of wordLength, firstLetter, lastLetter
 
+const wordObjects =  names.map( name  => {
+    return {
+        wordLength: name.length,
+        firstLetter: name.charAt(0),
+        lastLetter: name.charAt(name.length - 1)
+    }
+});
 
 
 // - Create a string of all vowels in the entire array of names
 
+const stringOfVowels = names.filter ( name => {
 
+});
 
 // - Create a single object with properties
 
