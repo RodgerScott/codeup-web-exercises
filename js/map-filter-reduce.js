@@ -55,3 +55,7 @@ console.log(emailAddresses);
 
 //reduce function
 
+const idObject = users.reduce( (accumulator, value) => {
+    accumulator[value.id] = `${value.name}, ${value.email}, ${value.languages}`;
+    return accumulator;
+}, {});
