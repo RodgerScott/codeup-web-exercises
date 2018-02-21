@@ -87,19 +87,26 @@ const newArray = fruits.map( letter => {
 // PROBLEM 2 - create array of user objects based on the customers array
 // of objects (each user object should just have name and age properties)
 
-const newArray2 = customers.map( customer => {
+// const newArray2 = customers.map( customer => {
+//     return {
+//         name: customer.name,
+//         age: customer.age
+//     };
+// });
+
+const newArray2 = customers.map( ({name, age}) => {
     return {
-        name: customer.name,
-        age: customer.age
+        name,
+        age
     };
 });
 // PROBLEM 3 - create an array of civil servant customers (teachers and police officers)
 // containing the same properties as the objects on the customers objects
 
 
-const civilArray = customers.filter ( customer => {
-    if (customer.occupation === "Police Officer" || customer.occupation === "Teacher") {
-        return customer;
+const civilArray = customers.filter ( ({occupation}) => {
+    if (occupation === "Police Officer" || occupation === "Teacher") {
+        return customers;
     }
 });
 
@@ -172,12 +179,18 @@ const wordObjects =  names.map( name  => {
 
 // - Create a string of all vowels in the entire array of names
 
-const stringOfVowels = names.filter ( name => {
+//filter out the consenants
 
-});
+const stringOfVowels = names.reduce(( vowels, name) => {
+    return (vowels + (name.match(/[aeiou]/g)));
+}, "");
 
 // - Create a single object with properties
 
+const singleObject = names.reduce (( accum, name ) => {
+    accum["name"] = `${name}`;
+    return accum;
+}, {});
 
 //bonus set 3
 
