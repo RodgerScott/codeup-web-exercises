@@ -181,14 +181,14 @@ const wordObjects =  names.map( name  => {
 
 //filter out the consenants
 
-const stringOfVowels = names.reduce(( vowels, name) => {
+const stringOfVowels = names.reduce( ( vowels, name) => {
     return (vowels + (name.match(/[aeiou]/g)));
 }, "");
 
 // - Create a single object with properties
 
-const singleObject = names.reduce (( accum, name ) => {
-    accum["name"] = `${name}`;
+const singleObject = names.reduce( ( accum, name ) => {
+    accum[name] = name;
     return accum;
 }, {});
 
