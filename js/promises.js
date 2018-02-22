@@ -1,19 +1,18 @@
-function wait (number) {
-    return new Promise((resolve, reject) => {
-
+const wait = number => {
+    return new Promise( (resolve, reject) => {
         setTimeout(() => {
             if (number) {
-                resolve();
+                resolve(`Your promise resolved after ${number} milliseconds`);
             } else {
-                reject();
+                reject(`Terrible`);
             }
-        }, number)
-    })
-}
+        }, number);
+    });
+};
 
 
-wait(1000).then(() => console.log('You\'ll see this after 1 second'));
-wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
+wait(1000).then((data) => console.log(data));
+wait(3000).then((data) => console.log(data));
 
 
     const ghCommit = (username) => {
