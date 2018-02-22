@@ -217,14 +217,31 @@ const family = [
 
 // - Calculate the average age of family members
 
+const averageAgeDeaux = family.reduce (( age, person) => {
+    return Math.round(age + person.age / family.length);
+}, 0);
+
 
 // - Create an array of family objects without the age property
+
+const arrayFamily = family.map ( ({name, gender})  => {
+    return {
+        name,
+        gender
+    }
+});
 
 
 // - Create an array of all minors
 
+const minorsArray = family.filter ( person => {
+    if (person.age < 19 ) {
+        return person;
+    }
+});
 
 // - Calculate the total age combined of family members
+
 
 
 // - Create an array of only female family member objects
