@@ -242,12 +242,23 @@ const minorsArray = family.filter ( person => {
 
 // - Calculate the total age combined of family members
 
-
+const totalFamilyAge = family.reduce((totalAge, person) => {
+   return totalAge + person.age;
+}, 0);
 
 // - Create an array of only female family member objects
 
+const ladies = family.filter ( person => {
+    return person.gender === "female";
+});
+
 
 // - Create a single object with properties containing arrays of all names, genders, and ages
+
+const properties = family.reduce ((accum, {name, gender, age} ) => {
+    accum[name] = [name, gender, age];
+    return accum;
+}, {});
 
 
 //bonus set 4
