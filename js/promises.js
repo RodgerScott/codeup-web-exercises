@@ -18,7 +18,7 @@ wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
 
 
 function githubCheck() {
-    const gHPromise = fetch('https://api.github.com/users', {headers: {'Authorization': 'ff269b833c93ec3f2a3061d8a12508cd7ffc4bed'}});
+    const gHPromise = fetch('https://api.github.com/users', {headers: {'Authorization': ''}});
     return gHPromise;
 }
 
