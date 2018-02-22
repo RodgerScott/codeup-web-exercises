@@ -255,10 +255,13 @@ const ladies = family.filter ( person => {
 
 // - Create a single object with properties containing arrays of all names, genders, and ages
 
-const properties = family.reduce ((accum, {name, gender, age} ) => {
-    accum[name] = [name, gender, age];
-    return accum;
-}, {});
+const output = {
+    names: family.map(obj => obj.name),
+    genders: family.map(obj => obj.gender),
+    ages: family.map(obj => obj.age)
+};
+
+//chanel's solution ^ Check this out later.
 
 
 //bonus set 4
