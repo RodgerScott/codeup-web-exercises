@@ -17,13 +17,14 @@
 
 let mockdata1;
 let mockdata2;
+let users = [];
 
 $.get('./data/mockdata1.json').done(function (data, status, jqxhr) {
     mockdata1 = data;
     $.get('./data/mockdata2.json').done(function(data,status,jqxhr){
         mockdata2 = data;
-        let users = mockdata1.concat(mockdata2);
-        console.log(users);
+        let totalData = mockdata1.concat(mockdata2);
+        users.push(totalData);
     });
 });
 
@@ -46,6 +47,17 @@ function reduce (data) {
 //     "L": 290,
 //     "XL": 442
 // }
+
+let tshirts = {
+    "S":0,
+    "M":0,
+    "L":0,
+    "XL":0,
+    "2XL":0,
+    "3XL":0
+};
+
+
 //
 // 2. Produce a new array of objects w/ only the car info. Call this array allCars. Each object should only have the make, model, color, price, used properties
 //
