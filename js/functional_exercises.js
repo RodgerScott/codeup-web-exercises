@@ -21,17 +21,22 @@ let susers = [];
 
 $.ajax('./data/mockdata1.json').done( data => {
     busers.push(data);
-    console.log(susers);
 });
 
 
 $.ajax('./data/mockdata2.json').done( data => {
     susers.push(data);
-    console.log(susers);
 });
 
-//
+
 // 1. Use .reduce to get a sum total of every price from each object. Call that sum "totalPrices"
+
+function reduce () {
+    busers.reduce(( total, price) => {
+        return total + price.price;
+    });
+}
+
 
 //
 // 2. Use the users array and .reduce to determine how many shirts of each size we'll need to get. Example output should looks something like the following (numbers aren't exact)
