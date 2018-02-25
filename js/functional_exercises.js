@@ -15,26 +15,25 @@
 //
 // 1. Combine both arrays of objects into a single array. Name that variable users.
 
+let mockdata1;
+let mockdata2;
 
-let busers = [];
-let susers = [];
-
-$.ajax('./data/mockdata1.json').done( data => {
-    busers.push(data);
-});
-
-
-$.ajax('./data/mockdata2.json').done( data => {
-    susers.push(data);
+$.get('./data/mockdata1.json').done(function (data, status, jqxhr) {
+    mockdata1 = data;
+    $.get('./data/mockdata2.json').done(function(data,status,jqxhr){
+        mockdata2 = data;
+        let users = mockdata1.concat(mockdata2);
+        console.log(users);
+    });
 });
 
 
 // 1. Use .reduce to get a sum total of every price from each object. Call that sum "totalPrices"
+//
 
-function reduce () {
-    busers.reduce(( total, price) => {
-        return total + price.price;
-    });
+function reduce (data) {
+    return data.reduce( (total, {price}) =>
+        total + parseFloat(price.substr(1)), 0);
 }
 
 
