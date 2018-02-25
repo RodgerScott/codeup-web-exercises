@@ -30,13 +30,6 @@ $.ajax('./data/mockdata2.json').done( data => {
     console.log(susers);
 });
 
-
-let apax = setTimeout(() => {
-    busers.reduce( (totalPrices, price) => {
-        return totalPrices + price;
-    }, 0);
-}, 4000);
-
 //
 // 1. Use .reduce to get a sum total of every price from each object. Call that sum "totalPrices"
 
