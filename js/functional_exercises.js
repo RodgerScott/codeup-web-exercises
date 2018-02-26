@@ -19,9 +19,9 @@ let mockdata1;
 let mockdata2;
 let users = [];
 
-$.get('./data/mockdata1.json').done(function (data, status, jqxhr) {
+$.get('./data/mockdata1.json').done( data => {
     mockdata1 = data;
-    $.get('./data/mockdata2.json').done(function(data,status,jqxhr){
+    $.get('./data/mockdata2.json').done( data => {
         mockdata2 = data;
         let totalData = mockdata1.concat(mockdata2);
         users.push(totalData);
