@@ -57,6 +57,19 @@ let tshirts = {
     "3XL":0
 };
 
+function tShirtSize () {
+    return users.reduce((sizeCounter, {shirt_size}) => {
+
+    }, {
+        "SM": 0,
+        "M":0,
+        "L":0,
+        "XL":0,
+        "2XL":0,
+        "3XL":0
+    })
+}
+
 
 //
 // 2. Produce a new array of objects w/ only the car info. Call this array allCars. Each object should only have the make, model, color, price, used properties
