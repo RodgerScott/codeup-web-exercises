@@ -3,7 +3,7 @@ nav div {
 }
 
 .row.top-margin-for-rows {
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
 main {
@@ -32,4 +32,14 @@ main {
 }
 .label-size {
     width: 85%;
+}
+
+#function-return {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 300px) {
+    .label-size {
+        width: 95%;
+    }
 }
