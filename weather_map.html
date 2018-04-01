@@ -6,42 +6,54 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather API Project</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/weather-map.css">
     <style>
     </style>
 </head>
 <body>
-    <h1 id="cityTitle">San Antonio</h1>
-
-    <div class="inputs">
-        <label>Select A City: <input id="citySelect" type="text"></label>
+<div class="container-fluid">
+<div class="jumbotron jumbotron-fluid">
+    <div class="container-fluid">
+        <h2 class="display-4">Weather App</h2>
+        <p class="lead">Welcome to my 3-day forecast app.</p>
     </div>
-    <div class="inputs">
-        <button id="cityButton">
-            Submit
+</div>
+
+        <div class="container-fluid">
+            <div class="inputs">
+                <label>Select A City: <input id="citySelect" type="text"></label>
+            </div>
+            <div class="inputs">
+                <button id="cityButton">
+                    Submit
+                </button>
+            </div>
+            <div class="inputs">
+                <label for="checkboxOne">1 Day<input id="checkboxOne" type="radio" value="1" name="checker"></label>
+                <label for="checkboxTwo">2 Day<input id="checkboxTwo" type="radio" value="2" name="checker"></label>
+                <label for="checkboxThree">3 Day<input id="checkboxThree" type="radio" value="3" name="checker" checked></label>
+            </div>
+        </div>
+        <h1 id="cityTitle">San Antonio</h1>
+        <div class="container">
+            <div class="row">
+                <div id="today" class="innerBox col-sm-4"></div>
+                <div id="tomorrow" class="innerBox col-sm-4"></div>
+                <div id="dayAfterTomorrow" class="innerBox col-sm-4"></div>
+            </div>
+        </div>
+        <div id="map">
+
+        </div>
+        <button id="clearmarker">
+            Clear Markers
         </button>
-    </div>
-    <div class="inputs">
-        <label for="checkboxOne">1 Day<input id="checkboxOne" type="radio" value="1" name="checker"></label>
-        <label for="checkboxTwo">2 Day<input id="checkboxTwo" type="radio" value="2" name="checker"></label>
-        <label for="checkboxThree">3 Day<input id="checkboxThree" type="radio" value="3" name="checker" checked></label>
-    </div>
 
-    <div class="mainContainer container">
-        <div id="today" class="innerBox"></div>
-        <div id="tomorrow" class="innerBox"></div>
-        <div id="dayAfterTomorrow" class="innerBox"></div>
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIIUTWwvJJl5ZNhLBapDLyznaOhiyvjos"></script>
+        <script src="js/weather-map.js"></script>
     </div>
-    <div id="map">
-
-    </div>
-    <button id="clearmarker">
-        Clear Markers
-    </button>
-
-    <script src="js/jquery-2.2.4.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIIUTWwvJJl5ZNhLBapDLyznaOhiyvjos"></script>
-    <script src="js/weather-map.js"></script>
-
 </body>
 </html>

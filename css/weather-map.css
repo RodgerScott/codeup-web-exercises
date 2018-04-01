@@ -10,18 +10,7 @@ h2 {
     text-align: center;
 }
 
-.mainContainer {
-    height: 250px;
-    width: 85%;
-    background-color: lightblue;
-    box-sizing: border-box;
-    margin: 0 auto;
-}
-
 .innerBox {
-    height: 250px;
-    width: 33.3%;
-    float: left;
     text-align: center;
     border: 1px solid black;
     box-sizing: border-box;
@@ -34,7 +23,7 @@ h2 {
     width: 85%;
     box-sizing: border-box;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .tempResults {
@@ -49,8 +38,7 @@ h2 {
 }
 
 .inputs {
-    position:relative;
-    left: 110px;
+    alignment: left;
 }
 
 #mapLocate {
