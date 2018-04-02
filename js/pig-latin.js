@@ -1,7 +1,7 @@
 function  ted () {
     var pigLatingCharacter = [];
 
-            var newPhrase = document.getElementById("original-text").value;
+            var newPhrase = document.getElementById("original-text").value.trim();
             newPhrase = newPhrase.split(' ');
             for (var i = 0; i < newPhrase.length; i++) {
                 while (newPhrase[i] === "") {
