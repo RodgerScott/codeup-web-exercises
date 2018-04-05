@@ -39,3 +39,10 @@ h1 {
     size: 1.5em;
     margin-bottom: 55px;
 }
+
+@media screen and (min-width: 200px) {
+    .box {
+        height: 80px;
+        width: 80px;
+    }
+}
