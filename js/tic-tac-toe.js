@@ -211,20 +211,20 @@ function isSolved() {
     }
 
     //draw
-    // var count = 0;
-    //
-    // for (var i = 0; i < ticTacToeBoard.length; i++) {
-    //     for (var j = 0; j < 3; j++) {
-    //         if (ticTacToeBoard[i][j] === 1|| ticTacToeBoard[i][j] === 2) {
-    //             count += 1;
-    //         }
-    //     }
-    // }
-    // if (count === 9) {
-    //     $('#turnIndicator').text('It\'s a draw!');
-    // } else {
-    //     count = 0;
-    //     draw = true;
-    // }
+    var count = 0;
+
+    for (var i = 0; i < ticTacToeBoard.length; i++) {
+        for (var j = 0; j < 3; j++) {
+            if (ticTacToeBoard[i][j] === 1|| ticTacToeBoard[i][j] === 2) {
+                count += 1;
+            }
+        }
+    }
+    if (count === 9) {
+        $('#turnIndicator').text('It\'s a draw!');
+        draw === true;
+    } else {
+        count = 0;
+    }
 
 }
