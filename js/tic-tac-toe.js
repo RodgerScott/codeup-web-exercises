@@ -5,7 +5,6 @@ var ticTacToeBoard = [[0,0,0],[0,0,0],[0,0,0]];
 var turn = 0;
 
 var active = false;
-var draw = false;
 
 $('button').click(function(event) {
     event.preventDefault();
@@ -220,9 +219,8 @@ function isSolved() {
             }
         }
     }
-    if (count === 9) {
+    if (count === 9 && active !== false) {
         $('#turnIndicator').text('It\'s a draw!');
-        draw === true;
     } else {
         count = 0;
     }
