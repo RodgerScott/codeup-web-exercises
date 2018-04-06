@@ -5,12 +5,14 @@ var ticTacToeBoard = [[0,0,0],[0,0,0],[0,0,0]];
 var turn = 0;
 
 var active = false;
+var draw = false;
 
 $('button').click(function(event) {
     event.preventDefault();
     active = true;
+    $('#turnIndicator').removeClass('hidden');
     $('.box').text("");
-    $('#turnIndicator').text("Player X's Turn");
+    $('#turnIndicator').text("Go Player X");
     turn = 0;
     ticTacToeBoard = [[0,0,0],[0,0,0],[0,0,0]];
 });
@@ -30,11 +32,11 @@ $('button').click(function(event) {
 
 
     $('#tr0').click(function () {
-        if (turn % 2 === 0 && ticTacToeBoard[0][0] === 0) {
+        if (turn % 2 === 0 && ticTacToeBoard[0][0] === 0 && active === true) {
 
             ticTacToeBoard[0].splice(0, 1, 1);
             console.log(ticTacToeBoard);
-        } else if (turn % 2 === 1 && ticTacToeBoard[0][0] === 0) {
+        } else if (turn % 2 === 1 && ticTacToeBoard[0][0] === 0 && active === true) {
             ticTacToeBoard[0].splice(0, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -42,22 +44,22 @@ $('button').click(function(event) {
     });
 
     $('#tr1').click(function () {
-        if (turn % 2 === 0 && ticTacToeBoard[0][1] === 0) {
+        if (turn % 2 === 0 && ticTacToeBoard[0][1] === 0 && active === true) {
 
             ticTacToeBoard[0].splice(1, 1, 1);
             console.log(ticTacToeBoard);
-        } else if (turn % 2 === 1 && ticTacToeBoard[0][1] === 0) {
+        } else if (turn % 2 === 1 && ticTacToeBoard[0][1] === 0 && active === true) {
             ticTacToeBoard[0].splice(1, 1, 2);
             console.log(ticTacToeBoard);
         }
         isSolved();
     });
     $('#tr2').click(function () {
-        if (turn % 2 === 0 && ticTacToeBoard[0][2] === 0) {
+        if (turn % 2 === 0 && ticTacToeBoard[0][2] === 0 && active === true) {
 
             ticTacToeBoard[0].splice(2, 1, 1);
             console.log(ticTacToeBoard);
-        } else if (turn % 2 === 1 && ticTacToeBoard[0][2] === 0) {
+        } else if (turn % 2 === 1 && ticTacToeBoard[0][2] === 0 && active === true) {
             ticTacToeBoard[0].splice(2, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -65,11 +67,11 @@ $('button').click(function(event) {
     });
 
     $('#mr0').click(function () {
-        if (turn % 2 === 0 && ticTacToeBoard[1][0] === 0) {
+        if (turn % 2 === 0 && ticTacToeBoard[1][0] === 0 && active === true) {
 
             ticTacToeBoard[1].splice(0, 1, 1);
             console.log(ticTacToeBoard);
-        } else if (turn % 2 === 1 && ticTacToeBoard[1][0] === 0) {
+        } else if (turn % 2 === 1 && ticTacToeBoard[1][0] === 0 && active === true) {
             ticTacToeBoard[1].splice(0, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -77,11 +79,11 @@ $('button').click(function(event) {
     });
 
     $('#mr1').click(function () {
-        if (turn % 2 === 0 && ticTacToeBoard[1][1] === 0) {
+        if (turn % 2 === 0 && ticTacToeBoard[1][1] === 0 && active === true) {
 
             ticTacToeBoard[1].splice(1, 1, 1);
             console.log(ticTacToeBoard);
-        } else if (turn % 2 === 1 && ticTacToeBoard[1][1] === 0) {
+        } else if (turn % 2 === 1 && ticTacToeBoard[1][1] === 0 && active === true) {
             ticTacToeBoard[1].splice(1, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -89,11 +91,11 @@ $('button').click(function(event) {
     });
 
     $('#mr2').click(function () {
-        if (turn % 2 === 0 && ticTacToeBoard[1][2] === 0) {
+        if (turn % 2 === 0 && ticTacToeBoard[1][2] === 0 && active === true) {
 
             ticTacToeBoard[1].splice(2, 1, 1);
             console.log(ticTacToeBoard);
-        } else if (turn % 2 === 1 && ticTacToeBoard[1][2] === 0) {
+        } else if (turn % 2 === 1 && ticTacToeBoard[1][2] === 0 && active === true) {
             ticTacToeBoard[1].splice(2, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -101,11 +103,11 @@ $('button').click(function(event) {
     });
 
     $('#br0').click(function () {
-        if (turn % 2 === 0 && ticTacToeBoard[2][0] === 0) {
+        if (turn % 2 === 0 && ticTacToeBoard[2][0] === 0 && active === true) {
 
             ticTacToeBoard[2].splice(0, 1, 1);
             console.log(ticTacToeBoard);
-        } else if (turn % 2 === 1 && ticTacToeBoard[2][0] === 0) {
+        } else if (turn % 2 === 1 && ticTacToeBoard[2][0] === 0 && active === true) {
             ticTacToeBoard[2].splice(0, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -113,11 +115,11 @@ $('button').click(function(event) {
     });
 
     $('#br1').click(function () {
-        if (turn % 2 === 0 && ticTacToeBoard[2][1] === 0) {
+        if (turn % 2 === 0 && ticTacToeBoard[2][1] === 0 && active === true) {
 
             ticTacToeBoard[2].splice(1, 1, 1);
             console.log(ticTacToeBoard);
-        } else if (turn % 2 === 1 && ticTacToeBoard[2][1] === 0) {
+        } else if (turn % 2 === 1 && ticTacToeBoard[2][1] === 0 && active === true) {
             ticTacToeBoard[2].splice(1, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -125,11 +127,11 @@ $('button').click(function(event) {
     });
 
     $('#br2').click(function () {
-        if (turn % 2 === 0 && ticTacToeBoard[2][2] === 0) {
+        if (turn % 2 === 0 && ticTacToeBoard[2][2] === 0 && active === true) {
 
             ticTacToeBoard[2].splice(2, 1, 1);
             console.log(ticTacToeBoard);
-        } else if (turn % 2 === 1 && ticTacToeBoard[2][2] === 0) {
+        } else if (turn % 2 === 1 && ticTacToeBoard[2][2] === 0 && active === true) {
             ticTacToeBoard[2].splice(2, 1, 2);
             console.log(ticTacToeBoard);
         }
@@ -207,4 +209,22 @@ function isSolved() {
         $('#turnIndicator').text('X Wins');
         active = false;
     }
+
+    //draw
+    // var count = 0;
+    //
+    // for (var i = 0; i < ticTacToeBoard.length; i++) {
+    //     for (var j = 0; j < 3; j++) {
+    //         if (ticTacToeBoard[i][j] === 1|| ticTacToeBoard[i][j] === 2) {
+    //             count += 1;
+    //         }
+    //     }
+    // }
+    // if (count === 9) {
+    //     $('#turnIndicator').text('It\'s a draw!');
+    // } else {
+    //     count = 0;
+    //     draw = true;
+    // }
+
 }
