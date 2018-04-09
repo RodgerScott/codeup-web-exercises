@@ -46,7 +46,7 @@ google.maps.event.addListener(map, "click", function(event) {
             alert('Geocoding was not successful - STATUS: ' + status);
         }
 
-        $('h1').text(results[0].address_components[2].long_name);
+        $('#showCity').text(results[0].address_components[2].long_name);
     });
 
 
@@ -360,7 +360,7 @@ $('#cityButton').click(function (){
         myLatLng = { lat: results[0].geometry.location.lat(),
         lng: results[0].geometry.location.lng()};
 
-        $('h1').text(results[0].address_components[0].long_name);
+        $('#showCity').text(results[0].address_components[0].long_name);
     });
 
     console.log(lat);

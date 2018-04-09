@@ -10,6 +10,10 @@ h2 {
     text-align: center;
 }
 
+.weather-title {
+    background-image: url("../images/clouds.jpg");
+}
+
 .innerBox {
     text-align: center;
     border: 1px solid black;
